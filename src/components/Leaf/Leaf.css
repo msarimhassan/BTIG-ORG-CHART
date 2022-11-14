@@ -1,0 +1,14 @@
+.leaf {
+    background-color: #3a7879;
+    padding: 10px 0px;
+    font-size: 0.5vw;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 5px;
+    display: inline-block;
+    max-width: 200px;
+    text-align: center;
+    color: white;
+    height: 300px;
+    overflow: scroll;
+    overflow-x: hidden;
+}

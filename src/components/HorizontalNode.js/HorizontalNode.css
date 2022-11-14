@@ -1,0 +1,18 @@
+.HorizontalNode{
+    background-color: #A3A0A0 ;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 0.7vw;   
+    width: fit-content;
+}
+.member-name{
+     margin: 10px;
+}
+.highlighted-text{
+    color: white;
+    font-weight: bold;
+}

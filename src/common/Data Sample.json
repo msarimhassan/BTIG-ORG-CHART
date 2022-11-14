@@ -1,0 +1,1940 @@
+{
+   "DisplayName":"Zane, River",
+   "UserPrincipalName":"LZane@btig.com",
+   "Team":"CTO",
+   "TeamLead":true,
+   "DirectTeamMembers":[
+         {
+         "DisplayName":"Carl, Izaiah",
+         "UserPrincipalName":"LCarl@btig.com",
+         "Team":"Data Division",
+         "TeamLead":true,
+         "DirectTeamMembers":[
+            {
+               "DisplayName":"Azriel, Mohammed",
+               "UserPrincipalName":"SAzriel@btig.com",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            }
+         ],
+         "Dimensions":{
+            "Left":true,
+            "Horizontal":false
+         },
+         "ReportsIntoUpn":null,
+         "FlatTeam":[
+            "SAzriel@btig.com"
+         ]
+      },
+      {
+         "DisplayName":"Reed, Camden",
+         "UserPrincipalName":"GReed@btig.com",
+         "Team":"AppDev",
+         "TeamLead":true,
+         "DirectTeamMembers":[
+            {
+               "DisplayName":"Ramon, Izaiah",
+               "UserPrincipalName":"RRamon@btig.com",
+               "Team":"QA",
+               "TeamLead":true,
+               "DirectTeamMembers":[
+                  {
+                     "DisplayName":"Amari, Gerardo",
+                     "UserPrincipalName":"LAmari@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Omari, Ira",
+                     "UserPrincipalName":"LOmari@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Titan, Yosef, Hugo, Ahmed",
+                     "UserPrincipalName":"CTitan@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  }
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  "LAmari@btig.com",
+                  "LOmari@btig.com",
+                  "CTitan@btig.com"
+               ]
+            },
+            {
+               "DisplayName":"Crosby, Maxton",
+               "UserPrincipalName":"KCrosby@btig.com",
+               "Team":"PBDS",
+               "TeamLead":true,
+               "DirectTeamMembers":[
+                  {
+                     "DisplayName":"Lawrence, Ezequiel",
+                     "UserPrincipalName":"SLawrence@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Uriel, Maxwell",
+                     "UserPrincipalName":"KUriel@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  }
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  "SLawrence@btig.com",
+                  "KUriel@btig.com"
+               ]
+            },
+            {
+               "DisplayName":"Frank, Thomas",
+               "UserPrincipalName":"GFrank@btig.com",
+               "Team":"OMS",
+               "TeamLead":true,
+               "DirectTeamMembers":[
+                  {
+                     "DisplayName":"Dimitri, Lance",
+                     "UserPrincipalName":"CDimitri@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Brantley, Bentley",
+                     "UserPrincipalName":"RBrantley@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Amari, Andrew",
+                     "UserPrincipalName":"RAmari@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  }
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  "CDimitri@btig.com",
+                  "RBrantley@btig.com",
+                  "RAmari@btig.com"
+               ]
+            },
+            {
+               "DisplayName":"Chris, Ermias, Hugo, Kyro",
+               "UserPrincipalName":"CChris@btig.com",
+               "Team":"SFDC",
+               "TeamLead":true,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Devon, Khalil",
+               "UserPrincipalName":"KDevon@btig.com",
+               "Team":"SFDC",
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Nova, Collin",
+               "UserPrincipalName":"CJalen@btig.com",
+               "Team":"Cloud \u0026 Delivery",
+               "TeamLead":true,
+               "DirectTeamMembers":[
+                  {
+                     "DisplayName":"Mekhi, William",
+                     "UserPrincipalName":"MMekhi@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Maverick, Chaim",
+                     "UserPrincipalName":"CMaverick@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Brecken, Keegan",
+                     "UserPrincipalName":"KBrecken@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Elias, Jericho",
+                     "UserPrincipalName":"LElias@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  }
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  "MMekhi@btig.com",
+                  "CMaverick@btig.com",
+                  "KBrecken@btig.com",
+                  "LElias@btig.com"
+               ]
+            },
+            {
+               "DisplayName":"Tony, Alan",
+               "UserPrincipalName":"MTony@btig.com",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Amari, Remy",
+               "UserPrincipalName":"LAmari@btig.com",
+               "Team":"SFDC",
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            }
+         ],
+         "Dimensions":{
+            "Left":true,
+            "Horizontal":false
+         },
+         "ReportsIntoUpn":null,
+         "FlatTeam":[
+            "RRamon@btig.com",
+            "KCrosby@btig.com",
+            "GFrank@btig.com",
+            "CChris@btig.com",
+            "KDevon@btig.com",
+            "CJalen@btig.com",
+            "MTony@btig.com",
+            "LAmari@btig.com",
+            "LAmari@btig.com",
+            "LOmari@btig.com",
+            "CTitan@btig.com",
+            "SLawrence@btig.com",
+            "KUriel@btig.com",
+            "CDimitri@btig.com",
+            "RBrantley@btig.com",
+            "RAmari@btig.com",
+            "MMekhi@btig.com",
+            "CMaverick@btig.com",
+            "KBrecken@btig.com",
+            "LElias@btig.com"
+         ]
+      },
+      {
+         "DisplayName":"Enrique, Juan",
+         "UserPrincipalName":"CEnrique@btig.com",
+         "Team":"Trading Support",
+         "TeamLead":true,
+         "DirectTeamMembers":[
+            {
+               "DisplayName":"Trevor, Tomas",
+               "UserPrincipalName":"UTrevor@btig.com",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Shepherd, Declan",
+               "UserPrincipalName":"LShepherd@btig.com",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            }
+         ],
+         "Dimensions":{
+            "Left":true,
+            "Horizontal":false
+         },
+         "ReportsIntoUpn":null,
+         "FlatTeam":[
+            "UTrevor@btig.com",
+            "LShepherd@btig.com"
+         ]
+      },
+      {
+         "DisplayName":"Michael, Keaton",
+         "UserPrincipalName":"KMichael@btig.com",
+         "Team":"Infrastructure \u0026 Service Team",
+         "TeamLead":true,
+         "DirectTeamMembers":[
+            {
+               "DisplayName":"Kevin, Vihaan",
+               "UserPrincipalName":"KKevin@btig.com",
+               "Team":"Infrastructure",
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Preston, Brennan",
+               "UserPrincipalName":"CPreston@btig.com",
+               "Team":"Service Team",
+               "TeamLead":true,
+               "DirectTeamMembers":[
+                  {
+                     "DisplayName":"Silas, Drake",
+                     "UserPrincipalName":"MSilas@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Ahmad, Landyn",
+                     "UserPrincipalName":"FAhmad@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Cruz, Royal",
+                     "UserPrincipalName":"KCruz@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Raiden, Donald",
+                     "UserPrincipalName":"CRaiden@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Myles, Lance",
+                     "UserPrincipalName":"CMyles@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Jakob, Izaiah",
+                     "UserPrincipalName":"LJakob@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Kendrick, Declan",
+                     "UserPrincipalName":"CKendrick@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Tony, Azriel",
+                     "UserPrincipalName":"CTony@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Zaid, Orlando",
+                     "UserPrincipalName":"KKaysen@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Bishop, Zeke",
+                     "UserPrincipalName":"KBishop@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Lennon, Brycen, Hugo, Ahmed",
+                     "UserPrincipalName":"RLennon@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Luka, Maxwell",
+                     "UserPrincipalName":"BLuka@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  }
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  "MSilas@btig.com",
+                  "FAhmad@btig.com",
+                  "KCruz@btig.com",
+                  "CRaiden@btig.com",
+                  "CMyles@btig.com",
+                  "LJakob@btig.com",
+                  "CKendrick@btig.com",
+                  "CTony@btig.com",
+                  "KKaysen@btig.com",
+                  "KBishop@btig.com",
+                  "RLennon@btig.com",
+                  "BLuka@btig.com"
+               ]
+            },
+            {
+               "DisplayName":"Felix, Jaxson",
+               "UserPrincipalName":"LFelix@btig.com",
+               "Team":"Infrastructure",
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Evan, Jamir",
+               "UserPrincipalName":"LEvan@btig.com",
+               "Team":"Infrastructure",
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Omar, Houston",
+               "UserPrincipalName":"LOmar@btig.com",
+               "Team":"Infrastructure",
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Jaxx, Azael",
+               "UserPrincipalName":"MJaxx@btig.com",
+               "Team":"Infrastructure",
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Musa, Kyro",
+               "UserPrincipalName":"SMusa@btig.com",
+               "Team":"Infrastructure",
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Beckett, Kairo",
+               "UserPrincipalName":"KBeckett@btig.com",
+               "Team":"Infrastructure",
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            }
+         ],
+         "Dimensions":{
+            "Left":true,
+            "Horizontal":false
+         },
+         "ReportsIntoUpn":null,
+         "FlatTeam":[
+            "KKevin@btig.com",
+            "CPreston@btig.com",
+            "LFelix@btig.com",
+            "LEvan@btig.com",
+            "LOmar@btig.com",
+            "MJaxx@btig.com",
+            "SMusa@btig.com",
+            "KBeckett@btig.com",
+            "MSilas@btig.com",
+            "FAhmad@btig.com",
+            "KCruz@btig.com",
+            "CRaiden@btig.com",
+            "CMyles@btig.com",
+            "LJakob@btig.com",
+            "CKendrick@btig.com",
+            "CTony@btig.com",
+            "KKaysen@btig.com",
+            "KBishop@btig.com",
+            "RLennon@btig.com",
+            "BLuka@btig.com"
+         ]
+      },
+      {
+         "DisplayName":"Westin, Dane",
+         "UserPrincipalName":"CJaime@btig.com",
+         "Team":"Architecture",
+         "TeamLead":true,
+         "DirectTeamMembers":[
+            {
+               "DisplayName":"Jamir, Callen",
+               "UserPrincipalName":"KJamir@btig.com",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            }
+         ],
+         "Dimensions":{
+            "Left":false,
+            "Horizontal":true
+         },
+         "ReportsIntoUpn":null,
+         "FlatTeam":[
+            "KJamir@btig.com"
+         ]
+      },
+      {
+         "DisplayName":"Griffin, Mauricio",
+         "UserPrincipalName":"KGriffin@btig.com",
+         "Team":"Security, Compliance, Governance \u0026 Controls",
+         "TeamLead":true,
+         "DirectTeamMembers":[
+            {
+               "DisplayName":"Makai, Travis",
+               "UserPrincipalName":"LMakai@btig.com",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            }
+         ],
+         "Dimensions":{
+            "Left":false,
+            "Horizontal":true
+         },
+         "ReportsIntoUpn":null,
+         "FlatTeam":[
+            "LMakai@btig.com"
+         ]
+      },
+      {
+         "DisplayName":"Yahir, Luciano",
+         "UserPrincipalName":"LYahir@btig.com",
+         "Team":"Strategy",
+         "TeamLead":true,
+         "DirectTeamMembers":[
+            {
+               "DisplayName":"Marcos, Shawn",
+               "UserPrincipalName":"KErick@btig.com",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            }
+         ],
+         "Dimensions":{
+            "Left":true,
+            "Horizontal":true
+         },
+         "ReportsIntoUpn":null,
+         "FlatTeam":[
+            "KErick@btig.com"
+         ]
+      },
+      {
+         "DisplayName":"Solomon, Ezra",
+         "UserPrincipalName":"LSolomon@btig.com",
+         "Team":"PMO",
+         "TeamLead":true,
+         "DirectTeamMembers":[
+            {
+               "DisplayName":"Cesar, King",
+               "UserPrincipalName":"LCesar@btig.com",
+               "Team":null,
+               "TeamLead":true,
+               "DirectTeamMembers":[
+                  {
+                     "DisplayName":"Wilder, Leonard",
+                     "UserPrincipalName":"LWilder@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"James",
+                     "UserPrincipalName":"RLucca@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  }
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  "LWilder@btig.com",
+                  "RLucca@btig.com"
+               ]
+            },
+            {
+               "DisplayName":"Zyaire, Andrew",
+               "UserPrincipalName":"GZyaire@btig.com",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Rafael, Bodhi",
+               "UserPrincipalName":"MRafael@btig.com",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Waylon, Matias",
+               "UserPrincipalName":"KWaylon@btig.com",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            }
+         ],
+         "Dimensions":{
+            "Left":true,
+            "Horizontal":true
+         },
+         "ReportsIntoUpn":null,
+         "FlatTeam":[
+            "LCesar@btig.com",
+            "GZyaire@btig.com",
+            "MRafael@btig.com",
+            "KWaylon@btig.com",
+            "LWilder@btig.com",
+            "RLucca@btig.com"
+         ]
+      },
+      {
+         "DisplayName":"Zev, Kristian, Hugo, Ahmed",
+         "UserPrincipalName":"CZev@btig.com",
+         "Team":"Strategy",
+         "TeamLead":false,
+         "DirectTeamMembers":[
+            
+         ],
+         "Dimensions":{
+            "Left":true,
+            "Horizontal":false
+         },
+         "ReportsIntoUpn":null,
+         "FlatTeam":[
+            
+         ]
+      },
+      {
+         "DisplayName":"Saint, Colson",
+         "UserPrincipalName":"CSaint@btig.com",
+         "Team":"Valstro",
+         "TeamLead":false,
+         "DirectTeamMembers":[
+            
+         ],
+         "Dimensions":{
+            "Left":false,
+            "Horizontal":false
+         },
+         "ReportsIntoUpn":null,
+         "FlatTeam":[
+            
+         ]
+      },
+      {
+         "DisplayName":"Alfred, Crosby",
+         "UserPrincipalName":"LAlfred@btig.com",
+         "Team":"Electronic Trading",
+         "TeamLead":true,
+         "DirectTeamMembers":[
+            {
+               "DisplayName":"Jamir, Finn",
+               "UserPrincipalName":"CJamir@btig.com",
+               "Team":null,
+               "TeamLead":true,
+               "DirectTeamMembers":[
+                  {
+                     "DisplayName":"Everett, Samir",
+                     "UserPrincipalName":"UEverett@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Santino, Kason",
+                     "UserPrincipalName":"GSantino@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Sonny, Casen",
+                     "UserPrincipalName":"USonny@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Layne, Johnny",
+                     "UserPrincipalName":"KLayne@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  }
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  "UEverett@btig.com",
+                  "GSantino@btig.com",
+                  "USonny@btig.com",
+                  "KLayne@btig.com"
+               ]
+            },
+            {
+               "DisplayName":"Dakota, Duke",
+               "UserPrincipalName":"KDakota@btig.com",
+               "Team":null,
+               "TeamLead":true,
+               "DirectTeamMembers":[
+                  {
+                     "DisplayName":"Azael, Issac",
+                     "UserPrincipalName":"UAzael@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Ben, Mohammed",
+                     "UserPrincipalName":"KBen@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  }
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  "UAzael@btig.com",
+                  "KBen@btig.com"
+               ]
+            },
+            {
+               "DisplayName":"Clay, Drake",
+               "UserPrincipalName":"MClay@btig.com",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Maurice, Izaiah",
+               "UserPrincipalName":"CMaurice@btig.com",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Carlos, Adam",
+               "UserPrincipalName":"CCarlos@btig.com",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Darius, Santana",
+               "UserPrincipalName":"CDarius@btig.com",
+               "Team":null,
+               "TeamLead":true,
+               "DirectTeamMembers":[
+                  {
+                     "DisplayName":"Houston, Waylon",
+                     "UserPrincipalName":"KHouston@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Khalid, Westin",
+                     "UserPrincipalName":"RKhalid@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Avery, Jedidiah",
+                     "UserPrincipalName":"KAvery@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Hamza, Kian",
+                     "UserPrincipalName":"KHamza@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  }
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  "KHouston@btig.com",
+                  "RKhalid@btig.com",
+                  "KAvery@btig.com",
+                  "KHamza@btig.com"
+               ]
+            },
+            {
+               "DisplayName":"Rex, Ander",
+               "UserPrincipalName":"KRex@btig.com",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Jeremy, Bodhi",
+               "UserPrincipalName":"MJeremy@btig.com",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Julius, Jaxson",
+               "UserPrincipalName":"GJulius@btig.com",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Ambrose, Kash",
+               "UserPrincipalName":"EAmbrose@btig.com",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Daniel, Sergio",
+               "UserPrincipalName":"KDaniel@btig.com",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Alec, Paxton, Shepherd",
+               "UserPrincipalName":"BAlec@btig.com",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Zyair, Dior",
+               "UserPrincipalName":"KZyair@btig.com",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            }
+         ],
+         "Dimensions":{
+            "Left":false,
+            "Horizontal":false
+         },
+         "ReportsIntoUpn":null,
+         "FlatTeam":[
+            "CJamir@btig.com",
+            "KDakota@btig.com",
+            "MClay@btig.com",
+            "CMaurice@btig.com",
+            "CCarlos@btig.com",
+            "CDarius@btig.com",
+            "KRex@btig.com",
+            "MJeremy@btig.com",
+            "GJulius@btig.com",
+            "EAmbrose@btig.com",
+            "KDaniel@btig.com",
+            "BAlec@btig.com",
+            "KZyair@btig.com",
+            "UEverett@btig.com",
+            "GSantino@btig.com",
+            "USonny@btig.com",
+            "KLayne@btig.com",
+            "UAzael@btig.com",
+            "KBen@btig.com",
+            "KHouston@btig.com",
+            "RKhalid@btig.com",
+            "KAvery@btig.com",
+            "KHamza@btig.com"
+         ]
+      },
+      {
+         "DisplayName":"Emerson, Trevor",
+         "UserPrincipalName":"KEmerson@btig.com.hk",
+         "Team":"APAC",
+         "TeamLead":true,
+         "DirectTeamMembers":[
+            {
+               "DisplayName":"Jeremias, Gabriel",
+               "UserPrincipalName":"UJeremias@btig.com.hk",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Wes, Martin",
+               "UserPrincipalName":"KWes@btig.com.hk",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Emerson, Jensen",
+               "UserPrincipalName":"KEmerson@btig.com.hk",
+               "Team":null,
+               "TeamLead":true,
+               "DirectTeamMembers":[
+                  {
+                     "DisplayName":"Nikolas, Jacoby",
+                     "UserPrincipalName":"ANikolas@btig.com.hk",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  }
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  "ANikolas@btig.com.hk"
+               ]
+            },
+            {
+               "DisplayName":"Oakley, Riggs",
+               "UserPrincipalName":"COakley@btig.com.sg",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Crosby, Ernesto",
+               "UserPrincipalName":"LSaint@btig.com.hk",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Mohammed, Beckett",
+               "UserPrincipalName":"KMohammed@btig.com.hk",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Xander, Conner",
+               "UserPrincipalName":"KXander@btig.com.hk",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Landon, Harry",
+               "UserPrincipalName":"GLandon@btig.com.hk",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            }
+         ],
+         "Dimensions":{
+            "Left":false,
+            "Horizontal":false
+         },
+         "ReportsIntoUpn":null,
+         "FlatTeam":[
+            "UJeremias@btig.com.hk",
+            "KWes@btig.com.hk",
+            "KEmerson@btig.com.hk",
+            "COakley@btig.com.sg",
+            "LSaint@btig.com.hk",
+            "KMohammed@btig.com.hk",
+            "KXander@btig.com.hk",
+            "GLandon@btig.com.hk",
+            "ANikolas@btig.com.hk"
+         ]
+      },
+      {
+         "DisplayName":"Quinton, Kian",
+         "UserPrincipalName":"KQuinton@btig.com",
+         "Team":"EMEA",
+         "TeamLead":true,
+         "DirectTeamMembers":[
+            {
+               "DisplayName":"Dakota, Koda",
+               "UserPrincipalName":"LDakota@btig.com",
+               "Team":null,
+               "TeamLead":true,
+               "DirectTeamMembers":[
+                  {
+                     "DisplayName":"Maddox, Armani",
+                     "UserPrincipalName":"LMaddox@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  }
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  "LMaddox@btig.com"
+               ]
+            },
+            {
+               "DisplayName":"Alonso, Lucas",
+               "UserPrincipalName":"KAlonso@btig.com",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Erik, Alberto",
+               "UserPrincipalName":"UErik@btig.com",
+               "Team":null,
+               "TeamLead":false,
+               "DirectTeamMembers":[
+                  
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  
+               ]
+            },
+            {
+               "DisplayName":"Harlan, Keegan",
+               "UserPrincipalName":"KHarlan@btig.com",
+               "Team":null,
+               "TeamLead":true,
+               "DirectTeamMembers":[
+                  {
+                     "DisplayName":"Augustus, Zayn",
+                     "UserPrincipalName":"GAugustus@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  },
+                  {
+                     "DisplayName":"Omar, Cal, Andre",
+                     "UserPrincipalName":"COmar@btig.com",
+                     "Team":null,
+                     "TeamLead":false,
+                     "DirectTeamMembers":[
+                        
+                     ],
+                     "Dimensions":{
+                        "Left":true,
+                        "Horizontal":false
+                     },
+                     "ReportsIntoUpn":null,
+                     "FlatTeam":[
+                        
+                     ]
+                  }
+               ],
+               "Dimensions":{
+                  "Left":true,
+                  "Horizontal":false
+               },
+               "ReportsIntoUpn":null,
+               "FlatTeam":[
+                  "GAugustus@btig.com",
+                  "COmar@btig.com"
+               ]
+            }
+         ],
+         "Dimensions":{
+            "Left":false,
+            "Horizontal":false
+         },
+         "ReportsIntoUpn":null,
+         "FlatTeam":[
+            "LDakota@btig.com",
+            "KAlonso@btig.com",
+            "UErik@btig.com",
+            "KHarlan@btig.com",
+            "LMaddox@btig.com",
+            "GAugustus@btig.com",
+            "COmar@btig.com"
+         ]
+      }
+   ],
+   "Dimensions":{
+      "Left":true,
+      "Horizontal":false
+   },
+   "ReportsIntoUpn":null,
+   "FlatTeam":[
+      "CKaiden@btig.com",
+      "KMatias@btig.com",
+      "LCarl@btig.com",
+      "GReed@btig.com",
+      "CEnrique@btig.com",
+      "KMichael@btig.com",
+      "CJaime@btig.com",
+      "KGriffin@btig.com",
+      "LYahir@btig.com",
+      "LSolomon@btig.com",
+      "CZev@btig.com",
+      "CSaint@btig.com",
+      "CArchie@btig.com",
+      "LAziel@btig.com",
+      "LClay@btig.com",
+      "GMaximo@btig.com",
+      "CRobin@btig.com",
+      "LFox@btig.com",
+      "RAhmed@btig.com",
+      "CDavid@btig.com",
+      "SAzriel@btig.com",
+      "RRamon@btig.com",
+      "KCrosby@btig.com",
+      "GFrank@btig.com",
+      "CChris@btig.com",
+      "KDevon@btig.com",
+      "CJalen@btig.com",
+      "MTony@btig.com",
+      "LAmari@btig.com",
+      "LAmari@btig.com",
+      "LOmari@btig.com",
+      "CTitan@btig.com",
+      "SLawrence@btig.com",
+      "KUriel@btig.com",
+      "CDimitri@btig.com",
+      "RBrantley@btig.com",
+      "RAmari@btig.com",
+      "MMekhi@btig.com",
+      "CMaverick@btig.com",
+      "KBrecken@btig.com",
+      "LElias@btig.com",
+      "UTrevor@btig.com",
+      "LShepherd@btig.com",
+      "KKevin@btig.com",
+      "CPreston@btig.com",
+      "LFelix@btig.com",
+      "LEvan@btig.com",
+      "LOmar@btig.com",
+      "MJaxx@btig.com",
+      "SMusa@btig.com",
+      "KBeckett@btig.com",
+      "MSilas@btig.com",
+      "FAhmad@btig.com",
+      "KCruz@btig.com",
+      "CRaiden@btig.com",
+      "CMyles@btig.com",
+      "LJakob@btig.com",
+      "CKendrick@btig.com",
+      "CTony@btig.com",
+      "KKaysen@btig.com",
+      "KBishop@btig.com",
+      "RLennon@btig.com",
+      "BLuka@btig.com",
+      "KJamir@btig.com",
+      "LMakai@btig.com",
+      "KErick@btig.com",
+      "LCesar@btig.com",
+      "GZyaire@btig.com",
+      "MRafael@btig.com",
+      "KWaylon@btig.com",
+      "LWilder@btig.com",
+      "RLucca@btig.com"
+   ]
+}

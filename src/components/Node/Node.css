@@ -1,0 +1,56 @@
+.node{
+    padding: 0px 0px;
+    margin-top: 10px;
+    background-color: #006791;
+    border-radius: 5px;     
+    display: inline-block;
+    max-width: 200px;
+    text-align: center;
+    max-height: 50px;
+   font-size: 0.7vw;
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+   cursor: pointer;
+   color: white;
+}
+.node2 {
+    padding: 0px 0;
+    background-color: #006791;
+    border-radius: 5px;
+    display: inline-block;
+    max-width: 200px;
+    text-align: center;
+    max-height: 50px;
+    font-size: 0.7vw;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    cursor: pointer;
+    color: white;
+}
+
+
+.text{
+    cursor: pointer;
+    font-size: 0.5vw;
+}
+.text-teamname{
+    font-weight: bold;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #3a7879;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #C8C8C8;
+    border-radius: 10px;
+}
+
+@media only screen and  (max-width:1024px){
+    .text {
+            font-size: 0.7vw;
+        }
+}
+
+

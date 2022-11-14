@@ -1,0 +1,1420 @@
+{
+    "data": {
+        "displayName": "Kolton, Harlan",
+        "userPrincipalName": "KHarlan@btig.com",
+        "teamName": null,
+        "teamLead": true,
+        "visible": null,
+        "directTeamMembers": [
+            {
+                "displayName": "Phillip, Kyle, Andrew",
+                "userPrincipalName": "PAndrew@btig.com",
+                "teamName": "Security, Compliance, Governance & Controls",
+                "teamLead": false,
+                "visible": null,
+                "directTeamMembers": [],
+                "dimensions": {
+                    "left": true,
+                    "horizontal": false
+                }
+            },
+            {
+                "displayName": "Travis, Soren",
+                "userPrincipalName": "TSoren@btig.com",
+                "teamName": "Enterprise Systems",
+                "teamLead": true,
+                "visible": null,
+                "directTeamMembers": [
+                    {
+                        "displayName": "Avyaan, Callan",
+                        "userPrincipalName": "ACallan@btig.com",
+                        "teamName": "TPS",
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Wesley, Jakai",
+                        "userPrincipalName": "WJakai@btig.com",
+                        "teamName": "TPS",
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Lorenzo, Clark",
+                        "userPrincipalName": "LClark@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Jesus, Ford",
+                        "userPrincipalName": "JFord@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Pedro",
+                        "userPrincipalName": "",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Zakai, Braden",
+                        "userPrincipalName": "ZBraden@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Ray, Kenji",
+                        "userPrincipalName": "RKenji@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    }
+                ],
+                "dimensions": {
+                    "left": true,
+                    "horizontal": false
+                }
+            },
+            {
+                "displayName": "Jayden, Rocco",
+                "userPrincipalName": "JRocco@btig.com",
+                "teamName": "Data Division",
+                "teamLead": true,
+                "visible": null,
+                "directTeamMembers": [
+                    {
+                        "displayName": "Louie, Skyler",
+                        "userPrincipalName": "LSkyler@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    }
+                ],
+                "dimensions": {
+                    "left": true,
+                    "horizontal": false
+                }
+            },
+            {
+                "displayName": "Memphis",
+                "userPrincipalName": "",
+                "teamName": "Application Development",
+                "teamLead": true,
+                "visible": null,
+                "directTeamMembers": [
+                    {
+                        "displayName": "Alan, Kobe",
+                        "userPrincipalName": "AKobe@btig.com",
+                        "teamName": "QA",
+                        "teamLead": true,
+                        "visible": null,
+                        "directTeamMembers": [
+                            {
+                                "displayName": "Andy, Mordechai",
+                                "userPrincipalName": "AMordechai@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Zyon, Victor",
+                                "userPrincipalName": "ZVictor@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Mac, Nehemiah, Ulises, Jalen",
+                                "userPrincipalName": "MJalen@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            }
+                        ],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Colter, Alberto",
+                        "userPrincipalName": "CAlberto@btig.com",
+                        "teamName": "PBDS",
+                        "teamLead": true,
+                        "visible": null,
+                        "directTeamMembers": [
+                            {
+                                "displayName": "Coleson, Edison",
+                                "userPrincipalName": "CEdison@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Aron, Kolton",
+                                "userPrincipalName": "AKolton@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            }
+                        ],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Rory, Callahan",
+                        "userPrincipalName": "RCallahan@btig.com",
+                        "teamName": "OMS",
+                        "teamLead": true,
+                        "visible": null,
+                        "directTeamMembers": [
+                            {
+                                "displayName": "Dylan, Kayden",
+                                "userPrincipalName": "DKayden@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Benedict, Kayden",
+                                "userPrincipalName": "BKayden@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Ishaan, Ayden",
+                                "userPrincipalName": "IAyden@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            }
+                        ],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Nathan, Riggs, Ulises, Jayce",
+                        "userPrincipalName": "NJayce@btig.com",
+                        "teamName": "SFDC",
+                        "teamLead": true,
+                        "visible": null,
+                        "directTeamMembers": [
+                            {
+                                "displayName": "Forrest, Peter",
+                                "userPrincipalName": "FPeter@btig.com",
+                                "teamName": "SFDC",
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Yaakov, Chaim",
+                                "userPrincipalName": "YChaim@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            }
+                        ],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Yaakov, Chaim",
+                        "userPrincipalName": "YChaim@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Koda, Colten",
+                        "userPrincipalName": "KColten@btig.com",
+                        "teamName": "Cloud & Delivery",
+                        "teamLead": true,
+                        "visible": null,
+                        "directTeamMembers": [
+                            {
+                                "displayName": "Clay, Flynn",
+                                "userPrincipalName": "CFlynn@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Eliseo, Mateo",
+                                "userPrincipalName": "EMateo@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Marcellus, Makai",
+                                "userPrincipalName": "MMakai@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            }
+                        ],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Jamison, Byron",
+                        "userPrincipalName": "JByron@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Forrest, Peter",
+                        "userPrincipalName": "FPeter@btig.com",
+                        "teamName": "SFDC",
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    }
+                ],
+                "dimensions": {
+                    "left": true,
+                    "horizontal": false
+                }
+            },
+            {
+                "displayName": "Matias, Dennis",
+                "userPrincipalName": "MDennis@btig.com",
+                "teamName": "Prod Support",
+                "teamLead": true,
+                "visible": null,
+                "directTeamMembers": [
+                    {
+                        "displayName": "Lincoln, Kieran",
+                        "userPrincipalName": "LKieran@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Bodhi, Carl",
+                        "userPrincipalName": "BCarl@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    }
+                ],
+                "dimensions": {
+                    "left": true,
+                    "horizontal": false
+                }
+            },
+            {
+                "displayName": "Ahmir, Robert",
+                "userPrincipalName": "ARobert@btig.com",
+                "teamName": "Infrastructure & Service Team",
+                "teamLead": true,
+                "visible": null,
+                "directTeamMembers": [
+                    {
+                        "displayName": "Jon, Christopher",
+                        "userPrincipalName": "JChristopher@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Nash, Diego",
+                        "userPrincipalName": "NDiego@btig.com",
+                        "teamName": null,
+                        "teamLead": true,
+                        "visible": null,
+                        "directTeamMembers": [
+                            {
+                                "displayName": "Isaiah, Quincy",
+                                "userPrincipalName": "IQuincy@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Dean, Emanuel",
+                                "userPrincipalName": "DEmanuel@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Porter, Phoenix",
+                                "userPrincipalName": "PPhoenix@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Axl, Asa",
+                                "userPrincipalName": "AAsa@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Vicente, Kayden",
+                                "userPrincipalName": "VKayden@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Xavier, Rocco",
+                                "userPrincipalName": "XRocco@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Bentley, Cairo",
+                                "userPrincipalName": "BCairo@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Beckett, Bodie",
+                                "userPrincipalName": "BBodie@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Marvin, Cassius",
+                                "userPrincipalName": "MCassius@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Eden, Anderson",
+                                "userPrincipalName": "EAnderson@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Greyson, Taylor",
+                                "userPrincipalName": "GTaylor@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Bronson, Taylor, Ulises, Jalen",
+                                "userPrincipalName": "BJalen@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            }
+                        ],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Kingsley, Moses",
+                        "userPrincipalName": "KMoses@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Boone, Armani",
+                        "userPrincipalName": "BArmani@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Noe, Jayden",
+                        "userPrincipalName": "NJayden@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Bowie, Danny",
+                        "userPrincipalName": "BDanny@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Tru, Shepard",
+                        "userPrincipalName": "TShepard@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Leland, Silas",
+                        "userPrincipalName": "LSilas@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    }
+                ],
+                "dimensions": {
+                    "left": true,
+                    "horizontal": false
+                }
+            },
+            {
+                "displayName": "Spencer, Kenji",
+                "userPrincipalName": "SKenji@btig.com",
+                "teamName": "Global Architecture",
+                "teamLead": true,
+                "visible": null,
+                "directTeamMembers": [
+                    {
+                        "displayName": "Braxton, Kai",
+                        "userPrincipalName": "BKai@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    }
+                ],
+                "dimensions": {
+                    "left": true,
+                    "horizontal": false
+                }
+            },
+            {
+                "displayName": "Colton, Miller",
+                "userPrincipalName": "CMiller@btig.com",
+                "teamName": "Security, Compliance, Governance & Controls",
+                "teamLead": true,
+                "visible": null,
+                "directTeamMembers": [
+                    {
+                        "displayName": "Arjun, Roger",
+                        "userPrincipalName": "ARoger@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    }
+                ],
+                "dimensions": {
+                    "left": false,
+                    "horizontal": true
+                }
+            },
+            {
+                "displayName": "Dawson, Armani",
+                "userPrincipalName": "DArmani@btig.com",
+                "teamName": "Strategy & Business Management",
+                "teamLead": true,
+                "visible": null,
+                "directTeamMembers": [
+                    {
+                        "displayName": "Christopher, Guillermo",
+                        "userPrincipalName": "CGuillermo@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    }
+                ],
+                "dimensions": {
+                    "left": true,
+                    "horizontal": false
+                }
+            },
+            {
+                "displayName": "Benicio, Kyle",
+                "userPrincipalName": "BKyle@btig.com",
+                "teamName": "Project Management Office",
+                "teamLead": true,
+                "visible": null,
+                "directTeamMembers": [
+                    {
+                        "displayName": "Alberto, Kane",
+                        "userPrincipalName": "AKane@btig.com",
+                        "teamName": null,
+                        "teamLead": true,
+                        "visible": null,
+                        "directTeamMembers": [
+                            {
+                                "displayName": "Crosby, Dorian",
+                                "userPrincipalName": "CDorian@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Connor",
+                                "userPrincipalName": "",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            }
+                        ],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Callen, Mitchell",
+                        "userPrincipalName": "CMitchell@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Atticus, Ulises",
+                        "userPrincipalName": "AUlises@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Titan, Musa",
+                        "userPrincipalName": "TMusa@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    }
+                ],
+                "dimensions": {
+                    "left": true,
+                    "horizontal": false
+                }
+            },
+            {
+                "displayName": "Emir, Matteo, Ulises, Jalen",
+                "userPrincipalName": "EJalen@btig.com",
+                "teamName": null,
+                "teamLead": false,
+                "visible": null,
+                "directTeamMembers": [],
+                "dimensions": {
+                    "left": true,
+                    "horizontal": false
+                }
+            },
+            {
+                "displayName": "Agustin, Arlo",
+                "userPrincipalName": "AArlo@btig.com",
+                "teamName": "Valstro",
+                "teamLead": false,
+                "visible": null,
+                "directTeamMembers": [],
+                "dimensions": {
+                    "left": true,
+                    "horizontal": false
+                }
+            },
+            {
+                "displayName": "Elliot, Brooks",
+                "userPrincipalName": "EBrooks@btig.com",
+                "teamName": "Electronic Trading",
+                "teamLead": true,
+                "visible": null,
+                "directTeamMembers": [
+                    {
+                        "displayName": "Ledger, Amari",
+                        "userPrincipalName": "LAmari@btig.com",
+                        "teamName": null,
+                        "teamLead": true,
+                        "visible": null,
+                        "directTeamMembers": [
+                            {
+                                "displayName": "Zeke, Marcellus",
+                                "userPrincipalName": "ZMarcellus@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Kylen, Joey",
+                                "userPrincipalName": "KJoey@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Blaise, Mark",
+                                "userPrincipalName": "BMark@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Abram, Cannon",
+                                "userPrincipalName": "ACannon@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            }
+                        ],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Saul, Elijah",
+                        "userPrincipalName": "SElijah@btig.com",
+                        "teamName": null,
+                        "teamLead": true,
+                        "visible": null,
+                        "directTeamMembers": [
+                            {
+                                "displayName": "Wayne, Royal",
+                                "userPrincipalName": "WRoyal@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Maurice, Krew",
+                                "userPrincipalName": "MKrew@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            }
+                        ],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Ameer, Quincy",
+                        "userPrincipalName": "AQuincy@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Pierce, Davian",
+                        "userPrincipalName": "PDavian@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Niko, Titus",
+                        "userPrincipalName": "NTitus@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Philip, Isaac",
+                        "userPrincipalName": "PIsaac@btig.com",
+                        "teamName": null,
+                        "teamLead": true,
+                        "visible": null,
+                        "directTeamMembers": [
+                            {
+                                "displayName": "Avyaan, Spencer",
+                                "userPrincipalName": "ASpencer@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Harlan, Bode",
+                                "userPrincipalName": "HBode@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Leonardo, Rayden",
+                                "userPrincipalName": "LRayden@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Mccoy, Koa",
+                                "userPrincipalName": "MKoa@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            }
+                        ],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Van, Westley",
+                        "userPrincipalName": "VWestley@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Ares, Ulises",
+                        "userPrincipalName": "AUlises@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Landon, Muhammad",
+                        "userPrincipalName": "LMuhammad@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Hugh, Marcus",
+                        "userPrincipalName": "HMarcus@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Jamir, Magnus",
+                        "userPrincipalName": "JMagnus@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Jeremias, Aiden, Derrick",
+                        "userPrincipalName": "JDerrick@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Kristian, Jeremiah",
+                        "userPrincipalName": "KJeremiah@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Keegan, Zyon, Ulises, Jayce",
+                        "userPrincipalName": "KJayce@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    }
+                ],
+                "dimensions": {
+                    "left": true,
+                    "horizontal": false
+                }
+            },
+            {
+                "displayName": "Leonidas, Koa",
+                "userPrincipalName": "LKoa@btig.com",
+                "teamName": "EMEA",
+                "teamLead": true,
+                "visible": null,
+                "directTeamMembers": [
+                    {
+                        "displayName": "Guillermo, Dorian",
+                        "userPrincipalName": "GDorian@btig.com",
+                        "teamName": null,
+                        "teamLead": true,
+                        "visible": null,
+                        "directTeamMembers": [
+                            {
+                                "displayName": "Yahir, Bowie",
+                                "userPrincipalName": "YBowie@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            }
+                        ],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Carson, Archie",
+                        "userPrincipalName": "CArchie@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Dominik, Dante",
+                        "userPrincipalName": "DDante@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Beau, Mateo",
+                        "userPrincipalName": "BMateo@btig.com",
+                        "teamName": null,
+                        "teamLead": true,
+                        "visible": null,
+                        "directTeamMembers": [
+                            {
+                                "displayName": "Mustafa, Legend",
+                                "userPrincipalName": "MLegend@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            },
+                            {
+                                "displayName": "Leonard, Xavier, Aryan",
+                                "userPrincipalName": "LAryan@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            }
+                        ],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    }
+                ],
+                "dimensions": {
+                    "left": true,
+                    "horizontal": false
+                }
+            },
+            {
+                "displayName": "Dakota, Carmelo",
+                "userPrincipalName": "DCarmelo@btig.com",
+                "teamName": "APAC",
+                "teamLead": true,
+                "visible": null,
+                "directTeamMembers": [
+                    {
+                        "displayName": "Garrett, Landon",
+                        "userPrincipalName": "GLandon@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Forest, Julius",
+                        "userPrincipalName": "FJulius@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Dakota, Franco",
+                        "userPrincipalName": "DFranco@btig.com",
+                        "teamName": null,
+                        "teamLead": true,
+                        "visible": null,
+                        "directTeamMembers": [
+                            {
+                                "displayName": "Erik, Damon",
+                                "userPrincipalName": "EDamon@btig.com",
+                                "teamName": null,
+                                "teamLead": false,
+                                "visible": null,
+                                "directTeamMembers": [],
+                                "dimensions": {
+                                    "left": true,
+                                    "horizontal": false
+                                }
+                            }
+                        ],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Emmanuel, Salvador",
+                        "userPrincipalName": "ESalvador@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Roger, Aarav",
+                        "userPrincipalName": "RAarav@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Anakin, Justice",
+                        "userPrincipalName": "AJustice@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Paul, Jaxxon",
+                        "userPrincipalName": "PJaxxon@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    },
+                    {
+                        "displayName": "Dangelo, Krew",
+                        "userPrincipalName": "DKrew@btig.com",
+                        "teamName": null,
+                        "teamLead": false,
+                        "visible": null,
+                        "directTeamMembers": [],
+                        "dimensions": {
+                            "left": true,
+                            "horizontal": false
+                        }
+                    }
+                ],
+                "dimensions": {
+                    "left": true,
+                    "horizontal": false
+                }
+            }
+        ],
+        "dimensions": {
+            "left": true,
+            "horizontal": false
+        }
+    }
+}

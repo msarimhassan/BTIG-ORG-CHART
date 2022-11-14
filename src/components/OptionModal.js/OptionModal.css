@@ -1,0 +1,32 @@
+.heading-text{
+    text-align: center;
+    margin-top: 5px;
+}
+
+.cancel-btn{
+    margin: 10px;
+        text-transform: uppercase;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background-color: #EEEEEE;
+        cursor: pointer;
+        color: black;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        font-family: 'Poppins', sans-serif;
+        font-family: 'Raleway', sans-serif;
+}
+
+.submit-btn{
+    margin: 10px;
+        text-transform: uppercase;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background-color: #0095ff;
+        cursor: pointer;
+        color: white;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        font-family: 'Poppins', sans-serif;
+        font-family: 'Raleway', sans-serif;
+}
