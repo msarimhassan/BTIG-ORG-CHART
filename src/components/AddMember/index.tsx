@@ -54,7 +54,7 @@ const AddMember: React.FC<Props> = ({ modalIsOpen, setModal = () => {}, data }) 
             },
         };
         const response = await Network.post(Urls.addMemeber, obj, (await config()).headers);
-        if (!response.ok) return console.log({ response });
+        if (!response.ok) return alert(response.data.error);
         setApiCall((prevVal: boolean) => !prevVal);
     };
     return (

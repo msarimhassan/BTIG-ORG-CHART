@@ -21,28 +21,25 @@ const Leaf: FC<LeafProps> = ({ object, totalNodes = 1, handleNode = () => {} }) 
             className='leaf'
             style={{ width: dimension, height: window.height - 400 }}
         >
-            {/* <div
-                style={{ fontWeight: 'bolder', cursor: 'pointer' }}
-                onClick={() => handleNode(object)}
-            >
-                {object.teamName}
-            </div> */}
-
             {!!object.directTeamMembers &&
-                object.directTeamMembers.map(
-                    (
-                        item: { displayName: string; userPrincipalName: string; teamName: string },
-                        index: number
-                    ) => {
-                        if (!item.teamName) return null;
-                        return (
-                            <>
-                                <LeafName key={index} data={item} />
-                                <br />
-                            </>
-                        );
-                    }
-                )}
+                object.directTeamMembers.map((item: any, index: number) => {
+                    if (!item.teamLead) return null;
+                    return (
+                        <>
+                            <LeafName key={index} data={item} flag={true} />
+                            <br />
+                        </>
+                    );
+                })}
+            {!!object.directTeamMembers &&
+                object.directTeamMembers.map((item: any, index: number) => {
+                    return item.teamLead ? null : (
+                        <>
+                            <LeafName key={index} data={item} flag={false} />
+                            <br />
+                        </>
+                    );
+                })}
         </div>
     );
 };

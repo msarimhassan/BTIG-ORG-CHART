@@ -7,13 +7,15 @@ import EditModal from '../EditModal';
 
 interface NameProps {
     data: any;
+    flag: boolean;
 }
-const LeafName: FC<NameProps> = ({ data }) => {
+const LeafName: FC<NameProps> = ({ data, flag }) => {
     const [showName, setShowName] = useState<boolean>(false);
     const [showModal, setShowModal] = useState<boolean>(false);
     const [editModal, setEditModal] = useState<boolean>(false);
     const [optionModal, setOptionModal] = useState<boolean>(false);
     const { setApiCall } = useApi();
+
     const handleDelete = async (name: string) => {
         if (window.confirm(`Are you sure you want to delete ${name}`)) {
             console.log('deleted');
@@ -52,9 +54,21 @@ const LeafName: FC<NameProps> = ({ data }) => {
                 className='text'
                 onClick={() => setOptionModal(!optionModal)}
             >
-                <u style={{ fontWeight: 'bold' }}>{data.teamName}</u>
-                <br />
-                <span style={{ fontWeight: 'bold' }}>{data.displayName}</span>
+                <>
+                    {flag ? (
+                        <>
+                            <u style={{ fontWeight: 'bold' }}>
+                                {data.teamName ? data.teamName : null}
+                            </u>
+                            <br />
+                            <span style={{ fontWeight: 'bold' }}>
+                                {data.teamLead ? data.displayName : null}
+                            </span>
+                        </>
+                    ) : (
+                        <span style={{ fontWeight: 'bold' }}>{data.displayName}</span>
+                    )}
+                </>
             </div>
         </>
     );

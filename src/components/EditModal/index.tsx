@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { Network, Urls, config } from '../../config';
 import { useApi } from '../../hooks/useApi';
+import { useNode } from '../../hooks/useNode';
 
 const customStyles = {
     overlay: {
@@ -30,9 +31,12 @@ interface Props {
 const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) => {
     const [userPrinicipalName, setUserPrincipalName] = useState(data.userPrincipalName);
     const [displayName, setDisplayName] = useState(data.displayName);
+    const [reportsInto, setReportsInto] = useState<any>(null);
+    const { nodes } = useNode();
     const [teamLead, setTeamLead] = useState(data.teamLead);
     const [horizontal, setHorizontal] = useState(data.dimensions.horizontal);
     const { setApiCall } = useApi();
+    console.log({ nodes });
     const UpdateMember = async () => {
         const obj = {
             displayName: displayName,
@@ -44,8 +48,9 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
                 left: true,
                 horizontal: horizontal,
             },
+            ...(reportsInto && { reportsInto: reportsInto }),
         };
-        console.log({ obj });
+
         const response = await Network.put(
             `${Urls.updateMember}/${data.userPrincipalName}`,
             obj,
@@ -56,6 +61,7 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
         if (!response.ok) return console.log({ response });
         setApiCall((prevVal: boolean) => !prevVal);
     };
+
     return (
         <Modal isOpen={modalIsOpen} style={customStyles}>
             <h2 className='heading-text' style={{ marginTop: '10px' }}>
@@ -81,6 +87,20 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
                     }}
                 />
             </div>
+            <select
+                name=''
+                id=''
+                style={{ marginLeft: '25px' }}
+                onChange={(e) => setReportsInto(e.target.value)}
+            >
+                <option value='' selected disabled hidden>
+                    Choose Team
+                </option>
+                {nodes?.directTeamMembers.map((item: any) => {
+                    if (!item.teamLead) return null;
+                    return <option value={item.userPrincipalName}>{item.teamName}</option>;
+                })}
+            </select>
             <div
                 style={{
                     display: 'flex',
