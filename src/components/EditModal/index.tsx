@@ -87,6 +87,9 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
                     }}
                 />
             </div>
+            <span style={{ fontSize: '0.8vw',marginLeft:'25px' }}>
+                Note: Select the team if you want to change the team
+            </span>
             <select
                 name=''
                 id=''

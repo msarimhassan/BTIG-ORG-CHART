@@ -1,6 +1,6 @@
 import { create } from 'apisauce';
 
-const baseURL = 'https://fake-app-backend.herokuapp.com/api/';
+const baseURL = ' https://fake-app-backend.herokuapp.com/api/';
 
 const client = create({
     baseURL,

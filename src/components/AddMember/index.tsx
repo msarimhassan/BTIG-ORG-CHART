@@ -34,6 +34,7 @@ const AddMember: React.FC<Props> = ({ modalIsOpen, setModal = () => {}, data }) 
     const [displayName, setDisplayName] = useState('');
     const [teamLead, setTeamLead] = useState(false);
     const [horizontal, setHorizontal] = useState(false);
+    const [left, setLeft] = useState(false);
     const { apiCall, setApiCall } = useApi();
     const handleCancel = (e: any) => {
         e.stopPropagation();
@@ -49,7 +50,7 @@ const AddMember: React.FC<Props> = ({ modalIsOpen, setModal = () => {}, data }) 
             visible: null,
             reportsInto: data.userPrincipalName,
             dimensions: {
-                left: true,
+                left: left,
                 horizontal: horizontal,
             },
         };
@@ -107,6 +108,15 @@ const AddMember: React.FC<Props> = ({ modalIsOpen, setModal = () => {}, data }) 
                                     type='checkbox'
                                     name='Horizontal'
                                     onClick={(e) => setHorizontal(e.currentTarget.checked)}
+                                />
+                            </div>
+                            <div style={{ marginLeft: '10px' }}>
+                                <label>Left</label>
+                                <input
+                                    style={{ marginLeft: '10px' }}
+                                    type='checkbox'
+                                    name='Left'
+                                    onClick={(e) => setLeft(e.currentTarget.checked)}
                                 />
                             </div>
                         </div>

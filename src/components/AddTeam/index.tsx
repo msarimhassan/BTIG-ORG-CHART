@@ -16,7 +16,7 @@ const customStyles = {
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        height: '280px',
+        height: '300px',
         width: '350px',
         overflow: 'hidden',
         padding: 0,
@@ -29,6 +29,9 @@ const AddTeam: React.FC<Props> = ({ setModal = () => {}, modalIsOpen, reportsInt
     const [userPrinicipalName, setUserPrincipalName] = useState();
     const [displayName, setDisplayName] = useState();
     const [teamName, setTeamName] = useState();
+    const [horizontal, setHorizontal] = useState(false);
+    const [left, setLeft] = useState(false);
+
     const { setApiCall } = useApi();
     const onSubmit = async () => {
         const obj = {
@@ -39,8 +42,8 @@ const AddTeam: React.FC<Props> = ({ setModal = () => {}, modalIsOpen, reportsInt
             visible: null,
             reportsInto: reportsInto,
             dimensions: {
-                left: true,
-                horizontal: false,
+                left: left,
+                horizontal: horizontal,
             },
         };
         const response = await Network.post(Urls.addMemeber, obj, (await config()).headers);
@@ -79,8 +82,35 @@ const AddTeam: React.FC<Props> = ({ setModal = () => {}, modalIsOpen, reportsInt
                     }}
                 />
             </div>
+            <div
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    marginTop: '5px',
+                }}
+            >
+                <div>
+                    <label>Left</label>
+                    <input
+                        style={{ marginLeft: '10px' }}
+                        type='checkbox'
+                        name='Left'
+                        onClick={(e) => setLeft(e.currentTarget.checked)}
+                    />
+                </div>
+                <div style={{ marginLeft: '10px' }}>
+                    <label>Horizontal</label>
+                    <input
+                        style={{ marginLeft: '10px' }}
+                        type='checkbox'
+                        name='Horizontal'
+                        onClick={(e) => setHorizontal(e.currentTarget.checked)}
+                    />
+                </div>
+            </div>
 
-            <div style={{ marginLeft: '15px' }}>
+            <div style={{ marginLeft: '15px', marginTop: '10px' }}>
                 <button className='submit-btn' onClick={() => setModal(false)}>
                     Cancel
                 </button>
