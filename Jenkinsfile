@@ -1,1 +1,2 @@
-dotnetDockerPipeline('6.0')
+buildNodeApp('16.16.0')
+
