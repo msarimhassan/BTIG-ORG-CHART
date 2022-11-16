@@ -11,8 +11,10 @@ interface Props {
 
 const HorizontalNode: FC<Props> = ({ object, handleNode = () => {}, totalNodes = 1 }) => {
     const window = useWindowDimensions();
-    console.log(object.dimensions.left);
-    const dimension = object.dimensions.left ? `${window.width / 2}px` : `${window.width - 80}px`;
+
+    const dimension = object.dimensions.left
+        ? `${window.width / 2 - 56}px`
+        : `${window.width - 80}px`;
     return (
         <div
             className='HorizontalNode'

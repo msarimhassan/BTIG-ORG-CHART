@@ -36,7 +36,6 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
     const [teamLead, setTeamLead] = useState(data.teamLead);
     const [horizontal, setHorizontal] = useState(data.dimensions.horizontal);
     const { setApiCall } = useApi();
-    console.log({ nodes });
     const UpdateMember = async () => {
         const obj = {
             displayName: displayName,

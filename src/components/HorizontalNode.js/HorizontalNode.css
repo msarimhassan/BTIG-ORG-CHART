@@ -8,6 +8,7 @@
     cursor: pointer;
     font-size: 0.7vw;   
     width: fit-content;
+    border-radius: 5px;
 }
 .member-name{
      margin: 10px;

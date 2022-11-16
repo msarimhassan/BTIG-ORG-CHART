@@ -18,7 +18,6 @@ const LeafName: FC<NameProps> = ({ data, flag }) => {
 
     const handleDelete = async (name: string) => {
         if (window.confirm(`Are you sure you want to delete ${name}`)) {
-            console.log('deleted');
             const response = await Network.delete(
                 `${Urls.deleteMemeber}/${data.userPrincipalName}`,
                 {},
@@ -64,6 +63,15 @@ const LeafName: FC<NameProps> = ({ data, flag }) => {
                             <span style={{ fontWeight: 'bold' }}>
                                 {data.teamLead ? data.displayName : null}
                             </span>
+                            <br />
+                            {data.directTeamMembers.map((item: any) => {
+                                return (
+                                    <>
+                                        <span>{item.displayName}</span>
+                                        <br />
+                                    </>
+                                );
+                            })}
                         </>
                     ) : (
                         <span style={{ fontWeight: 'bold' }}>{data.displayName}</span>
