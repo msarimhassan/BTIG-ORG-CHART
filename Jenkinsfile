@@ -1,2 +1,2 @@
-buildNodeApp('16.16.0')
+buildNodeApp(nodeVersion: '16.16.0')
 
