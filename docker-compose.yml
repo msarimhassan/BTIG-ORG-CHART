@@ -1,8 +1,0 @@
-version: '3'
-services:
-  org-chart-ui:
-    build: .
-    ports:
-      - "3002:3000"
-    volumes:
-      - .:/app
