@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AddTeam from '../AddTeam';
-import { Icons } from '../../common';
+import useAuth from '../../hooks/useAuth';
 
 import './Root.css';
 interface Props {
@@ -10,27 +10,26 @@ interface Props {
 const Root: React.FC<Props> = ({ object }: Props) => {
     const [showModal, setShowModal] = useState<boolean>(false);
     const [active, isActive] = useState<boolean>(false);
-    const { AI } = Icons;
+    const { activeUser } = useAuth();
+
     const hideTooltip = () => {
         isActive(false);
     };
     const Tooltip = () => {
-        const handleAddClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-            setShowModal(!showModal);
-        };
+        if (activeUser.role == 'TaskUser') return null;
         return (
             <div data-testid='testleaftooltip' className='Tooltip-Wrapper'>
                 {active && (
-                    <div
-                        className='Tooltip-Tip top'
-                        data-testid='testleaftooltipchild'
-                        onClick={handleAddClick}
-                    >
+                    <div className='Tooltip-Tip top' data-testid='testleaftooltipchild'>
                         Click to add new team
                     </div>
                 )}
             </div>
         );
+    };
+    const handleTeamModal = () => {
+        if (activeUser.role == 'TaskUser') return alert('Cannot Access');
+        setShowModal(true);
     };
 
     return (
@@ -45,7 +44,7 @@ const Root: React.FC<Props> = ({ object }: Props) => {
                 className='root'
                 data-testid='testroot'
                 onMouseEnter={() => isActive(!active)}
-                onClick={() => setShowModal(true)}
+                onClick={() => handleTeamModal()}
                 onMouseLeave={hideTooltip}
             >
                 {object?.displayName}

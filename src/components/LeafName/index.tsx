@@ -4,6 +4,7 @@ import { Network, Urls, config } from '../../config';
 import { useApi } from '../../hooks/useApi';
 import OptionModal from '../OptionModal.js';
 import EditModal from '../EditModal';
+import useAuth from '../../hooks/useAuth';
 
 interface NameProps {
     data: any;
@@ -15,6 +16,7 @@ const LeafName: FC<NameProps> = ({ data, flag }) => {
     const [editModal, setEditModal] = useState<boolean>(false);
     const [optionModal, setOptionModal] = useState<boolean>(false);
     const { setApiCall } = useApi();
+    const { activeUser } = useAuth();
 
     const handleDelete = async (name: string) => {
         if (window.confirm(`Are you sure you want to delete ${name}`)) {
@@ -32,6 +34,10 @@ const LeafName: FC<NameProps> = ({ data, flag }) => {
     const handleUpdate = () => {
         setOptionModal(false);
         setEditModal(true);
+    };
+    const checkStatus = () => {
+        if (activeUser.role == 'TaskUser') return;
+        setOptionModal(!optionModal);
     };
     return (
         <>
@@ -51,7 +57,7 @@ const LeafName: FC<NameProps> = ({ data, flag }) => {
                 onMouseEnter={() => setShowName(!showName)}
                 onMouseLeave={() => setShowName(!showName)}
                 className='text'
-                onClick={() => setOptionModal(!optionModal)}
+                onClick={() => checkStatus()}
             >
                 <>
                     {flag ? (

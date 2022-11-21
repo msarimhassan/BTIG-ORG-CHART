@@ -4,4 +4,5 @@ export default {
     deleteMemeber: 'user/remove-direct-member',
     updateMember: 'user/update-member',
     updateTeamName: 'user/update-team-name',
+    login: 'user/manage-user',
 };

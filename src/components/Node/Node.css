@@ -31,6 +31,11 @@
     cursor: pointer;
     font-size: 0.5vw;
 }
+
+.text-top{
+    margin-top: 5px;
+}
+
 .text-teamname{
     font-weight: bold;
 }
@@ -57,5 +62,8 @@
 {
 .node{
     font-size: 0.1vw;
+}
+.text-top{
+    margin-top: 3px;
 }
 }

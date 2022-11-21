@@ -51,7 +51,7 @@ const AddMember: React.FC<Props> = ({ modalIsOpen, setModal = () => {}, data }) 
             reportsInto: data.userPrincipalName,
             dimensions: {
                 left: left,
-                horizontal: horizontal,
+                horizonrtal: horizontal,
             },
         };
         const response = await Network.post(Urls.addMemeber, obj, (await config()).headers);
