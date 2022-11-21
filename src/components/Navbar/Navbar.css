@@ -1,0 +1,23 @@
+.Navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #9fdbed;
+    padding: 10px;
+}
+
+.logo {
+    color: #006791;
+}
+
+.login-btn {
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #006791;
+    cursor: pointer;
+}

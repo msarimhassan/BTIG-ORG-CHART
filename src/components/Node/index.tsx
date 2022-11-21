@@ -4,6 +4,7 @@ import useWindowDimensions from '../../hooks/useWindowDimensions';
 import './Node.css';
 
 import { Tooltip } from '../../components';
+import useAuth from '../../hooks/useAuth';
 
 interface Props {
     object: any;
@@ -24,6 +25,7 @@ const Node: React.FC<Props> = ({
     const hideTip = () => {
         isActive(false);
     };
+    const { activeUser } = useAuth();
 
     const handlingNode = (obj: any) => {
         setUpn(obj.userPrincipalName);
@@ -42,12 +44,19 @@ const Node: React.FC<Props> = ({
             onMouseEnter={() => isActive(!active)}
             onMouseLeave={hideTip}
         >
-            <Tooltip data={object} active={active} hideTooltip={hideTip} flag={false} />
+            {activeUser.role == 'TaskUser' ? null : (
+                <Tooltip data={object} active={active} hideTooltip={hideTip} flag={false} />
+            )}
 
-            <div data-testid='testTeamName' className='text'>
+            <div
+                data-testid='testTeamName'
+                className={`text ${activeUser.role == 'TaskUser' ? 'text-top' : ''}`}
+            >
                 {object.displayName}
                 <br />
-                <span className='text-teamname'>{object.teamName}</span>
+                <span className='text-teamname'>
+                    <u>{object.teamName}</u>
+                </span>
             </div>
         </div>
     );

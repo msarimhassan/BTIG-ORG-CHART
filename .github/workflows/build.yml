@@ -1,0 +1,49 @@
+# name: Build
+
+# on:
+#   push:
+#     branches:
+#       - "main"
+# jobs:
+#   sonarCloudTrigger:
+#     name: SonarCloud Trigger
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Clone Repository
+#         uses: actions/checkout@v2
+#         with:
+#           node-version: 16
+#       - name: Install dependencies
+#         run: yarn
+#       - name: Test and coverage
+#         run: yarn test --coverage --watchAll=false
+#       - name: Analyze with SonarCloud
+#         uses: sonarsource/sonarcloud-github-action@v1.6
+#         env:
+#           GITHUB_TOKEN: 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
+#           SONAR_TOKEN: 4702e91a2dd1dcd0d855b920abe9ddb1b6294994
+name: Build
+on:
+    push:
+        branches:
+            - master
+    pull_request:
+        types: [opened, synchronize, reopened]
+jobs:
+    sonarCloudTrigger:
+        name: SonarCloud Trigger
+        runs-on: ubuntu-latest
+        steps:
+            - name: Clone Repository
+              uses: actions/checkout@v2
+              with:
+                  node-version: 16
+            - name: Install dependencies
+              run: yarn
+            - name: Test and coverage
+              run: yarn test --coverage --watchAll=false
+            - name: Analyze with SonarCloud
+              uses: sonarsource/sonarcloud-github-action@master
+              env:
+                  GITHUB_TOKEN: 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
+                  SONAR_TOKEN: 76b052c0144299c1714d42b769e29305fb9cb993

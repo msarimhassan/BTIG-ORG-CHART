@@ -1,10 +1,22 @@
 import React, { useState, useEffect } from 'react';
 
 // import { NewData } from "../../common";
-import { Node, Root, Tree, TreeNode, BackButton, Leaf, HorizontalNode } from '../../components';
+import {
+    Node,
+    Root,
+    Tree,
+    TreeNode,
+    BackButton,
+    Leaf,
+    HorizontalNode,
+    Navbar,
+} from '../../components';
 import { Network, Urls, config } from '../../config';
 import { useApi } from '../../hooks/useApi';
 import { useNode } from '../../hooks/useNode';
+import { configuration } from '../../configuration';
+import useAuth from '../../hooks/useAuth';
+import useLoader from '../../hooks/useLoader';
 
 import './Home.css';
 
@@ -14,7 +26,8 @@ const Home: React.FC = () => {
     const { setNodeData } = useNode();
     const [previousData, setPreviousData] = useState<any>([]);
     const [upn, setUpn] = useState<String>('KHarlan@btig.com');
-    const [loading, setLoading] = useState<Boolean>(false);
+    const { token } = useAuth();
+    const { setLoading } = useLoader();
 
     useEffect(() => {
         GetOrganizationData();
@@ -34,18 +47,11 @@ const Home: React.FC = () => {
     const GetOrganizationData = async () => {
         setLoading(true);
         const response = await Network.get(`${Urls.getMember}/${upn}`, (await config()).headers);
-        if (!response.ok) return console.log({ response });
         setLoading(false);
+        if (!response.ok) return console.log({ response });
         setData(response.data.data);
         setNodeData(response.data.data);
     };
-
-    if (loading)
-        return (
-            <div className='loader'>
-                <h1>Loading....</h1>
-            </div>
-        );
 
     return (
         <>
@@ -56,8 +62,7 @@ const Home: React.FC = () => {
                         <Tree label={<Root object={data} />}>
                             {data.directTeamMembers
                                 ? data.directTeamMembers.map((obj: any, index: any) => {
-                                      return obj.teamLead !== false &&
-                                          obj.dimensions.horizontal !== true ? (
+                                      return obj.dimensions.horizontal !== true ? (
                                           <TreeNode
                                               key={index}
                                               label={
@@ -107,5 +112,4 @@ const Home: React.FC = () => {
         </>
     );
 };
-
 export default Home;
