@@ -1,21 +1,8 @@
 import React, { useState, useEffect } from 'react';
-
-// import { NewData } from "../../common";
-import {
-    Node,
-    Root,
-    Tree,
-    TreeNode,
-    BackButton,
-    Leaf,
-    HorizontalNode,
-    Navbar,
-} from '../../components';
+import { Node, Root, Tree, TreeNode, BackButton, Leaf, HorizontalNode } from '../../components';
 import { Network, Urls, config } from '../../config';
 import { useApi } from '../../hooks/useApi';
 import { useNode } from '../../hooks/useNode';
-import { configuration } from '../../configuration';
-import useAuth from '../../hooks/useAuth';
 import useLoader from '../../hooks/useLoader';
 
 import './Home.css';
@@ -26,7 +13,6 @@ const Home: React.FC = () => {
     const { setNodeData } = useNode();
     const [previousData, setPreviousData] = useState<any>([]);
     const [upn, setUpn] = useState<String>('KHarlan@btig.com');
-    const { token } = useAuth();
     const { setLoading } = useLoader();
 
     useEffect(() => {
@@ -45,9 +31,9 @@ const Home: React.FC = () => {
     };
 
     const GetOrganizationData = async () => {
-        setLoading(true);
+        setLoading((loading: boolean) => !loading);
         const response = await Network.get(`${Urls.getMember}/${upn}`, (await config()).headers);
-        setLoading(false);
+        setLoading((loading: boolean) => !loading);
         if (!response.ok) return console.log({ response });
         setData(response.data.data);
         setNodeData(response.data.data);

@@ -2,8 +2,6 @@ import { create } from 'apisauce';
 
 const baseURL = ' https://fake-app-backend.herokuapp.com/api/';
 
-// const baseURL = 'http://192.168.0.125:8081/api/';
-
 const client = create({
     baseURL,
 });

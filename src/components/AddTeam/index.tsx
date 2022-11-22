@@ -52,7 +52,11 @@ const AddTeam: React.FC<Props> = ({ setModal = () => {}, modalIsOpen, reportsInt
     };
     return (
         <Modal isOpen={modalIsOpen} style={customStyles}>
-            <h2 className='heading-text' style={{ marginTop: '10px' }}>
+            <h2
+                className='heading-text'
+                style={{ marginTop: '10px' }}
+                data-testid='testaddteammodal'
+            >
                 Add New Team
             </h2>
             <div className='input-container'>
@@ -114,7 +118,7 @@ const AddTeam: React.FC<Props> = ({ setModal = () => {}, modalIsOpen, reportsInt
                 <button className='submit-btn' onClick={() => setModal(false)}>
                     Cancel
                 </button>
-                <button className='cancel-btn' onClick={() => onSubmit()}>
+                <button className='cancel-btn' data-testid='addteambtn'  onClick={() => onSubmit()}>
                     Add
                 </button>
             </div>

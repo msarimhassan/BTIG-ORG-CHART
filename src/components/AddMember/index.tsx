@@ -35,7 +35,7 @@ const AddMember: React.FC<Props> = ({ modalIsOpen, setModal = () => {}, data }) 
     const [teamLead, setTeamLead] = useState(false);
     const [horizontal, setHorizontal] = useState(false);
     const [left, setLeft] = useState(false);
-    const { apiCall, setApiCall } = useApi();
+    const { setApiCall } = useApi();
     const handleCancel = (e: any) => {
         e.stopPropagation();
         setModal(!modalIsOpen);
@@ -129,7 +129,11 @@ const AddMember: React.FC<Props> = ({ modalIsOpen, setModal = () => {}, data }) 
                         >
                             close
                         </button>
-                        <button className='submit-btn' onClick={AddNewMember}>
+                        <button
+                            className='submit-btn'
+                            data-testid='testaddmemberbtn'
+                            onClick={AddNewMember}
+                        >
                             Submit
                         </button>
                     </div>

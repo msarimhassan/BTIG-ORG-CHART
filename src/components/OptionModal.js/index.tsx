@@ -6,8 +6,8 @@ interface Props {
     data: any;
     setModal?: (obj: boolean) => void;
     modalIsOpen: boolean;
-    handleDelete: (name: string) => void;
-    handleUpdate: () => void;
+    handleDelete?: (name: string) => void;
+    handleUpdate?: () => void;
 }
 
 const customStyles = {
@@ -32,8 +32,8 @@ const OptionModal: React.FC<Props> = ({
     data,
     setModal = () => {},
     modalIsOpen,
-    handleDelete,
-    handleUpdate,
+    handleDelete = () => {},
+    handleUpdate = () => {},
 }) => {
     const { MD } = Icons;
     const DeleteMember = (name: string) => {
@@ -42,14 +42,14 @@ const OptionModal: React.FC<Props> = ({
     };
     return (
         <Modal isOpen={modalIsOpen} style={customStyles}>
-            <h2 className='heading-text' style={{ marginTop: '10px' }}>
+            <h2 data-testid="options-modal" className='heading-text' style={{ marginTop: '10px' }}>
                 Options
             </h2>
             <div style={{ position: 'absolute', right: 0, top: 0 }}>
                 <MD.MdCancel onClick={() => setModal(false)} />
             </div>
             <div style={{ marginLeft: '15px', marginTop: '40px' }}>
-                <button className='submit-btn' onClick={() => DeleteMember(data.displayName)}>
+                <button className='submit-btn' data-testid="delete-member" onClick={() => DeleteMember(data.displayName)}>
                     Delete
                 </button>
                 <button className='cancel-btn' onClick={handleUpdate}>

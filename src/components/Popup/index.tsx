@@ -74,7 +74,7 @@ const Popup: React.FC<Props> = ({ modalIsOpen, setModal = () => {}, data }) => {
                         >
                             close
                         </button>
-                        <button className='submit-btn' onClick={handleUpgrade}>
+                        <button className='submit-btn' data-testid='update-btn' onClick={handleUpgrade}>
                             Submit
                         </button>
                     </div>

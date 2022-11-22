@@ -9,11 +9,8 @@ interface Props {
 const Loader: FC<Props> = ({ loading }) => {
     const defaultOptions = {
         loop: true,
-
         autoplay: true,
-
         animationData: LoaderAnimation,
-
         rendererSettings: {
             preserveAspectRatio: 'xMidYMid slice',
         },
@@ -23,6 +20,7 @@ const Loader: FC<Props> = ({ loading }) => {
 
     return (
         <div
+            data-testid='testloader'
             style={{
                 zIndex: 99999,
                 width: '100%',

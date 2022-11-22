@@ -12,11 +12,12 @@ interface Props {
 const HorizontalNode: FC<Props> = ({ object, handleNode = () => {}, totalNodes = 1 }) => {
     const window = useWindowDimensions();
 
-    const dimension = object.dimensions.left
+    const dimension = object?.dimensions.left
         ? `${window.width / 2 - 56}px`
         : `${window.width - 80}px`;
     return (
         <div
+            data-testid='testhorizontalnode'
             className='HorizontalNode'
             onClick={() => handleNode(object)}
             style={{ width: dimension }}
@@ -29,8 +30,12 @@ const HorizontalNode: FC<Props> = ({ object, handleNode = () => {}, totalNodes =
                       (item: { displayName: String; teamName: String; teamLead: boolean }) => {
                           return (
                               <>
-                                  <span className='member-name'>{item.teamName}</span>
-                                  <span>{item.teamLead ? item.displayName : null}</span>
+                                  <span data-testid='testTeamName' className='member-name'>
+                                      {item?.teamName}
+                                  </span>
+                                  <span data-testid='testTeamLead'>
+                                      {item.teamLead ? item?.displayName : null}
+                                  </span>
                               </>
                           );
                       }

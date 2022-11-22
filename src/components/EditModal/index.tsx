@@ -63,7 +63,7 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
 
     return (
         <Modal isOpen={modalIsOpen} style={customStyles}>
-            <h2 className='heading-text' style={{ marginTop: '10px' }}>
+            <h2 className='heading-text' style={{ marginTop: '10px' }} data-testid="editteammembers">
                 Edit Team Members
             </h2>
             <div className='input-container'>
@@ -136,7 +136,7 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
                 <button className='submit-btn' onClick={() => setModal(false)}>
                     Cancel
                 </button>
-                <button className='cancel-btn' onClick={() => UpdateMember()}>
+                <button className='cancel-btn' onClick={() => UpdateMember()} data-testid="testeditteammodal">
                     Edit
                 </button>
             </div>

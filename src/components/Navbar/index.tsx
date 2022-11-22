@@ -1,23 +1,12 @@
 import { FC } from 'react';
 import './Navbar.css';
-import { PublicClientApplication } from '@azure/msal-browser';
-import { configuration } from '../../configuration';
+
 import { Network, Urls, config } from '../../config';
 import useAuth from '../../hooks/useAuth';
 import { useApi } from '../../hooks/useApi';
 import useLoader from '../../hooks/useLoader';
-
-const publicClientApplication = new PublicClientApplication({
-    auth: {
-        clientId: configuration.appId,
-        redirectUri: configuration.redirectUri,
-        authority: configuration.authority,
-    },
-    cache: {
-        cacheLocation: 'sessionStorage',
-        storeAuthStateInCookie: true,
-    },
-});
+import publicClientApplication from '../../configuration';
+import { configuration } from '../../configuration';
 
 const Navbar: FC = () => {
     const { setCredential, token, setToken } = useAuth();
@@ -41,14 +30,14 @@ const Navbar: FC = () => {
     };
 
     return (
-        <div className='Navbar'>
+        <div className='Navbar' data-testid='testnavbar'>
             <h2 className='logo'>Org Chart</h2>
             {token ? (
                 <button className='login-btn' onClick={() => handleLogout()}>
                     Logout
                 </button>
             ) : (
-                <button className='login-btn' onClick={() => handleLogin()}>
+                <button className='login-btn' data-testid='testloginbtn' onClick={() => handleLogin()}>
                     Login
                 </button>
             )}

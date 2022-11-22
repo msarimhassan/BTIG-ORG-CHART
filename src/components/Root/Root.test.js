@@ -1,30 +1,33 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import Root from '.';
 
 const obj = {
-    DisplayName: 'Sarim',
-    UserPrincipalName: 'SAzriel@btig.com',
-    Team: 'Hexaa',
-    TeamLead: false,
-    DirectTeamMembers: [],
-    Dimensions: {
-        Left: true,
-        Horizontal: false,
+    displayName: 'Sarim',
+    userPrincipalName: 'SAzriel@btig.com',
+    teamName: 'AppDev',
+    teamLead: false,
+    directTeamMembers: [],
+    dimensions: {
+        left: true,
+        horizontal: false,
     },
-    ReportsIntoUpn: null,
-    FlatTeam: [],
 };
 
 test('Employee name  renders the text inside the Root', async () => {
     render(<Root object={obj} />);
     const element = await screen.findByTestId('testroot');
-    expect(element).toHaveTextContent('HexaaSarim');
+    expect(element).toHaveTextContent('Sarim');
 });
 
-test('node render in the dom', async () => {
+test('Root render in the dom', async () => {
     render(<Root object={obj} />);
 
     const devEl = await screen.findByTestId('testroot');
 
     expect(devEl).toBeInTheDocument();
+});
+
+test('Root Click', () => {
+    render(<Root object={obj} />);
+    fireEvent.click(screen.getByTestId('testroot'));
 });

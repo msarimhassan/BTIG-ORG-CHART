@@ -1,48 +1,49 @@
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import { Leaf, LeafName } from "..";
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import Leaf from '.';
+import LeafName from '../LeafName';
+
+const flag = { flag: 0 };
 
 const obj = {
-  DisplayName: "Sarim",
-  UserPrincipalName: "SAzriel@btig.com",
-  Team: "Hexaa",
-  TeamLead: true,
-  DirectTeamMembers: [],
-  Dimensions: {
-    Left: true,
-    Horizontal: false,
-  },
-  ReportsIntoUpn: null,
-  FlatTeam: [],
+    displayName: 'Sarim',
+    userPrincipalName: 'SAzriel@btig.com',
+    teamName: 'Hexaa',
+    teamLead: true,
+    directTeamMembers: [],
+    dimensions: {
+        Left: true,
+        horizontal: false,
+    },
 };
 
-test("node render in the dom", async () => {
-  render(<Leaf object={obj} />);
+test('node render in the dom', async () => {
+    render(<Leaf object={obj} />);
 });
 
-test("node render in the dom", async () => {
-  render(<Leaf object={obj} />);
-  const devEl = await screen.findByTestId("testleaf");
-  expect(devEl).toBeInTheDocument();
+test('node render in the dom', async () => {
+    render(<Leaf object={obj} totalNodes={1} handleNode={() => {}} />);
+    const devEl = await screen.findByTestId('testleaf');
+    expect(devEl).toBeInTheDocument();
 });
 
-test("Renders Name of the flat team when mouse hovers", async () => {
-  render(<LeafName name="testing" />);
-  fireEvent.mouseOver(screen.getByTestId("testClick"));
-  await waitFor(() => screen.getByTestId("testleaftooltip"));
+test('Renders Name of the flat team when mouse hovers', async () => {
+    render(<LeafName data={obj} flag={true} />);
+    fireEvent.mouseOver(screen.getByTestId('testClick'));
+    await waitFor(() => screen.getByTestId('testleaftooltip'));
 
-  expect(screen.getByTestId("testleaftooltipchild")).toBeInTheDocument();
+    expect(screen.getByTestId('testleaftooltipchild')).toBeInTheDocument();
 });
 
-test("Show the name of the employee in the leaf", async () => {
-  render(<LeafName name="Testing" />);
-  const element = await screen.findByTestId("testClick");
-  expect(element).toHaveTextContent("Testing");
+test('Show the name of the employee in the leaf', async () => {
+    render(<LeafName data={obj} flag={false} />);
+    const element = await screen.findByTestId('testClick');
+    expect(element).toHaveTextContent('Sarim');
 });
 
-test("Null renders when there is no team lead", async () => {
-  render(<Leaf object={{ ...obj, TeamLead: false }} />);
+test('Null renders when there is no team lead', async () => {
+    render(<Leaf object={{ ...obj, TeamLead: false }} />);
 
-  const element = await screen.findByTestId("testleaf");
+    const element = await screen.findByTestId('testleaf');
 
-  expect(element).toHaveTextContent("");
+    expect(element).toHaveTextContent('');
 });
