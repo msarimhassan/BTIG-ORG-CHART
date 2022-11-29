@@ -1,9 +1,9 @@
 import { PublicClientApplication } from '@azure/msal-browser';
 export const configuration = {
-    appId: 'eead2ff1-122d-4397-bcef-13de993bc8cc',
+    appId: 'aa9b76f3-f406-4669-904f-fff70fa660b2',
     redirectUri: '/',
-    scopes: ['api://eead2ff1-122d-4397-bcef-13de993bc8cc/access_via_approle_assignments'],
-    authority: 'https://login.microsoftonline.com/0d4e2c53-ba4c-40c7-9648-f59d221da571',
+    scopes: ['api://aa9b76f3-f406-4669-904f-fff70fa660b2/read', 'api://aa9b76f3-f406-4669-904f-fff70fa660b2/write'],
+    authority: 'https://login.microsoftonline.com/e4202d55-d645-49e4-ae25-7ced9f98e618',
 };
 
 const publicClientApplication = new PublicClientApplication({
