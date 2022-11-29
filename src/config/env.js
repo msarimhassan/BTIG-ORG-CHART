@@ -3,10 +3,10 @@ import { create } from 'apisauce';
 let baseURL = null;
 if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
   //Development
-  baseURL = ' https://fake-app-backend.herokuapp.com/api/';
+  baseURL = 'https://org-chart-api.btig.dev/';
 } else {
   //Production
-  baseURL = ' https://fake-app-backend.herokuapp.com/api/';
+  baseURL = 'http://org-chart-backend.btig.svc.cluster.local/';
 }
 
 const client = create({
