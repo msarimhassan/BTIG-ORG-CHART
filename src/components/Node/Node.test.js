@@ -2,34 +2,39 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Node from '.';
 
 const obj = {
-    displayName: 'Sarim',
-    userPrincipalName: 'SAzriel@btig.com',
-    teamName: 'AppDev',
-    teamLead: false,
-    directTeamMembers: [],
-    dimensions: {
-        left: true,
-        horizontal: false,
-    },
+  displayName: 'Sarim',
+  userPrincipalName: 'SAzriel@btig.com',
+  teamName: 'AppDev',
+  teamLead: false,
+  directTeamMembers: [],
+  dimensions: {
+    left: true,
+    horizontal: false,
+  },
 };
 test('node render in the dom', async () => {
-    render(<Node object={obj} />);
+  render(<Node object={obj} />);
 
-    const devEl = await screen.findByTestId('testteamNode');
+  const devEl = await screen.findByTestId('testteamNode');
 
-    expect(devEl).toBeInTheDocument();
+  expect(devEl).toBeInTheDocument();
 });
 
 test('Employee name  renders the text inside the node', async () => {
-    render(<Node object={obj} />);
-    const element = await screen.findByTestId('testTeamName');
-    expect(element).toHaveTextContent('SarimAppDev');
+  render(<Node object={obj} />);
+  const element = await screen.findByTestId('testTeamName');
+  expect(element).toHaveTextContent('SarimAppDev');
 });
 
 test('Renders tooltip when mouse hovers', async () => {
-    render(<Node object={obj} />);
-    fireEvent.mouseOver(screen.getByTestId('testteamNode'));
-    await waitFor(() => screen.getByTestId('testTooltip'));
+  render(<Node object={obj} />);
+  fireEvent.mouseOver(screen.getByTestId('testteamNode'));
+  await waitFor(() => screen.getByTestId('testTooltip'));
 
-    expect(screen.getByTestId('testToolTipchild')).toBeInTheDocument();
+  expect(screen.getByTestId('testToolTipchild')).toBeInTheDocument();
+});
+
+test('handle Click', async () => {
+  render(<Node object={obj} />);
+  fireEvent.click(screen.getByTestId('testteamNode'));
 });

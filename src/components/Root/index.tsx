@@ -16,7 +16,7 @@ const Root: React.FC<Props> = ({ object }: Props) => {
         isActive(false);
     };
     const Tooltip = () => {
-        if (activeUser?.role == 'TaskUser') return null;
+        if (activeUser?.role === 'TaskUser') return null;
         return (
             <div className='Tooltip-Wrapper'>
                 {active && <div data-testid='testleaftooltipchild'>Click to add new team</div>}
@@ -24,7 +24,7 @@ const Root: React.FC<Props> = ({ object }: Props) => {
         );
     };
     const handleTeamModal = () => {
-        if (activeUser?.role == 'TaskUser') return alert('Cannot Access');
+        if (activeUser?.role === 'TaskUser') return alert('Cannot Access');
         setShowModal(true);
     };
 

@@ -3,7 +3,6 @@ import { FC, useState } from 'react';
 import { Popup, AddMember } from '../../components';
 import { Icons } from '../../common';
 import './Tooltip.css';
-import useAuth from '../../hooks/useAuth';
 interface Props {
     active: boolean;
     data: any;
@@ -15,7 +14,6 @@ const Tooltip: FC<Props> = ({ active, hideTooltip = () => {}, flag, data }) => {
     const { MD, AI } = Icons;
     const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
     const [modal, openModal] = useState<boolean>(false);
-    const { activeUser } = useAuth();
 
     const handleEditClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         e.stopPropagation();

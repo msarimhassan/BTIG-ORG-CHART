@@ -7,85 +7,81 @@ import EditModal from '../EditModal';
 import useAuth from '../../hooks/useAuth';
 
 interface NameProps {
-    data: any;
-    flag: boolean;
+  data: any;
+  flag: boolean;
 }
 const LeafName: FC<NameProps> = ({ data, flag }) => {
-    const [showName, setShowName] = useState<boolean>(false);
-    const [showModal, setShowModal] = useState<boolean>(false);
-    const [editModal, setEditModal] = useState<boolean>(false);
-    const [optionModal, setOptionModal] = useState<boolean>(false);
-    const { setApiCall } = useApi();
-    const { activeUser } = useAuth();
+  const [showName, setShowName] = useState<boolean>(false);
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [editModal, setEditModal] = useState<boolean>(false);
+  const [optionModal, setOptionModal] = useState<boolean>(false);
+  const { setApiCall } = useApi();
+  const { activeUser } = useAuth();
 
-    const handleDelete = async (name: string) => {
-        if (window.confirm(`Are you sure you want to delete ${name}`)) {
-            const response = await Network.delete(
-                `${Urls.deleteMemeber}/${data.userPrincipalName}`,
-                {},
-                (
-                    await config()
-                ).headers
-            );
-            if (!response.ok) return console.log({ response });
-            setApiCall((prevVal: boolean) => !prevVal);
-        }
-    };
-    const handleUpdate = () => {
-        setOptionModal(false);
-        setEditModal(true);
-    };
-    const checkStatus = () => {
-        if (activeUser.role == 'TaskUser') return;
-        setOptionModal(!optionModal);
-    };
-    return (
+  const handleDelete = async (name: string) => {
+    if (window.confirm(`Are you sure you want to delete ${name}`)) {
+      const response = await Network.delete(
+        `${Urls.deleteMemeber}/${data.userPrincipalName}`,
+        {},
+        (
+          await config()
+        ).headers
+      );
+      if (!response.ok) return console.log({ response });
+      setApiCall((prevVal: boolean) => !prevVal);
+    }
+  };
+  const handleUpdate = () => {
+    setOptionModal(false);
+    setEditModal(true);
+  };
+  const checkStatus = () => {
+    if (activeUser?.role === 'TaskUser') return;
+    setOptionModal(!optionModal);
+  };
+  return (
+    <>
+      <Popup data={data} modalIsOpen={showModal} setModal={setShowModal} />
+      <Leaftooltip active={showName} data={data} />
+      <OptionModal
+        data={data}
+        handleDelete={handleDelete}
+        modalIsOpen={optionModal}
+        setModal={setOptionModal}
+        handleUpdate={handleUpdate}
+      />
+      <EditModal data={data} modalIsOpen={editModal} setModal={setEditModal} />
+
+      <div
+        data-testid='testClick'
+        onMouseEnter={() => setShowName(!showName)}
+        onMouseLeave={() => setShowName(!showName)}
+        className='text'
+        onClick={() => checkStatus()}
+      >
         <>
-            <Popup data={data} modalIsOpen={showModal} setModal={setShowModal} />
-            <Leaftooltip active={showName} data={data} />
-            <OptionModal
-                data={data}
-                handleDelete={handleDelete}
-                modalIsOpen={optionModal}
-                setModal={setOptionModal}
-                handleUpdate={handleUpdate}
-            />
-            <EditModal data={data} modalIsOpen={editModal} setModal={setEditModal} />
-
-            <div
-                data-testid='testClick'
-                onMouseEnter={() => setShowName(!showName)}
-                onMouseLeave={() => setShowName(!showName)}
-                className='text'
-                onClick={() => checkStatus()}
-            >
-                <>
-                    {flag ? (
-                        <>
-                            <u style={{ fontWeight: 'bold' }}>
-                                {data.teamName ? data.teamName : null}
-                            </u>
-                            <br />
-                            <span style={{ fontWeight: 'bold' }}>
-                                {data.teamLead ? data.displayName : null}
-                            </span>
-                            <br />
-                            {data.directTeamMembers.map((item: any) => {
-                                return (
-                                    <>
-                                        <span>{item.displayName}</span>
-                                        <br />
-                                    </>
-                                );
-                            })}
-                        </>
-                    ) : (
-                        <span style={{ fontWeight: 'bold' }}>{data.displayName}</span>
-                    )}
-                </>
-            </div>
+          {flag ? (
+            <>
+              <u style={{ fontWeight: 'bold' }}>{!!data.teamName && data.teamName}</u>
+              <br />
+              <span style={{ fontWeight: 'bold' }}>{!!data.teamLead && data.displayName}</span>
+              <br />
+              {data.directTeamMembers.map((item: any) => {
+                return (
+                  <>
+                    <span>{item.displayName}</span>
+                    <br />
+                  </>
+                );
+              })}
+            </>
+          ) : (
+            <span style={{ fontWeight: 'bold' }}>{data.displayName}</span>
+          )}
         </>
-    );
+      </div>
+    </>
+  );
 };
 
 export default LeafName;

@@ -1,20 +1,22 @@
 import client from './env';
 
-export default {
-    get: async (url, headers, data) => {
-        client.setHeaders(headers);
-        return await client.get(url, data);
-    },
-    post: async (url, data, headers) => {
-        client.setHeaders(headers);
-        return await client.post(url, data);
-    },
-    put: async (url, data, headers) => {
-        client.setHeaders(headers);
-        return await client.put(url, data);
-    },
-    delete: async (url, data, headers) => {
-        client.setHeaders(headers);
-        return await client.delete(url, data);
-    },
+const Network = {
+  get: async (url, headers, data) => {
+    client.setHeaders(headers);
+    return await client.get(url, data);
+  },
+  post: async (url, data, headers) => {
+    client.setHeaders(headers);
+    return await client.post(url, data);
+  },
+  put: async (url, data, headers) => {
+    client.setHeaders(headers);
+    return await client.put(url, data);
+  },
+  delete: async (url, data, headers) => {
+    client.setHeaders(headers);
+    return await client.delete(url, data);
+  },
 };
+
+export default Network;
