@@ -22,10 +22,10 @@ const App: FC = () => {
       setActiveUser(JSON.parse(user));
     }
   }, []);
-  useEffect(() => {
-    if (token) return;
-    handleLogin();
-  }, [token]);
+  // useEffect(() => {
+  //   if (token) return;
+  //   handleLogin();
+  // }, [token]);
   const handleLogin = async () => {
     const response = await publicClientApplication?.loginPopup({
       scopes: configuration?.scopes,
