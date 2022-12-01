@@ -3,7 +3,7 @@ import { create } from 'apisauce';
 let baseURL = null;
 if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
   //Development
-  baseURL = 'https://org-chart-api.btig.dev/';
+  baseURL = 'https://org-chart.btig.dev/api/';
 } else {
   //Production
   baseURL = 'http://org-chart-backend.btig.svc.cluster.local/';
