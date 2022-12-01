@@ -5,8 +5,10 @@ import { Network, Urls, config } from '../../config';
 import { useApi } from '../../hooks/useApi';
 import { useNode } from '../../hooks/useNode';
 import useLoader from '../../hooks/useLoader';
+import { logMessage } from '../../utils';
 
 import './Home.css';
+import useAuth from '../../hooks/useAuth';
 
 const Home: React.FC = () => {
   const [data, setData] = useState<any>(null);
@@ -15,6 +17,7 @@ const Home: React.FC = () => {
   const [previousData, setPreviousData] = useState<any>([]);
   const [upn, setUpn] = useState<String>('KHarlan@btig.com');
   const { setLoading } = useLoader();
+  const { activeUser } = useAuth();
 
   useEffect(() => {
     const GetOrganizationData = async () => {
@@ -22,6 +25,8 @@ const Home: React.FC = () => {
       const response = await Network.get(`${Urls.getMember}/${upn}`, (await config()).headers);
       setLoading(false);
       if (!response.ok) return console.log({ response });
+      logMessage(`${activeUser.name} fetch data from endpoint ${upn}`);
+
       setData(response.data.data);
       setNodeData(response.data.data);
     };
@@ -30,11 +35,13 @@ const Home: React.FC = () => {
 
   const handleNode = (obj: any) => {
     setPreviousData([...previousData, data]);
+    logMessage(`${activeUser.name} click the node`);
     setData(obj);
     setNodeData(obj);
   };
   const handleBack = () => {
     const newData = previousData.pop();
+    logMessage(`${activeUser.name} click the back button`);
     setData(newData);
     setNodeData(newData);
   };

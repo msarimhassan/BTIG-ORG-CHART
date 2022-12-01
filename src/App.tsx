@@ -4,8 +4,8 @@ import { ApiContext, NodeContext, AuthContext, LoaderContext } from './context';
 import publicClientApplication from './configuration';
 import { configuration } from './configuration';
 import { Network, Urls, config } from './config';
-
 import { Loader, Navbar } from './components';
+import { logMessage } from './utils';
 
 const App: FC = () => {
   const [apiCall, setApiCall] = useState<boolean>(false);
@@ -16,7 +16,6 @@ const App: FC = () => {
   useEffect(() => {
     const token = localStorage.getItem('org-token');
     const user = localStorage.getItem('org-user') || '{}';
-
     if (token) {
       setToken(token);
       setActiveUser(JSON.parse(user));
@@ -32,6 +31,7 @@ const App: FC = () => {
     setLoading(false);
     localStorage.setItem('org-token', fetch.data.token);
     localStorage.setItem('org-user', JSON.stringify(fetch.data.user));
+    logMessage(`${fetch.data.user.name} login into the app`);
     setToken(fetch.data.token);
     setActiveUser(fetch.data.user);
     setApiCall((prevState: any) => !prevState);

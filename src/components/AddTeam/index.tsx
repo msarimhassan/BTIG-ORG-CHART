@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { Network, Urls, config } from '../../config';
 import { useApi } from '../../hooks/useApi';
+import { logMessage } from '../../utils';
+import useAuth from '../../hooks/useAuth';
+
 interface Props {
   setModal?: (obj: boolean) => void;
   modalIsOpen: boolean;
@@ -47,6 +50,7 @@ const AddTeam: React.FC<Props> = ({ setModal = () => {}, modalIsOpen, reportsInt
   };
 
   const { setApiCall } = useApi();
+  const { activeUser } = useAuth();
   const onSubmit = async () => {
     const obj = {
       ...team,
@@ -58,6 +62,7 @@ const AddTeam: React.FC<Props> = ({ setModal = () => {}, modalIsOpen, reportsInt
     };
     const response = await Network.post(Urls.addMemeber, obj, (await config()).headers);
     if (!response.ok) return alert(response.data.error);
+    logMessage(`${activeUser.name} added new team with name ${team.teamName}`);
     setApiCall((prevVal: boolean) => !prevVal);
   };
   return (

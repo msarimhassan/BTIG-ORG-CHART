@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import { Network, Urls, config } from '../../config';
 import { useApi } from '../../hooks/useApi';
 import { useNode } from '../../hooks/useNode';
+import { logMessage } from '../../utils';
 
 const customStyles = {
   overlay: {
@@ -65,6 +66,7 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
       ).headers
     );
     if (!response.ok) return console.log({ response });
+    logMessage(`Updated the member ${data.userPrincipalName}`);
     setApiCall((prevVal: boolean) => !prevVal);
   };
 

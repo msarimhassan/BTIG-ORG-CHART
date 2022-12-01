@@ -5,6 +5,7 @@ import { useApi } from '../../hooks/useApi';
 import OptionModal from '../OptionModal.js';
 import EditModal from '../EditModal';
 import useAuth from '../../hooks/useAuth';
+import { logMessage } from '../../utils';
 
 interface NameProps {
   data: any;
@@ -28,6 +29,7 @@ const LeafName: FC<NameProps> = ({ data, flag }) => {
         ).headers
       );
       if (!response.ok) return console.log({ response });
+      logMessage(`Delete Member ${data.userPrincipalName}`);
       setApiCall((prevVal: boolean) => !prevVal);
     }
   };
