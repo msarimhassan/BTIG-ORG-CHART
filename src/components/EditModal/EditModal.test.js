@@ -29,3 +29,7 @@ test('handle Change', async () => {
   fireEvent.click(screen.getByTestId('teamLead-input'), { target: { value: true } });
 });
 
+test('Edit Team Modal click button', async () => {
+  render(<EditModal data={obj} modalIsOpen={true} />);
+  fireEvent.click(screen.getByTestId('cancel-btn'));
+});
