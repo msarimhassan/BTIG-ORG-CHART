@@ -33,3 +33,8 @@ test('Edit Team Modal click button', async () => {
   render(<EditModal data={obj} modalIsOpen={true} />);
   fireEvent.click(screen.getByTestId('cancel-btn'));
 });
+
+test('handle Change', async () => {
+  render(<EditModal data={obj} modalIsOpen={true} />);
+  fireEvent.change(screen.getByTestId('reportsInto-input'), { target: { value: true } });
+});
