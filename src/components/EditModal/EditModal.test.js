@@ -38,3 +38,8 @@ test('handle Change', async () => {
   render(<EditModal data={obj} modalIsOpen={true} />);
   fireEvent.change(screen.getByTestId('reportsInto-input'), { target: { value: true } });
 });
+
+test('handle Change', async () => {
+  render(<EditModal data={obj} modalIsOpen={true} />);
+  fireEvent.click(screen.getByTestId('teamLead-input'), { target: { value: true } });
+});
