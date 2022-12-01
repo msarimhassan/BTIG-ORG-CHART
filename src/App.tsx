@@ -27,8 +27,8 @@ const App: FC = () => {
     handleLogin();
   }, [token]);
   const handleLogin = async () => {
-    const response = await publicClientApplication.loginPopup({
-      scopes: configuration.scopes,
+    const response = await publicClientApplication?.loginPopup({
+      scopes: configuration?.scopes,
       prompt: 'select_account',
     });
     setLoading(true);
