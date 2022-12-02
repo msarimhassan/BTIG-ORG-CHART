@@ -4,7 +4,7 @@ import Modal from 'react-modal';
 interface Props {
   setModal?: (obj: boolean) => void;
   modalIsOpen: boolean;
-  reportsInto: String;
+  reportsInto: string;
 }
 const customStyles = {
   overlay: {
