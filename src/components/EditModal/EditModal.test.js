@@ -48,3 +48,8 @@ test('handle Change', async () => {
   render(<EditModal data={obj} modalIsOpen={true} />);
   fireEvent.click(screen.getByTestId('horizontal-input'), { target: { value: true } });
 });
+
+test('handle visible Change', async () => {
+  render(<EditModal data={obj} modalIsOpen={true} />);
+  fireEvent.click(screen.getByTestId('visible-input'), { target: { value: true } });
+});
