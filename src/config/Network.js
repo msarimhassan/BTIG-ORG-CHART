@@ -13,6 +13,10 @@ const Network = {
     client.setHeaders(headers);
     return await client.put(url, data);
   },
+  patch: async (url, data, headers) => {
+    client.setHeaders(headers);
+    return await client.patch(url, data);
+  },
   delete: async (url, data, headers) => {
     client.setHeaders(headers);
     return await client.delete(url, data);

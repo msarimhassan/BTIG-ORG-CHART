@@ -32,17 +32,14 @@ const Popup: React.FC<Props> = ({ modalIsOpen, setModal = () => {}, data }) => {
   const [newTeam, setNewTeam] = useState(data.teamName);
   const { setApiCall } = useApi();
   const handleUpgrade = async () => {
-    const obj = {
-      newTeamName: newTeam,
-    };
-    const response = await Network.put(
-      `${Urls.updateTeamName}/${data.teamName}`,
-      obj,
+    const response = await Network.patch(
+      Urls.updateTeamName(data.teamName, newTeam),
+      {},
       (
         await config()
       ).headers
     );
-    if (!response.ok) return console.log({ response });
+    if (!response.ok) return alert('Error in updating teamName');
     setApiCall((prevVal: any) => !prevVal);
   };
   return (

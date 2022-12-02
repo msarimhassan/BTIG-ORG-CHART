@@ -35,6 +35,7 @@ const initialValues = {
   teamLead: false,
   horizontal: false,
   left: false,
+  visible: false,
 };
 const AddMember: React.FC<Props> = ({ modalIsOpen, setModal = () => {}, data }) => {
   const [user, setUser] = useState(initialValues);
@@ -141,7 +142,26 @@ const AddMember: React.FC<Props> = ({ modalIsOpen, setModal = () => {}, data }) 
                 />
               </div>
             </div>
+            <div style={{ marginLeft: '30px', marginTop: '10px' }}>
+              <label>Visible</label>
+              <input
+                style={{ marginLeft: '10px' }}
+                type='checkbox'
+                name='visible'
+                data-testid='visible-input'
+                onClick={(event) => {
+                  let e = {
+                    target: {
+                      name: 'visible',
+                      value: event.currentTarget.checked,
+                    },
+                  };
+                  handleChange(e);
+                }}
+              />
+            </div>
           </div>
+
           <div className='btn-group'>
             <button data-testid='test-cancel-btn' className='cancel-btn' onClick={handleCancel}>
               close

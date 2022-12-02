@@ -22,13 +22,13 @@ const LeafName: FC<NameProps> = ({ data, flag }) => {
   const handleDelete = async (name: string) => {
     if (window.confirm(`Are you sure you want to delete ${name}`)) {
       const response = await Network.delete(
-        `${Urls.deleteMemeber}/${data.userPrincipalName}`,
+        Urls.deleteMember(data.userPrincipalName),
         {},
         (
           await config()
         ).headers
       );
-      if (!response.ok) return console.log({ response });
+      if (!response.ok) return alert('Failed to delete');
       logMessage(`Delete Member ${data.userPrincipalName}`);
       setApiCall((prevVal: boolean) => !prevVal);
     }

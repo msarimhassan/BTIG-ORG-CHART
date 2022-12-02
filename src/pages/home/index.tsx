@@ -15,14 +15,14 @@ const Home: React.FC = () => {
   const { apiCall } = useApi();
   const { setNodeData } = useNode();
   const [previousData, setPreviousData] = useState<any>([]);
-  const [upn, setUpn] = useState<String>('KHarlan@btig.com');
+  const [upn, setUpn] = useState<any>(null);
   const { setLoading } = useLoader();
   const { activeUser } = useAuth();
 
   useEffect(() => {
     const GetOrganizationData = async () => {
       setLoading(true);
-      const response = await Network.get(`${Urls.getMember}/${upn}`, (await config()).headers);
+      const response = await Network.get(Urls.getMember(upn), (await config()).headers);
       setLoading(false);
       if (!response.ok) return console.log({ response });
       logMessage(`${activeUser.name} fetch data from endpoint ${upn}`);

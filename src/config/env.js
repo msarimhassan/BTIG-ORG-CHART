@@ -1,5 +1,7 @@
 import { create } from 'apisauce';
 
+export const SEQSERVER = 'http://localhost:5341/';
+
 let baseURL = null;
 if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
   //Development

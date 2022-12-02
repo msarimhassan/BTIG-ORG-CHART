@@ -4,49 +4,41 @@ import useAuth from '../../hooks/useAuth';
 
 import './Root.css';
 interface Props {
-    object: any;
+  object: any;
 }
 
 const Root: React.FC<Props> = ({ object }: Props) => {
-    const [showModal, setShowModal] = useState<boolean>(false);
-    const [active, isActive] = useState<boolean>(false);
-    const { activeUser } = useAuth();
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [active, isActive] = useState<boolean>(false);
+  const { activeUser } = useAuth();
 
-    const hideTooltip = () => {
-        isActive(false);
-    };
-    const Tooltip = () => {
-        if (activeUser?.role === 'TaskUser') return null;
-        return (
-            <div className='Tooltip-Wrapper'>
-                {active && <div data-testid='testleaftooltipchild'>Click to add new team</div>}
-            </div>
-        );
-    };
-    const handleTeamModal = () => {
-        if (activeUser?.role === 'TaskUser') return alert('Cannot Access');
-        setShowModal(true);
-    };
+  const hideTooltip = () => {
+    isActive(false);
+  };
 
-    return (
-        <>
-            <Tooltip data-testid='root-tooltip' />
-            <AddTeam
-                modalIsOpen={showModal}
-                setModal={setShowModal}
-                reportsInto={object?.userPrincipalName}
-            />
-            <div
-                className='root'
-                data-testid='testroot'
-                onMouseEnter={() => isActive(!active)}
-                onClick={() => handleTeamModal()}
-                onMouseLeave={hideTooltip}
-            >
-                {object?.displayName}
-            </div>
-        </>
-    );
+  const handleTeamModal = () => {
+    if (activeUser?.role === 'TaskUser') return alert('Cannot Access');
+    setShowModal(true);
+  };
+
+  return (
+    <>
+      <AddTeam
+        modalIsOpen={showModal}
+        setModal={setShowModal}
+        reportsInto={object?.userPrincipalName}
+      />
+      <div
+        className='root'
+        data-testid='testroot'
+        onMouseEnter={() => isActive(!active)}
+        onClick={() => handleTeamModal()}
+        onMouseLeave={hideTooltip}
+      >
+        {object?.displayName}
+      </div>
+    </>
+  );
 };
 
 export default Root;

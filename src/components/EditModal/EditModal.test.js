@@ -21,7 +21,7 @@ test('Edit Team Modal render in the dom', async () => {
 
 test('Edit Team Modal click button', async () => {
   render(<EditModal data={obj} modalIsOpen={true} />);
-  fireEvent.click(screen.getByTestId('testeditteammodal'));
+  fireEvent.click(screen.getByTestId('edit-cancel-btn'));
 });
 
 test('handle Change', async () => {
@@ -31,7 +31,7 @@ test('handle Change', async () => {
 
 test('Edit Team Modal click button', async () => {
   render(<EditModal data={obj} modalIsOpen={true} />);
-  fireEvent.click(screen.getByTestId('cancel-btn'));
+  fireEvent.click(screen.getByTestId('edit-cancel-btn'));
 });
 
 test('handle Change', async () => {

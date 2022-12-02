@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import { Network, Urls, config } from '../../config';
-import { useApi } from '../../hooks/useApi';
-import { logMessage } from '../../utils';
-import useAuth from '../../hooks/useAuth';
 
 interface Props {
   setModal?: (obj: boolean) => void;
@@ -47,23 +43,6 @@ const AddTeam: React.FC<Props> = ({ setModal = () => {}, modalIsOpen, reportsInt
     setTeam((prevVal: any) => {
       return { ...prevVal, [name]: value };
     });
-  };
-
-  const { setApiCall } = useApi();
-  const { activeUser } = useAuth();
-  const onSubmit = async () => {
-    const obj = {
-      ...team,
-      reportsInto: reportsInto,
-      dimensions: {
-        left: team.left,
-        horizontal: team.horizontal,
-      },
-    };
-    const response = await Network.post(Urls.addMemeber, obj, (await config()).headers);
-    if (!response.ok) return alert(response.data.error);
-    logMessage(`${activeUser.name} added new team with name ${team.teamName}`);
-    setApiCall((prevVal: boolean) => !prevVal);
   };
   return (
     <Modal isOpen={modalIsOpen} style={customStyles}>
@@ -148,7 +127,7 @@ const AddTeam: React.FC<Props> = ({ setModal = () => {}, modalIsOpen, reportsInt
         <button className='submit-btn' onClick={() => setModal(false)}>
           Cancel
         </button>
-        <button className='cancel-btn' data-testid='addteambtn' onClick={() => onSubmit()}>
+        <button className='cancel-btn' data-testid='addteambtn'>
           Add
         </button>
       </div>
