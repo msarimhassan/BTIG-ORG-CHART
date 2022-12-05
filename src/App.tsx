@@ -26,6 +26,7 @@ const App: FC = () => {
       scopes: configuration?.scopes,
       prompt: 'select_account',
     });
+    console.log({ response });
     setLoading(true);
     const fetch = await Network.post(Urls.login, response, (await config()).headers);
     setLoading(false);
