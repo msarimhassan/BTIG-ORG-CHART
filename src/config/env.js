@@ -51,6 +51,6 @@ const responseMonitor = (response) => {
   }
 };
 
-client.addMonitor(responseMonitor);
+client?.addMonitor(responseMonitor);
 
 export default client;
