@@ -43,4 +43,14 @@ export const multipartConfig = async () => {
   };
 };
 
+const responseMonitor = (response) => {
+  if (response.status === 401) {
+    localStorage.clear();
+    alert('Unauthorized');
+    window.location.href = '/';
+  }
+};
+
+client.addMonitor(responseMonitor);
+
 export default client;
