@@ -3,7 +3,6 @@ import Home from './pages/home';
 import { ApiContext, NodeContext, AuthContext, LoaderContext } from './context';
 import publicClientApplication from './configuration';
 import { configuration } from './configuration';
-import { Network, Urls, config } from './config';
 import { Loader, Navbar } from './components';
 import { logMessage } from './utils';
 
@@ -26,15 +25,13 @@ const App: FC = () => {
       scopes: configuration?.scopes,
       prompt: 'select_account',
     });
-    console.log({ response });
-    setLoading(true);
-    const fetch = await Network.post(Urls.login, response, (await config()).headers);
-    setLoading(false);
-    localStorage.setItem('org-token', fetch.data.token);
-    localStorage.setItem('org-user', JSON.stringify(fetch.data.user));
-    logMessage(`${fetch.data.user.name} login into the app`);
-    setToken(fetch.data.token);
-    setActiveUser(fetch.data.user);
+
+    const a: any = response.idTokenClaims;
+    localStorage.setItem('org-token', response.accessToken);
+    localStorage.setItem('org-user', JSON.stringify({ role: a.roles[0] }));
+    logMessage(`${a.preferred_username} login into the app`);
+    setToken(response.accessToken);
+    setActiveUser({ role: a.roles[0] });
     setApiCall((prevState: any) => !prevState);
   };
 
