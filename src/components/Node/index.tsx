@@ -44,13 +44,13 @@ const Node: React.FC<Props> = ({
       onMouseEnter={() => isActive(!active)}
       onMouseLeave={hideTip}
     >
-      {activeUser?.role === 'TaskUser' ? null : (
+      {activeUser?.role === 'read' ? null : (
         <Tooltip data={object} active={active} hideTooltip={hideTip} flag={false} />
       )}
 
       <div
         data-testid='testTeamName'
-        className={`text ${activeUser?.role === 'TaskUser' ? 'text-top' : ''}`}
+        className={`text ${activeUser?.role === 'read' ? 'text-top' : ''}`}
       >
         {object.displayName}
         <br />

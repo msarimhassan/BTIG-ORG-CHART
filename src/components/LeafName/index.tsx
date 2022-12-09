@@ -38,7 +38,7 @@ const LeafName: FC<NameProps> = ({ data, flag }) => {
     setEditModal(true);
   };
   const checkStatus = () => {
-    if (activeUser?.role === 'TaskUser') return;
+    if (activeUser?.role === 'read') return;
     setOptionModal(!optionModal);
   };
   return (

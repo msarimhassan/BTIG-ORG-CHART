@@ -1,10 +1,11 @@
-import { FC, useState, useEffect } from "react";
-import Home from "./pages/home";
-import { ApiContext, NodeContext, AuthContext, LoaderContext } from "./context";
-import publicClientApplication from "./configuration";
-import { configuration } from "./configuration";
-import { Loader, Navbar } from "./components";
-import { logMessage } from "./utils";
+import { FC, useState, useEffect } from 'react';
+import Home from './pages/home';
+import { ApiContext, NodeContext, AuthContext, LoaderContext } from './context';
+import publicClientApplication from './configuration';
+import { configuration } from './configuration';
+import { Loader, Navbar } from './components';
+import { logMessage } from './utils';
+import { EventType, InteractionType } from '@azure/msal-browser';
 
 const App: FC = () => {
   const [apiCall, setApiCall] = useState<boolean>(false);
@@ -13,53 +14,58 @@ const App: FC = () => {
   const [token, setToken] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
-    const token = localStorage.getItem("org-token");
-    const user = localStorage.getItem("org-user") || "{}";
+    const token = localStorage.getItem('org-token');
+    const user = localStorage.getItem('org-user') || '{}';
     if (token) {
       setToken(token);
       setActiveUser(JSON.parse(user));
     }
   }, []);
+
+  useEffect(() => {
+    publicClientApplication.addEventCallback((message) => {
+      switch (message.eventType) {
+        case EventType.LOGIN_SUCCESS:
+        case EventType.ACQUIRE_TOKEN_SUCCESS:
+          if (message.interactionType === InteractionType.Redirect) {
+            handleResponse(message.payload);
+          }
+      }
+    });
+  }, []);
+
   const handleLogin = async () => {
-    const response: any =
-      await publicClientApplication?.handleRedirectPromise();
+    const response: any = await publicClientApplication?.handleRedirectPromise();
     handleResponse(response);
-    const a: any = response.idTokenClaims;
-    localStorage.setItem("org-token", response.accessToken);
-    localStorage.setItem("org-user", JSON.stringify({ role: a.roles[0] }));
-    logMessage(`${a.preferred_username} login into the app`);
-    setToken(response.accessToken);
-    setActiveUser({ role: a.roles[0] });
-    setApiCall((prevState: any) => !prevState);
   };
 
-  function handleResponse(response: any) {
-    let accountId = "";
+  const handleResponse = (response: any) => {
     if (response !== null) {
-      console.log(response);
-      accountId = response.account.homeAccountId;
+      localStorage.setItem('org-token', response.accessToken);
+      localStorage.setItem('org-user', JSON.stringify({ role: response.idTokenClaims.roles[0] }));
+      setToken(response.accessToken);
+      setActiveUser({ role: response.idTokenClaims.roles[0] });
+      logMessage('User login into the app');
+
       // Display signed-in user content, call API, etc.
     } else {
       // In case multiple accounts exist, you can select
       const currentAccounts = publicClientApplication.getAllAccounts();
 
       if (currentAccounts.length === 0) {
-        // no accounts signed-in, attempt to sign a user in
         publicClientApplication.loginRedirect({
           scopes: configuration?.scopes,
         });
       } else if (currentAccounts.length > 1) {
-        // Add choose account code here
+        console.log({ currentAccounts });
       } else if (currentAccounts.length === 1) {
-        accountId = currentAccounts[0].homeAccountId;
+        console.log({ currentAccounts });
       }
     }
-  }
+  };
 
   return (
-    <AuthContext.Provider
-      value={{ activeUser, setActiveUser, token, setToken }}
-    >
+    <AuthContext.Provider value={{ activeUser, setActiveUser, token, setToken }}>
       <LoaderContext.Provider value={{ loading, setLoading }}>
         <Loader loading={loading} />
         <ApiContext.Provider value={{ apiCall, setApiCall }}>
@@ -70,17 +76,17 @@ const App: FC = () => {
             ) : (
               <div
                 style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  height: "100vh",
-                  flexDirection: "column",
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: '100vh',
+                  flexDirection: 'column',
                 }}
               >
                 <h1>Login into Org Chart</h1>
                 <button
-                  className="login-btn"
-                  style={{ marginTop: "10px" }}
+                  className='login-btn'
+                  style={{ marginTop: '10px' }}
                   onClick={() => {
                     handleLogin();
                   }}

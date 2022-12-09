@@ -17,7 +17,7 @@ const Root: React.FC<Props> = ({ object }: Props) => {
   };
 
   const handleTeamModal = () => {
-    if (activeUser?.role === 'TaskUser') return alert('Cannot Access');
+    if (activeUser?.role === 'read') return alert('Cannot Access');
     setShowModal(true);
   };
 
