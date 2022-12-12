@@ -1,6 +1,6 @@
 import { create } from 'apisauce';
 
-export const SEQSERVER = '';
+export const SEQSERVER = 'https://seq-dev.btig.corp/';
 
 let baseURL = null;
 if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
