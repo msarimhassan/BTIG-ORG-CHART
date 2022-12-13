@@ -5,10 +5,10 @@ export const SEQSERVERAPIKEY = 'wCP3b8ye3O6YULE5hm6D';
 
 let baseURL = null;
 if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
-  //Development
+  // Local Development
   baseURL = 'https://org-chart.btig.dev/api/';
 } else {
-  //Production
+  // K8S DEV/QA/PROD 
   baseURL = 'http://org-chart-backend.btig.svc.cluster.local/';
 }
 
