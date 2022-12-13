@@ -59,7 +59,7 @@ const Home: React.FC = () => {
             <Tree label={<Root object={data} />}>
               {data.directTeamMembers
                 ? data.directTeamMembers.map((obj: any, index: any) => {
-                    return obj.dimensions.horizontal !== true ? (
+                    return obj.dimensions?.horizontal !== true ? (
                       <TreeNode
                         key={index}
                         label={
@@ -91,7 +91,7 @@ const Home: React.FC = () => {
           </div>
           <div>
             {data.directTeamMembers?.map((obj: any) => {
-              return obj.teamName !== null && obj.dimensions.horizontal !== false ? (
+              return obj.teamName !== null && obj.dimensions?.horizontal !== false ? (
                 <HorizontalNode
                   object={obj}
                   handleNode={() => handleNode(obj)}
