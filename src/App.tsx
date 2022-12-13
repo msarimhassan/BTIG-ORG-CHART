@@ -1,11 +1,13 @@
 import { FC, useState, useEffect } from 'react';
+import { EventType, InteractionType } from '@azure/msal-browser';
+
 import Home from './pages/home';
 import { ApiContext, NodeContext, AuthContext, LoaderContext } from './context';
 import publicClientApplication from './configuration';
 import { configuration } from './configuration';
 import { Loader, Navbar } from './components';
 import { logMessage } from './utils';
-import { EventType, InteractionType } from '@azure/msal-browser';
+import { Routes, Route } from 'react-router-dom';
 
 const App: FC = () => {
   const [apiCall, setApiCall] = useState<boolean>(false);
@@ -71,30 +73,37 @@ const App: FC = () => {
         <ApiContext.Provider value={{ apiCall, setApiCall }}>
           <NodeContext.Provider value={{ nodes, setNodes }}>
             <Navbar />
-            {token ? (
-              <Home />
-            ) : (
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  height: '100vh',
-                  flexDirection: 'column',
-                }}
-              >
-                <h1>Login into Org Chart</h1>
-                <button
-                  className='login-btn'
-                  style={{ marginTop: '10px' }}
-                  onClick={() => {
-                    handleLogin();
-                  }}
-                >
-                  Login
-                </button>
-              </div>
-            )}
+            <Routes>
+              <Route
+                path='/*'
+                element={
+                  token ? (
+                    <Home />
+                  ) : (
+                    <div
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        height: '100vh',
+                        flexDirection: 'column',
+                      }}
+                    >
+                      <h1>Login into Org Chart</h1>
+                      <button
+                        className='login-btn'
+                        style={{ marginTop: '10px' }}
+                        onClick={() => {
+                          handleLogin();
+                        }}
+                      >
+                        Login
+                      </button>
+                    </div>
+                  )
+                }
+              />
+            </Routes>
           </NodeContext.Provider>
         </ApiContext.Provider>
       </LoaderContext.Provider>

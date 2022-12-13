@@ -1,21 +1,25 @@
 /* eslint-disable */
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import { Node, Root, Tree, TreeNode, BackButton, Leaf, HorizontalNode } from '../../components';
 import { Network, Urls, config } from '../../config';
 import { useApi } from '../../hooks/useApi';
 import { useNode } from '../../hooks/useNode';
 import useLoader from '../../hooks/useLoader';
-import { logMessage } from '../../utils';
-
-import './Home.css';
 import useAuth from '../../hooks/useAuth';
+import { logMessage } from '../../utils';
+import './Home.css';
 
 const Home: React.FC = () => {
+  const location = useLocation();
   const [data, setData] = useState<any>(null);
   const { apiCall } = useApi();
   const { setNodeData } = useNode();
   const [previousData, setPreviousData] = useState<any>([]);
-  const [upn, setUpn] = useState<any>(null);
+  const [upn, setUpn] = useState(
+    location.pathname !== '/' ? location.pathname.replace('/', '') : 'KHarlan@btig.com'
+  );
   const { setLoading } = useLoader();
   const { activeUser } = useAuth();
 
@@ -24,7 +28,7 @@ const Home: React.FC = () => {
       setLoading(true);
       const response = await Network.get(Urls.getMember(upn), (await config()).headers);
       setLoading(false);
-      if (!response.ok) return console.log({ response });
+      if (!response.ok) return alert('Sorry no records are available');
       logMessage(`${activeUser.name} fetch data from endpoint ${upn}`);
 
       setData(response.data.data);
