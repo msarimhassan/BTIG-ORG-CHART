@@ -34,7 +34,7 @@ const Node: React.FC<Props> = ({
 
   return (
     <div
-      style={{ width: dimension, height: dimension }}
+      style={{ width: dimension, height: dimension, padding: 1 }}
       className='node'
       data-testid='testteamNode'
       onClick={(e) => {
@@ -44,10 +44,6 @@ const Node: React.FC<Props> = ({
       onMouseEnter={() => isActive(!active)}
       onMouseLeave={hideTip}
     >
-      {activeUser?.role === 'read' ? null : (
-        <Tooltip data={object} active={active} hideTooltip={hideTip} flag={false} />
-      )}
-
       <div
         data-testid='testTeamName'
         className={`text ${activeUser?.role === 'read' ? 'text-top' : ''}`}
@@ -58,6 +54,9 @@ const Node: React.FC<Props> = ({
           <u>{object.teamName}</u>
         </span>
       </div>
+      {activeUser?.role === 'read' ? null : (
+        <Tooltip data={object} active={active} hideTooltip={hideTip} flag={false} />
+      )}
     </div>
   );
 };
