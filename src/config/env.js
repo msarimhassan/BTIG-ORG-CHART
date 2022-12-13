@@ -1,15 +1,15 @@
-import { create } from "apisauce";
+import { create } from 'apisauce';
 
-export const SEQSERVER = "https://seq-dev.btig.corp/";
-export const SEQSERVERAPIKEY = "";
+export const SEQSERVERURL = 'https://seq-dev.btig.corp/';
+export const SEQSERVERAPIKEY = '';
 
 let baseURL = null;
-if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
+if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
   //Development
-  baseURL = "https://org-chart.btig.dev/api/";
+  baseURL = 'https://org-chart.btig.dev/api/';
 } else {
   //Production
-  baseURL = "http://org-chart-backend.btig.svc.cluster.local/";
+  baseURL = 'http://org-chart-backend.btig.svc.cluster.local/';
 }
 
 const client = create({
@@ -17,11 +17,11 @@ const client = create({
 });
 
 export const config = async () => {
-  const token = localStorage.getItem("org-token");
+  const token = localStorage.getItem('org-token');
   return {
     headers: {
       Authorization: `Bearer ${token}`,
-      Accept: "application/json",
+      Accept: 'application/json',
     },
   };
 };
@@ -29,17 +29,17 @@ export const authConfig = async (token) => {
   return {
     headers: {
       Authorization: `Bearer ${token}`,
-      Accept: "application/json",
+      Accept: 'application/json',
     },
   };
 };
 
 export const multipartConfig = async () => {
-  const token = localStorage.getItem("AC-Token");
+  const token = localStorage.getItem('AC-Token');
   return {
     headers: {
       Authorization: `Bearer ${token}`,
-      Accept: "multipart/form-data",
+      Accept: 'multipart/form-data',
     },
   };
 };
@@ -47,8 +47,8 @@ export const multipartConfig = async () => {
 const responseMonitor = (response) => {
   if (response.status === 401) {
     localStorage.clear();
-    alert("Unauthorized");
-    window.location.href = "/";
+    alert('Unauthorized');
+    window.location.href = '/';
   }
 };
 
