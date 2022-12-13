@@ -1,7 +1,7 @@
 import { create } from 'apisauce';
 
 export const SEQSERVERURL = 'https://seq-dev.btig.corp/';
-export const SEQSERVERAPIKEY = '';
+export const SEQSERVERAPIKEY = 'wCP3b8ye3O6YULE5hm6D';
 
 let baseURL = null;
 if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
