@@ -36,6 +36,10 @@ const Root: React.FC<Props> = ({ object }: Props) => {
         onMouseLeave={hideTooltip}
       >
         {object?.displayName}
+        <br />
+        <span className='text-teamname'>
+          <u>{object.teamName}</u>
+        </span>
       </div>
     </>
   );
