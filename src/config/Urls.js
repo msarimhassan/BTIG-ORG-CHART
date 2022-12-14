@@ -30,7 +30,7 @@ const Urls = {
   updateDisplayName: (upn, displayName) => `Member/${upn}/DisplayName?displayName=${displayName}`,
 
   //change visibility status
-  updateVisible: (upn, visible) => `Member/${upn}{/Visible?visible=${visible}`,
+  updateVisible: (upn, visible) => `Member/${upn}/Visible?visible=${visible}`,
 
   //Move the employee into another team
   updatePartofTeam: (upn, team) => `Member/${upn}/AsPartOfTeam?team=${team}`,

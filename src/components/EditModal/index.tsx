@@ -31,6 +31,13 @@ interface Props {
   modalIsOpen: boolean;
 }
 
+const IconButton = ({ onClick = () => {} }) => {
+  const { AI } = Icons;
+  return (
+    <AI.AiFillEdit size={20} style={{ cursor: 'pointer', marginLeft: '10px' }} onClick={onClick} />
+  );
+};
+
 const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) => {
   const initialValues = {
     userPrinicipalName: data.userPrincipalName,
@@ -42,7 +49,6 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
     left: data.dimensions.horizontal,
   };
 
-  const { AI } = Icons;
   const [user, setUser] = useState(initialValues);
   const { setApiCall } = useApi();
   const { nodes } = useNode();
@@ -56,20 +62,11 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
 
   const UpdateMember = async (key: any) => {
     const URL = checkKey(key, user);
+    console.log({ URL });
     const response = await Network.patch(URL, {}, (await config()).headers);
     if (!response.ok) return alert('Error in updating the member');
     logMessage(`Updated the member ${data.userPrincipalName}`);
     setApiCall((prevVal: boolean) => !prevVal);
-  };
-
-  const IconButton = (key: any) => {
-    return (
-      <AI.AiFillEdit
-        size={20}
-        style={{ cursor: 'pointer', marginLeft: '10px' }}
-        onClick={() => UpdateMember(key)}
-      />
-    );
   };
 
   return (
@@ -80,13 +77,14 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
       <div className='input-container'>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <input
+            name='displayName'
             type='text'
             className='edit-input'
             value={user.displayName}
             onChange={handleChange}
             placeholder='Edit the Name'
           />
-          <IconButton key={'displayName'} />
+          <IconButton onClick={() => UpdateMember('displayName')} />
         </div>
 
         <br />
@@ -106,7 +104,7 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
         <select
           name=''
           id=''
-          style={{ marginLeft: '25px', border: '1px solid black' }}
+          style={{ marginLeft: '25px', border: '1px solid black', width: '200px' }}
           data-testid='reportsInto-input'
           onChange={(event) => {
             let e = {
@@ -126,7 +124,7 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
             return <option value={item.teamName}>{item.teamName}</option>;
           })}
         </select>
-        <IconButton key={'Team'} />
+        <IconButton onClick={() => UpdateMember('Team')} />
       </div>
       <div style={{ display: 'flex', flexDirection: 'row', marginLeft: '30px', marginTop: '10px' }}>
         <label>Team Lead</label>
@@ -146,7 +144,7 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
             handleChange(e);
           }}
         />
-        <IconButton key={'teamLead'} />
+        <IconButton onClick={() => UpdateMember('teamLead')} />
       </div>
       <div style={{ display: 'flex', flexDirection: 'row', marginLeft: '30px', marginTop: '10px' }}>
         <label>Horizontal</label>
@@ -166,7 +164,7 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
             handleChange(e);
           }}
         />
-        <IconButton key={'horizontal'} />
+        <IconButton onClick={() => UpdateMember('horizontal')} />
       </div>
       <div style={{ display: 'flex', flexDirection: 'row', marginLeft: '30px', marginTop: '10px' }}>
         <label>Left</label>
@@ -186,7 +184,7 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
             handleChange(e);
           }}
         />
-        <IconButton key={'left'} />
+        <IconButton onClick={() => UpdateMember('left')} />
       </div>
       <div style={{ display: 'flex', flexDirection: 'row', marginLeft: '30px', marginTop: '10px' }}>
         <label>Visible</label>
@@ -206,7 +204,7 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
             handleChange(e);
           }}
         />
-        <IconButton key={'visible'} />
+        <IconButton onClick={() => UpdateMember('visible')} />
       </div>
 
       <div style={{ marginLeft: '15px', marginTop: '5px' }}>
