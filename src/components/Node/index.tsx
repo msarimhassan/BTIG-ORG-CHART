@@ -28,6 +28,7 @@ const Node: React.FC<Props> = ({
   const { activeUser } = useAuth();
 
   const handlingNode = (obj: any) => {
+    if (obj.directTeamMembers.length == 0) return;
     setUpn(obj.userPrincipalName);
     handleNode(obj);
   };
