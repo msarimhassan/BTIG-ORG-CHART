@@ -18,7 +18,7 @@ const Home: React.FC = () => {
   const { setNodeData } = useNode();
   const [previousData, setPreviousData] = useState<any>([]);
   const [upn, setUpn] = useState(
-    location.pathname !== '/' ? location.pathname.replace('/', '') : 'KHarlan@btig.com'
+    location.pathname !== '/' ? location.pathname.replace('/', '') : ''
   );
   const { setLoading } = useLoader();
   const { activeUser } = useAuth();
