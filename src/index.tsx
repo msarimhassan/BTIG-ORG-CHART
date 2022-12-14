@@ -10,13 +10,11 @@ import publicClientApplication from './configuration';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <MsalProvider instance={publicClientApplication}>
-        <App />
-      </MsalProvider>
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>
+    <MsalProvider instance={publicClientApplication}>
+      <App />
+    </MsalProvider>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
