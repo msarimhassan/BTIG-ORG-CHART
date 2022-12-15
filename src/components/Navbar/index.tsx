@@ -29,7 +29,7 @@ const Navbar: FC = () => {
                 </button>
             ) : null}
         </nav >
-    )
+    );
 };
 
 export default Navbar;
