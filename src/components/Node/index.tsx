@@ -5,6 +5,7 @@ import './Node.css';
 
 import { Tooltip } from '../../components';
 import useAuth from '../../hooks/useAuth';
+import { manageteamNamefont } from '../../utils';
 
 interface Props {
   object: any;
@@ -36,27 +37,6 @@ const Node: React.FC<Props> = ({
     if (obj.directTeamMembers.length === 0) return;
     setUpn(obj.userPrincipalName);
     handleNode(obj);
-  };
-
-  const manageteamNamefont = (teamName: String) => {
-    const length = teamName?.length;
-    if (!teamName) {
-      return {
-        display: 'inline-block',
-        height: '100%',
-        fontSize: '0.6vw',
-      };
-    }
-    if (length < 15) {
-      return { fontSize: '0.5vw' };
-    }
-    if (length > 15 && length < 30) {
-      return { fontSize: '0.5vw' };
-    }
-    if (length > 30 && length < 50) {
-      return { fontSize: '0.4vw' };
-    }
-    return {};
   };
 
   const DisplayName: React.FC<teamName> = ({ teamName }) => {
