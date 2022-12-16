@@ -61,8 +61,19 @@
   .node {
     font-size: 0.01vw;
     min-height: 100px;
+    display: inline-block;
+    text-align: center;
+    padding-top: 10px;
   }
   .text-top {
     margin-top: 3px;
+  }
+  .node-displayname {
+    display: flex;
+    padding-top: 17px;
+    justify-content: center;
+    align-items: center;
+    /* background-color: pink; */
+    min-height: 70px;
   }
 }

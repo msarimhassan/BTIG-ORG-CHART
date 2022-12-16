@@ -13,6 +13,10 @@ interface Props {
   handleNode?: (obj: any) => void;
 }
 
+interface teamName {
+  teamName: String;
+}
+
 const Node: React.FC<Props> = ({
   object,
   totalNodes = 1,
@@ -22,20 +26,54 @@ const Node: React.FC<Props> = ({
   const [active, isActive] = useState(false);
   const window = useWindowDimensions();
   const dimension = `${(window.width - 40) / totalNodes}px`;
+  const height = `${(window.width - 40) / totalNodes + 50}px`;
   const hideTip = () => {
     isActive(false);
   };
   const { activeUser } = useAuth();
 
   const handlingNode = (obj: any) => {
-    if (obj.directTeamMembers.length == 0) return;
+    if (obj.directTeamMembers.length === 0) return;
     setUpn(obj.userPrincipalName);
     handleNode(obj);
   };
 
+  const manageteamNamefont = (teamName: String) => {
+    const length = teamName?.length;
+    if (!teamName) {
+      return {
+        display: 'inline-block',
+        height: '100%',
+        fontSize: '0.6vw',
+      };
+    }
+    if (length < 15) {
+      return { fontSize: '0.5vw' };
+    }
+    if (length > 15 && length < 30) {
+      return { fontSize: '0.5vw' };
+    }
+    if (length > 30 && length < 50) {
+      return { fontSize: '0.4vw' };
+    }
+    return {};
+  };
+
+  const DisplayName: React.FC<teamName> = ({ teamName }) => {
+    if (teamName) {
+      return <span style={manageteamNamefont(teamName)}>{object.displayName}</span>;
+    }
+
+    return (
+      <div className='node-displayname' style={manageteamNamefont(teamName)}>
+        {object.displayName}
+      </div>
+    );
+  };
+
   return (
     <div
-      style={{ width: dimension, height: dimension, padding: 1 }}
+      style={{ width: dimension, height: height, padding: 1 }}
       className='node'
       data-testid='testteamNode'
       onClick={(e) => {
@@ -45,19 +83,19 @@ const Node: React.FC<Props> = ({
       onMouseEnter={() => isActive(!active)}
       onMouseLeave={hideTip}
     >
+      {activeUser?.role === 'read' ? null : (
+        <Tooltip data={object} active={active} hideTooltip={hideTip} flag={false} />
+      )}
       <div
         data-testid='testTeamName'
         className={`text ${activeUser?.role === 'read' ? 'text-top' : ''}`}
       >
-        {object.displayName}
+        <DisplayName teamName={object.teamName} />
         <br />
-        <span className='text-teamname'>
+        <span className='text-teamname' style={manageteamNamefont(object.teamName)}>
           <u>{object.teamName}</u>
         </span>
       </div>
-      {activeUser?.role === 'read' ? null : (
-        <Tooltip data={object} active={active} hideTooltip={hideTip} flag={false} />
-      )}
     </div>
   );
 };

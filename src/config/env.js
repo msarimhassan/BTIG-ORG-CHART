@@ -8,7 +8,7 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
   // Local Development
   baseURL = 'https://org-chart.btig.dev/api/';
 } else {
-  // K8S DEV/QA/PROD 
+  // K8S DEV/QA/PROD
   baseURL = 'http://org-chart-backend.btig.svc.cluster.local/';
 }
 
@@ -47,7 +47,6 @@ export const multipartConfig = async () => {
 const responseMonitor = (response) => {
   if (response.status === 401) {
     localStorage.clear();
-    alert('Unauthorized');
     window.location.href = '/';
   }
 };

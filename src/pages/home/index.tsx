@@ -90,9 +90,10 @@ const Home: React.FC = () => {
             </Tree>
           </div>
           <div>
-            {data.directTeamMembers?.map((obj: any) => {
-              return obj.teamName !== null && obj.dimensions?.horizontal !== false ? (
+            {data.directTeamMembers?.map((obj: any, index: any) => {
+              return obj.dimensions?.horizontal !== false && obj.teamLead !== false ? (
                 <HorizontalNode
+                  key={index}
                   object={obj}
                   handleNode={() => handleNode(obj)}
                   totalNodes={data.directTeamMembers?.length}

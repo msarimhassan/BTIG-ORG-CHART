@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import './HorizontalNode.css';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 
@@ -13,28 +13,28 @@ const HorizontalNode: FC<Props> = ({ object, handleNode = () => {}, totalNodes =
   const window = useWindowDimensions();
 
   const dimension = object?.dimensions.left
-    ? `${window.width / 2 - 56}px`
-    : `${window.width - 80}px`;
+    ? `${window.width / 2 - 25}px`
+    : `${window.width - 30}px`;
   return (
     <div
       data-testid='testhorizontalnode'
       className='HorizontalNode'
       onClick={() => handleNode(object)}
-      style={{ width: dimension }}
+      style={{ minWidth: dimension }}
     >
       <span className='highlighted-text'>
         {object.teamName} <span style={{ color: '#006791' }}>{object.displayName}</span>
       </span>
       {object.directTeamMembers.length > 0
         ? object.directTeamMembers.map(
-            (item: { displayName: string; teamName: string; teamLead: boolean }) => {
+            (item: { displayName: string; teamName: string; teamLead: boolean }, index: any) => {
               return (
-                <>
+                <React.Fragment key={index}>
                   <span data-testid='testTeamName' className='member-name'>
                     {item?.teamName}
                   </span>
                   <span data-testid='testTeamLead'>{item.teamLead ? item?.displayName : null}</span>
-                </>
+                </React.Fragment>
               );
             }
           )

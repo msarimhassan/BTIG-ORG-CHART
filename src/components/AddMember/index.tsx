@@ -67,7 +67,7 @@ const AddMember: React.FC<Props> = ({ modalIsOpen, setModal = () => {}, data }) 
               type='text'
               value={user.displayName}
               className='edit-input'
-              placeholder='Member diplay Name'
+              placeholder='Member display Name'
               onChange={(e) => handleChange(e)}
             />
             <br />

@@ -29,6 +29,7 @@ interface Props {
   data: any;
   setModal?: (obj: boolean) => void;
   modalIsOpen: boolean;
+  handleDelete?: (name: string) => void;
 }
 
 const IconButton = ({ onClick = () => {} }) => {
@@ -38,7 +39,12 @@ const IconButton = ({ onClick = () => {} }) => {
   );
 };
 
-const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) => {
+const EditModal: React.FC<Props> = ({
+  data,
+  setModal = () => {},
+  modalIsOpen,
+  handleDelete = () => {},
+}) => {
   const initialValues = {
     userPrinicipalName: data.userPrincipalName,
     displayName: data.displayName,
@@ -62,7 +68,7 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
 
   const UpdateMember = async (key: any) => {
     const URL = checkKey(key, user);
-    console.log({ URL });
+
     const response = await Network.patch(URL, {}, (await config()).headers);
     if (!response.ok) return alert('Error in updating the member');
     logMessage(`Updated the member ${data.userPrincipalName}`);
@@ -71,8 +77,12 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
 
   return (
     <Modal isOpen={modalIsOpen} style={customStyles}>
-      <h2 className='heading-text' style={{ marginTop: '10px' }} data-testid='editteammembers'>
-        Edit Team Members
+      <h2
+        className='heading-text'
+        style={{ marginTop: '10px', textAlign: 'center' }}
+        data-testid='editteammembers'
+      >
+        Edit {user.userPrinicipalName}
       </h2>
       <div className='input-container'>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
@@ -97,9 +107,7 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
           onChange={handleChange}
         />
       </div>
-      <span style={{ fontSize: '0.8vw', marginLeft: '25px' }}>
-        Note: Select the team if you want to change the team
-      </span>
+      <span style={{ fontSize: '0.8vw', marginLeft: '25px' }}>Team:</span>
       <div style={{ display: 'flex', flexDirection: 'row', marginLeft: '10px' }}>
         <select
           name=''
@@ -116,12 +124,20 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
             handleChange(e);
           }}
         >
-          <option value='' selected disabled hidden>
+          <option value='' disabled hidden>
             Choose Team
           </option>
-          {nodes?.directTeamMembers.map((item: any) => {
+          {nodes?.directTeamMembers.map((item: any, index: any) => {
             if (!item.teamLead) return null;
-            return <option value={item.teamName}>{item.teamName}</option>;
+            return (
+              <option
+                key={index}
+                value={item.teamName}
+                selected={item.userPrincipalName === data.reportsInto}
+              >
+                {item.teamName}
+              </option>
+            );
           })}
         </select>
         <IconButton onClick={() => UpdateMember('Team')} />
@@ -134,11 +150,11 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
           name='teamLead'
           checked={user.teamLead}
           data-testid='teamLead-input'
-          onClick={(event) => {
+          onChange={() => {
             let e = {
               target: {
                 name: 'teamLead',
-                value: event.currentTarget.checked,
+                value: !user.teamLead,
               },
             };
             handleChange(e);
@@ -154,11 +170,11 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
           checked={user.horizontal}
           data-testid='horizontal-input'
           name='Horizontal'
-          onClick={(event) => {
+          onChange={() => {
             let e = {
               target: {
                 name: 'horizontal',
-                value: event.currentTarget.checked,
+                value: !user.horizontal,
               },
             };
             handleChange(e);
@@ -174,11 +190,11 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
           checked={user.left}
           data-testid='left-edit-input'
           name='Left'
-          onClick={(event) => {
+          onChange={() => {
             let e = {
               target: {
                 name: 'left',
-                value: event.currentTarget.checked,
+                value: !user.left,
               },
             };
             handleChange(e);
@@ -194,11 +210,11 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
           checked={user.visible}
           data-testid='visible-input'
           name='visible'
-          onClick={(event) => {
+          onChange={() => {
             let e = {
               target: {
                 name: 'visible',
-                value: event.currentTarget.checked,
+                value: !user.visible,
               },
             };
             handleChange(e);
@@ -209,11 +225,18 @@ const EditModal: React.FC<Props> = ({ data, setModal = () => {}, modalIsOpen }) 
 
       <div style={{ marginLeft: '15px', marginTop: '5px' }}>
         <button
-          className='submit-btn'
+          className='cancel-btn'
           data-testid='edit-cancel-btn'
           onClick={() => setModal(false)}
         >
           Cancel
+        </button>
+        <button
+          className='submit-btn'
+          data-testid='delete-member-btn'
+          onClick={() => handleDelete(user.displayName)}
+        >
+          Delete Member
         </button>
       </div>
     </Modal>

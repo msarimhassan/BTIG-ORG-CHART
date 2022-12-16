@@ -1,6 +1,6 @@
 const Urls = {
   //get Member
-  getMember: (upn, anonymous) => `OrgChart?upn=${upn}&anonymous=false`,
+  getMember: (upn, anonymous) => `OrgChart?upn=${upn}&anonymous=true`,
 
   //delete Member from the Team
   deleteMember: (upn) => `Member/${upn}`,

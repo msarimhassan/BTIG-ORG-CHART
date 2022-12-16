@@ -1,8 +1,7 @@
-import { useState, FC } from 'react';
+import React, { useState, FC } from 'react';
 import { Leaftooltip, Popup } from '../../components';
 import { Network, Urls, config } from '../../config';
 import { useApi } from '../../hooks/useApi';
-import OptionModal from '../OptionModal.js';
 import EditModal from '../EditModal';
 import useAuth from '../../hooks/useAuth';
 import { logMessage } from '../../utils';
@@ -15,7 +14,6 @@ const LeafName: FC<NameProps> = ({ data, flag }) => {
   const [showName, setShowName] = useState<boolean>(false);
   const [showModal, setShowModal] = useState<boolean>(false);
   const [editModal, setEditModal] = useState<boolean>(false);
-  const [optionModal, setOptionModal] = useState<boolean>(false);
   const { setApiCall } = useApi();
   const { activeUser } = useAuth();
 
@@ -33,26 +31,21 @@ const LeafName: FC<NameProps> = ({ data, flag }) => {
       setApiCall((prevVal: boolean) => !prevVal);
     }
   };
-  const handleUpdate = () => {
-    setOptionModal(false);
-    setEditModal(true);
-  };
+
   const checkStatus = () => {
     if (activeUser?.role === 'read') return;
-    setOptionModal(!optionModal);
+    setEditModal(!editModal);
   };
   return (
     <>
       <Popup data={data} modalIsOpen={showModal} setModal={setShowModal} />
       <Leaftooltip active={showName} data={data} />
-      <OptionModal
+      <EditModal
         data={data}
+        modalIsOpen={editModal}
+        setModal={setEditModal}
         handleDelete={handleDelete}
-        modalIsOpen={optionModal}
-        setModal={setOptionModal}
-        handleUpdate={handleUpdate}
       />
-      <EditModal data={data} modalIsOpen={editModal} setModal={setEditModal} />
 
       <div
         data-testid='testClick'
@@ -68,12 +61,12 @@ const LeafName: FC<NameProps> = ({ data, flag }) => {
               <br />
               <span style={{ fontWeight: 'bold' }}>{!!data.teamLead && data.displayName}</span>
               <br />
-              {data.directTeamMembers.map((item: any) => {
+              {data.directTeamMembers.map((item: any, index: any) => {
                 return (
-                  <>
-                    <span>{item.displayName}</span>
+                  <React.Fragment key={index}>
+                    <span key={index}>{item.displayName}</span>
                     <br />
-                  </>
+                  </React.Fragment>
                 );
               })}
             </>
