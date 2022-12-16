@@ -54,8 +54,7 @@ test('handle visible Change', async () => {
   fireEvent.click(screen.getByTestId('visible-input'), { target: { value: true } });
 });
 
-test('Edit Team Modal delete button', async () => {
-  render(<EditModal data={obj} modalIsOpen={true} />);
-
-  fireEvent.click(screen.getByTestId('delete-member-btn'));
-});
+// test('Edit Team Modal delete button', async () => {
+//   render(<EditModal data={obj} modalIsOpen={true} />);
+//   fireEvent.click(screen.getByTestId('delete-member-btn'));
+// });
