@@ -1,7 +1,10 @@
-dockerfile
-
 .dockerignore
-
+.git
+.github
 .gitignore
-
+.vscode
+Jenkinsfile
+README.md
+dockerfile*
 node_modules
+sonar-project.properties

@@ -1,10 +1,11 @@
 FROM node:16.16.0
 
-WORKDIR ./app
+WORKDIR /app
 
-COPY package.json .
+COPY yarn.lock package.json ./
 
-RUN yarn install
+RUN --mount=type=cache,id=yarn,mode=0777,target=/usr/local/share/.cache/yarn \
+    yarn install
 
 COPY . .
 
