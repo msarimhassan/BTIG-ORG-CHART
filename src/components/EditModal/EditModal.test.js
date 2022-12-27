@@ -34,24 +34,14 @@ test('Edit Team Modal cancel button', async () => {
   fireEvent.click(screen.getByTestId('edit-cancel-btn'));
 });
 
-test('Team Lead Input', async () => {
-  render(<EditModal data={obj} modalIsOpen={true} />);
-  fireEvent.click(screen.getByTestId('teamLead-input'), {
-    target: { value: true },
-  });
-});
+
 
 test('Edit Team Modal click button', async () => {
   render(<EditModal data={obj} modalIsOpen={true} />);
   fireEvent.click(screen.getByTestId('update-btn'));
 });
 
-// test("handle Change", async () => {
-//   render(<EditModal data={obj} modalIsOpen={true} />);
-//   fireEvent.click(screen.getByTestId("teamLead-input"), {
-//     target: { value: true },
-//   });
-// });
+
 
 test('handle horizontal Change', async () => {
   render(<EditModal data={obj} modalIsOpen={true} />);
@@ -60,12 +50,7 @@ test('handle horizontal Change', async () => {
   });
 });
 
-// test('handle visible Change', async () => {
-//   render(<EditModal data={obj} modalIsOpen={true} />);
-//   fireEvent.click(screen.getByTestId('visible-input'), {
-//     target: { value: true },
-//   });
-// });
+
 
 test('Edit Team Modal delete button', async () => {
   render(<EditModal data={obj} modalIsOpen={true} />);
