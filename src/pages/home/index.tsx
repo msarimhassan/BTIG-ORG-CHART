@@ -9,6 +9,10 @@ import { useNode } from '../../hooks/useNode';
 import useLoader from '../../hooks/useLoader';
 import useAuth from '../../hooks/useAuth';
 import { logMessage } from '../../utils';
+import NodeMerge from '../../components/NodeMerge';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
+import { calculateDimensions, findNodeDFS } from './helpers';
+
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -22,17 +26,39 @@ const Home: React.FC = () => {
   );
   const { setLoading } = useLoader();
   const { activeUser } = useAuth();
+  const window = useWindowDimensions();
 
   useEffect(() => {
     const GetOrganizationData = async () => {
       setLoading(true);
+      const prevState = { data, previousData };
       const response = await Network.get(Urls.getMember(upn), (await config()).headers);
-      setLoading(false);
       if (!response.ok) return alert('Sorry no records are available');
       logMessage(`${activeUser.name} fetch data from endpoint ${upn}`);
 
-      setData(response.data.data);
-      setNodeData(response.data.data);
+      if (prevState.data) {
+        const result = { data: null };
+        findNodeDFS(prevState.data._id, response.data.data, result);
+        const { data: prevNode } = result;
+
+        const navigations = new Array(previousData.length);
+
+        for (let i = 0; i < previousData.length; i++) {
+          const nav = previousData[i];
+          const navResult = { data: null };
+          findNodeDFS(nav._id, response.data.data, navResult);
+          const { data: prevNode } = navResult;
+          navigations[i] = prevNode;
+          setPreviousData(navigations);
+        }
+
+        setData(prevNode);
+        setNodeData(prevNode);
+      } else {
+        setData(response.data.data);
+        setNodeData(response.data.data);
+      }
+      setLoading(false);
     };
     GetOrganizationData();
   }, [upn, apiCall]);
@@ -50,43 +76,69 @@ const Home: React.FC = () => {
     setNodeData(newData);
   };
 
+  const totalVerticalNode = data?.directTeamMembers?.filter(
+    (item: any) => item.dimensions?.horizontal !== true && item.teamLead !== false
+  ).length;
+
+  const totalLeftNodes = data?.directTeamMembers?.filter(
+    (item: any) => item.dimensions.left && !item.dimensions.horizontal
+  ).length;
+
+  const { width, leftHorizontalNodeWidth, leftHorizontalNodeMargin, fullWidthHorizontalNodeWidth } =
+    calculateDimensions({ totalVerticalNode, totalLeftNodes, window });
+
   return (
     <>
       {data !== null ? (
         <>
           <div className='container' data-testid='testhome'>
             <BackButton previousData={previousData} handleBack={handleBack} />
-            <Tree label={<Root object={data} />}>
+            <Tree width={width} label={<Root object={data} />}>
               {data.directTeamMembers
-                ? data.directTeamMembers.map((obj: any, index: any) => {
-                    return obj.dimensions?.horizontal !== true ? (
-                      <TreeNode
-                        key={index}
-                        label={
-                          <Node
-                            setUpn={setUpn}
-                            key={index}
-                            handleNode={() => handleNode(obj)}
-                            object={obj}
-                            totalNodes={data.directTeamMembers.length}
-                          />
-                        }
-                      >
+                ? data.directTeamMembers
+                    .sort((a: any, b: any) => ('' + a.teamName).localeCompare(b.teamName))
+                    .sort((a: any, b: any) => b.dimensions.left - a.dimensions.left)
+                    .map((obj: any, index: any) => {
+                      return obj.dimensions?.horizontal !== true && obj.teamLead !== false ? (
                         <TreeNode
+                          level={2}
+                          width={width}
                           key={index}
                           label={
-                            <Leaf
+                            <Node
+                              setUpn={setUpn}
                               key={index}
-                              totalNodes={data.directTeamMembers?.length}
-                              object={obj}
                               handleNode={() => handleNode(obj)}
+                              object={obj}
+                              totalNodes={totalVerticalNode}
                             />
                           }
-                        />
-                      </TreeNode>
-                    ) : null;
-                  })
+                        >
+                          {!!obj.teamLead && (
+                            <TreeNode
+                              level={3}
+                              width={width}
+                              key={index}
+                              label={
+                                <Leaf
+                                  key={index}
+                                  totalNodes={totalVerticalNode}
+                                  object={obj}
+                                  handleNode={() => handleNode(obj)}
+                                />
+                              }
+                            />
+                          )}
+                        </TreeNode>
+                      ) : null;
+                    })
                 : null}
+              <TreeNode
+                isMergedNode={data.directTeamMembers.some((i: any) => i.teamLead)}
+                width={width}
+                label={<NodeMerge object={data} handleNode={() => handleNode(data)} />}
+                level={2}
+              />
             </Tree>
           </div>
           <div>
@@ -96,7 +148,9 @@ const Home: React.FC = () => {
                   key={index}
                   object={obj}
                   handleNode={() => handleNode(obj)}
-                  totalNodes={data.directTeamMembers?.length}
+                  marginLeft={leftHorizontalNodeMargin}
+                  leftNodeWidth={leftHorizontalNodeWidth}
+                  fullWidthHorizontalNodeWidth={fullWidthHorizontalNodeWidth}
                 />
               ) : null;
             })}

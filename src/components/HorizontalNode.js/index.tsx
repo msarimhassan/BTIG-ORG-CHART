@@ -1,45 +1,78 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import './HorizontalNode.css';
-import useWindowDimensions from '../../hooks/useWindowDimensions';
+import { Tooltip } from 'antd';
+import TooltipBox from '../Tooltip';
 
 interface Props {
   object: any;
   setUpn?: (obj: any) => void;
   handleNode?: (obj: any) => void;
-  totalNodes?: number;
+  marginLeft: number;
+  leftNodeWidth: number;
+  fullWidthHorizontalNodeWidth: number;
 }
 
-const HorizontalNode: FC<Props> = ({ object, handleNode = () => {}, totalNodes = 1 }) => {
-  const window = useWindowDimensions();
+const HorizontalNode: FC<Props> = ({
+  object,
+  handleNode = () => { },
+  marginLeft,
+  leftNodeWidth,
+  fullWidthHorizontalNodeWidth,
+}) => {
+  const [active, isActive] = useState(false);
 
-  const dimension = object?.dimensions.left
-    ? `${window.width / 2 - 25}px`
-    : `${window.width - 30}px`;
+  const hideTip = () => {
+    isActive(false);
+  };
+
   return (
-    <div
-      data-testid='testhorizontalnode'
-      className='HorizontalNode'
-      onClick={() => handleNode(object)}
-      style={{ minWidth: dimension }}
+    <Tooltip
+      zIndex={1}
+      placement='topLeft'
+      title={<TooltipBox data={object} active={active} hideTooltip={hideTip} flag={false} />}
     >
-      <span className='highlighted-text'>
-        {object.teamName} <span style={{ color: '#006791' }}>{object.displayName}</span>
-      </span>
-      {object.directTeamMembers.length > 0
-        ? object.directTeamMembers.map(
-            (item: { displayName: string; teamName: string; teamLead: boolean }, index: any) => {
-              return (
-                <React.Fragment key={index}>
-                  <span data-testid='testTeamName' className='member-name'>
-                    {item?.teamName}
-                  </span>
-                  <span data-testid='testTeamLead'>{item.teamLead ? item?.displayName : null}</span>
-                </React.Fragment>
-              );
-            }
-          )
-        : null}
-    </div>
+      <div
+        data-testid='testhorizontalnode'
+        className='HorizontalNode'
+        onClick={() => handleNode(object)}
+        style={{
+          width: object.dimensions.left ? leftNodeWidth - 10 : fullWidthHorizontalNodeWidth,
+          marginLeft: marginLeft,
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <div className='highlighted-text' data-testid='testTeamName'>{object.teamName}</div>
+            <div className='pipe-sign'></div>
+            <div
+              style={{
+                marginLeft: '5px',
+                whiteSpace: 'nowrap',
+                fontSize: '13px',
+                fontWeight: 'bold',
+              }}
+            >
+              {object.displayName}
+            </div>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            {object.directTeamMembers.length > 0
+              ? object.directTeamMembers.map((item: { displayName: string }, index: any) => {
+                return (
+                  <div
+                    key={index}
+                    style={{ marginLeft: '15px', whiteSpace: 'nowrap' }}
+                    data-testid='testTeamLead'
+                  >
+                    {item?.displayName}
+                  </div>
+                );
+              })
+              : null}
+          </div>
+        </div>
+      </div>
+    </Tooltip>
   );
 };
 

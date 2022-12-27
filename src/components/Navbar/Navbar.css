@@ -2,19 +2,23 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #9fdbed;
+    background-color: #fff;
     padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .logo {
-    color: #006791;
+    color: var(--primary-color);
+    font-size: 22px;
+    font-weight: 'bold';
+    letter-spacing: 4px;
 }
 
 .login-btn {
     width: 100px;
     height: 30px;
     border: none;
-    border-radius: 5px;
+    border-radius: --node-border-radius;
     font-size: 17px;
     font-weight: 600;
     color: #fff;

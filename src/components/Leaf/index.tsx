@@ -10,16 +10,14 @@ interface LeafProps {
   handleNode?: (obj: any) => void;
 }
 
-const Leaf: FC<LeafProps> = ({ object, totalNodes = 1, handleNode = () => {} }) => {
+const Leaf: FC<LeafProps> = ({ object, handleNode = () => {} }) => {
   const window = useWindowDimensions();
-  const dimension = `${(window.width - 40) / totalNodes}px`;
-
   return (
     <div
       data-testid='testleaf'
       id='leaf'
       className='leaf'
-      style={{ width: dimension, height: window.height - 400 }}
+      style={{ width: '100%', height: window.height - 400 }}
     >
       {!!object.directTeamMembers &&
         object.directTeamMembers.map((item: any, index: number) => {
@@ -27,7 +25,6 @@ const Leaf: FC<LeafProps> = ({ object, totalNodes = 1, handleNode = () => {} }) 
           return (
             <React.Fragment key={index}>
               <LeafName key={index} data={item} flag={true} />
-              <br />
             </React.Fragment>
           );
         })}
@@ -36,7 +33,6 @@ const Leaf: FC<LeafProps> = ({ object, totalNodes = 1, handleNode = () => {} }) 
           return item.teamLead ? null : (
             <React.Fragment key={index}>
               <LeafName data={item} flag={false} />
-              <br />
             </React.Fragment>
           );
         })}

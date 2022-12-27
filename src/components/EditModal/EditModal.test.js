@@ -1,10 +1,20 @@
-import { fireEvent, render, screen } from '@testing-library/react';
-import EditModal from './index';
+import { fireEvent, render, screen } from "@testing-library/react";
+import EditModal from "./index";
+
+window.matchMedia =
+  window.matchMedia ||
+  function () {
+    return {
+      matches: false,
+      addListener: function () {},
+      removeListener: function () {},
+    };
+  };
 
 const obj = {
-  displayName: 'Sarim',
-  userPrincipalName: 'SAzriel@btig.com',
-  teamName: 'AppDev',
+  displayName: "Sarim",
+  userPrincipalName: "SAzriel@btig.com",
+  teamName: "AppDev",
   teamLead: false,
   directTeamMembers: [],
   dimensions: {
@@ -13,48 +23,51 @@ const obj = {
   },
 };
 
-test('Edit Team Modal render in the dom', async () => {
+test("Edit Team Modal render in the dom", async () => {
   render(<EditModal data={obj} modalIsOpen={true} />);
-  const devEl = await screen.findByTestId('editteammembers');
+  const devEl = await screen.findByTestId("edit-modal");
   expect(devEl).toBeInTheDocument();
 });
 
-test('Edit Team Modal click button', async () => {
+test("Edit Team Modal cancel button", async () => {
   render(<EditModal data={obj} modalIsOpen={true} />);
-  fireEvent.click(screen.getByTestId('edit-cancel-btn'));
+  fireEvent.click(screen.getByTestId("edit-cancel-btn"));
 });
 
-test('handle Change', async () => {
+test("Team Lead Input", async () => {
   render(<EditModal data={obj} modalIsOpen={true} />);
-  fireEvent.click(screen.getByTestId('teamLead-input'), { target: { value: true } });
+  fireEvent.click(screen.getByTestId("teamLead-input"), {
+    target: { value: true },
+  });
 });
 
-test('Edit Team Modal click button', async () => {
+test("Edit Team Modal click button", async () => {
   render(<EditModal data={obj} modalIsOpen={true} />);
-  fireEvent.click(screen.getByTestId('edit-cancel-btn'));
+  fireEvent.click(screen.getByTestId("update-btn"));
 });
 
-test('handle Change', async () => {
+test("handle Change", async () => {
   render(<EditModal data={obj} modalIsOpen={true} />);
-  fireEvent.change(screen.getByTestId('reportsInto-input'), { target: { value: true } });
+  fireEvent.click(screen.getByTestId("teamLead-input"), {
+    target: { value: true },
+  });
 });
 
-test('handle Change', async () => {
+test("handle Change", async () => {
   render(<EditModal data={obj} modalIsOpen={true} />);
-  fireEvent.click(screen.getByTestId('teamLead-input'), { target: { value: true } });
+  fireEvent.click(screen.getByTestId("horizontal-input"), {
+    target: { value: true },
+  });
 });
 
-test('handle Change', async () => {
+test("handle visible Change", async () => {
   render(<EditModal data={obj} modalIsOpen={true} />);
-  fireEvent.click(screen.getByTestId('horizontal-input'), { target: { value: true } });
+  fireEvent.click(screen.getByTestId("visible-input"), {
+    target: { value: true },
+  });
 });
 
-test('handle visible Change', async () => {
+test("Edit Team Modal delete button", async () => {
   render(<EditModal data={obj} modalIsOpen={true} />);
-  fireEvent.click(screen.getByTestId('visible-input'), { target: { value: true } });
+  fireEvent.click(screen.getByTestId("delete-member"));
 });
-
-// test('Edit Team Modal delete button', async () => {
-//   render(<EditModal data={obj} modalIsOpen={true} />);
-//   fireEvent.click(screen.getByTestId('delete-member-btn'));
-// });

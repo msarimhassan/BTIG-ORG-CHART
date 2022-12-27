@@ -1,4 +1,5 @@
 import React from 'react';
+import { ConfigProvider } from 'antd';
 import { MsalProvider } from '@azure/msal-react';
 
 import ReactDOM from 'react-dom/client';
@@ -13,7 +14,21 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <MsalProvider instance={publicClientApplication}>
-        <App />
+        <ConfigProvider
+          theme={{
+            token: {
+              colorPrimary: "#1388c9",
+              colorSuccess: "#00c78b",
+              colorWarning: "#f8bf00",
+              colorError: "#f25a0e",
+              colorInfo: "#00b1cd",
+              wireframe: false,
+              borderRadius: 2,
+            },
+          }}
+        >
+          <App />
+        </ConfigProvider>
       </MsalProvider>
     </BrowserRouter>
   </React.StrictMode>

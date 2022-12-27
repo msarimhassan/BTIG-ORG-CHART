@@ -20,9 +20,9 @@ const Root: React.FC<Props> = ({ object }: Props) => {
         onMouseEnter={() => isActive(!active)}
         onMouseLeave={hideTooltip}
       >
-        {object?.displayName}
+        <span style={{ fontSize: '13px' }}>{object?.displayName}</span>
         <br />
-        <span className='text-teamname'>
+        <span className='text-teamname' style={{ fontSize: '13px' }}>
           <u>{object.teamName}</u>
         </span>
       </div>

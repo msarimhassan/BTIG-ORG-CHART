@@ -13,6 +13,7 @@ export const styles = ({ lineHeight, lineWidth, lineColor, lineBorderRadius, nod
                 padding-inline-start: 0;
                 margin: 0;
                 display: flex;
+                justify-content: center;
                 --line-height: ${lineHeight};
                 --line-width: ${lineWidth};
                 --line-color: ${lineColor};
@@ -21,7 +22,7 @@ export const styles = ({ lineHeight, lineWidth, lineColor, lineBorderRadius, nod
                 --tree-line-height: var(--line-height, 20px);
                 --tree-line-width: var(--line-width, 1px);
                 --tree-line-color: var(--line-color, black);
-                --tree-line-border-radius: var(--line-border-radius, 5px);
-                --tree-node-padding: var(--node-padding, 5px);
+                --tree-line-border-radius: var(--line-border-radius, 2px);
+                --tree-node-padding: var(--node-padding, 2px);
             `
 }

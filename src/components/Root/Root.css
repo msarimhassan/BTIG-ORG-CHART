@@ -1,8 +1,9 @@
 .root {
-    background-color: #006791;
+    /* background-color: #006791; */
+    background-color: var(--tertiary-color);
     display: inline-block;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: --node-border-radius;
     margin-top: 5px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     color: white;

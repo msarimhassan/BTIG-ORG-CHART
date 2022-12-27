@@ -2,9 +2,10 @@ import { useContext } from 'react';
 import { LoaderContext } from '../context';
 
 const useLoader = () => {
-  const { setLoading } = useContext(LoaderContext);
+  const { loading, setLoading } = useContext(LoaderContext);
   return {
     setLoading,
+    loading
   };
 };
 

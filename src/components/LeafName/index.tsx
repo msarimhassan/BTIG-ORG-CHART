@@ -1,45 +1,31 @@
 import React, { useState, FC } from 'react';
-import { Leaftooltip, Popup } from '../../components';
-import { Network, Urls, config } from '../../config';
+import { Button, Divider, Tooltip } from 'antd';
+
+import { Popup } from '../../components';
 import { useApi } from '../../hooks/useApi';
 import EditModal from '../EditModal';
-import useAuth from '../../hooks/useAuth';
-import { logMessage } from '../../utils';
+import { deleteTeamMember } from '../../utils';
 
 interface NameProps {
   data: any;
   flag: boolean;
 }
 const LeafName: FC<NameProps> = ({ data, flag }) => {
-  const [showName, setShowName] = useState<boolean>(false);
   const [showModal, setShowModal] = useState<boolean>(false);
   const [editModal, setEditModal] = useState<boolean>(false);
   const { setApiCall } = useApi();
-  const { activeUser } = useAuth();
 
-  const handleDelete = async (name: string) => {
+  const handleDelete = async (name: string, closeModal = () => {}) => {
     if (window.confirm(`Are you sure you want to delete ${name}`)) {
-      const response = await Network.delete(
-        Urls.deleteMember(data.userPrincipalName),
-        {},
-        (
-          await config()
-        ).headers
-      );
-      if (!response.ok) return alert('Failed to delete');
-      logMessage(`Delete Member ${data.userPrincipalName}`);
+      closeModal();
+      deleteTeamMember(data.userPrincipalName);
       setApiCall((prevVal: boolean) => !prevVal);
     }
   };
 
-  const checkStatus = () => {
-    if (activeUser?.role === 'read') return;
-    setEditModal(!editModal);
-  };
   return (
     <>
       <Popup data={data} modalIsOpen={showModal} setModal={setShowModal} />
-      <Leaftooltip active={showName} data={data} />
       <EditModal
         data={data}
         modalIsOpen={editModal}
@@ -47,31 +33,36 @@ const LeafName: FC<NameProps> = ({ data, flag }) => {
         handleDelete={handleDelete}
       />
 
-      <div
-        data-testid='testClick'
-        onMouseEnter={() => setShowName(!showName)}
-        onMouseLeave={() => setShowName(!showName)}
-        className='text'
-        onClick={() => checkStatus()}
-      >
+      <div data-testid='testClick' onClick={() => setEditModal(!editModal)}>
         <>
           {flag ? (
             <>
-              <u style={{ fontWeight: 'bold' }}>{!!data.teamName && data.teamName}</u>
-              <br />
-              <span style={{ fontWeight: 'bold' }}>{!!data.teamLead && data.displayName}</span>
-              <br />
-              {data.directTeamMembers.map((item: any, index: any) => {
-                return (
-                  <React.Fragment key={index}>
-                    <span key={index}>{item.displayName}</span>
-                    <br />
-                  </React.Fragment>
-                );
-              })}
+              <Tooltip placement='right' title={data.displayName}>
+                <Button size='small' block type='text' className='leaf-member-name'>
+                  <b>{!!data.teamName ? data.teamName : null}</b>
+                  {!!data.teamName ? <br /> : null}
+                  {!!data.teamLead ? data.displayName : null}
+                  {data.directTeamMembers.length}
+                  <br />
+                  {data.directTeamMembers.map((item: any, index: any) => {
+                    return (
+                      <div style={{ marginTop: '3px', fontSize: '9px' }} key={index}>
+                        {item.displayName}
+                      </div>
+                    );
+                  })}
+                </Button>
+              </Tooltip>
+              {data.directTeamMembers.length ? (
+                <Divider dashed style={{ marginTop: 5, marginBottom: 5 }} />
+              ) : null}
             </>
           ) : (
-            <span style={{ fontWeight: 'bold' }}>{data.displayName}</span>
+            <Tooltip placement='right' title={data.displayName}>
+              <Button size='small' block type='text' className='leaf-member-name'>
+                {data.displayName}
+              </Button>
+            </Tooltip>
           )}
         </>
       </div>

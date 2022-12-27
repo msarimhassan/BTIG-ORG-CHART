@@ -22,7 +22,7 @@ const Loader: FC<Props> = ({ loading }) => {
         <div
             data-testid='testloader'
             style={{
-                zIndex: 99999,
+                zIndex: 100,
                 width: '100%',
                 height: '100%',
                 display: 'flex',
@@ -30,6 +30,7 @@ const Loader: FC<Props> = ({ loading }) => {
                 alignItems: 'center',
                 position: 'fixed',
                 opacity: '75%',
+                backgroundColor: 'rgba(192,192,192,0.9)'
             }}
         >
             <Lottie options={defaultOptions} width={400} height={400} />

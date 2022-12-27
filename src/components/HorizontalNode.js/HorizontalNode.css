@@ -1,20 +1,39 @@
 .HorizontalNode {
-  background-color: #a3a0a0;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  /* margin-left: 30px; */
-
-  margin-left: 5px;
-  padding: 10px;
-  cursor: pointer;
+  display: flex;
+  background-color: var(--grey-dark-faded);
   font-size: 0.7vw;
-  width: fit-content;
-  border-radius: 5px;
+  overflow-y: hidden;
+  overflow: scroll;
+  margin-top: 10px;
+  border-radius: --node-border-radius;
+  padding: 5px 10px;
+  color: white !important;
+  cursor: pointer;
 }
 .member-name {
   margin: 10px;
 }
 .highlighted-text {
   color: white;
-  font-weight: bold;
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+.HorizontalNode::-webkit-scrollbar {
+  height: 0px;
+}
+
+.HorizontalNode::-webkit-scrollbar-track {
+  border-radius: --node-border-radius;
+}
+
+.HorizontalNode::-webkit-scrollbar-thumb {
+  background: rgba(191, 191, 191, 0.35);
+}
+
+.pipe-sign {
+  width: 1px;
+  height: 20px;
+  background-color: rgba(255,255,255, 0.3);
+  margin: 0 10px;
 }

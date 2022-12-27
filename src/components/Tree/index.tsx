@@ -11,6 +11,7 @@ export interface TreeProps {
     lineBorderRadius?: string;
     nodePadding?: string;
     children: TreeNodeProps['children'];
+    width: number;
 }
 
 const Tree: FC<TreeProps> = ({
@@ -18,16 +19,17 @@ const Tree: FC<TreeProps> = ({
     label,
     lineHeight = '10px',
     lineWidth = '2px',
-    lineColor = '#147CAB',
+    lineColor = 'rgb(191, 191, 191)',
     nodePadding = '0px',
-    lineBorderRadius = '5px',
+    lineBorderRadius = '2px',
+    width,
 }) => {
     return (
         <ul
             data-testid='testtree'
             className={styles({ lineHeight, lineWidth, lineColor, nodePadding, lineBorderRadius })}
         >
-            <TreeNode label={label}>{children}</TreeNode>
+            <TreeNode level={1} isRoot width={width}  label={label}>{children}</TreeNode>
         </ul>
     );
 };

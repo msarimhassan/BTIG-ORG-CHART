@@ -1,27 +1,7 @@
 import React, { useState } from 'react';
-import Modal from 'react-modal';
+import { Button, Checkbox, Col, Form, Input, Modal, Row, Spin } from 'antd';
 import { useApi } from '../../hooks/useApi';
 import { AddNewMember } from '../../utils';
-
-import './AddMember.css';
-
-const customStyles = {
-  overlay: {
-    padding: 0,
-    zIndex: 1000,
-  },
-  content: {
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    height: '280px',
-    width: '350px',
-    overflow: 'hidden',
-    padding: 0,
-    backgroundColor: '#fff',
-    boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px',
-  },
-};
 
 interface Props {
   modalIsOpen: boolean;
@@ -38,146 +18,105 @@ const initialValues = {
   visible: false,
 };
 const AddMember: React.FC<Props> = ({ modalIsOpen, setModal = () => {}, data }) => {
-  const [user, setUser] = useState(initialValues);
-  const handleChange = (e: any) => {
-    const { name, value } = e.target;
-    setUser((prevVal: any) => {
-      return {
-        ...prevVal,
-        [name]: value,
-        teamName: data?.teamName,
-        reportsInto: data?.userPrincipalName,
-      };
-    });
-  };
+  const [loading, setLoading] = useState(false);
   const { setApiCall } = useApi();
-  const handleCancel = (e: any) => {
+
+  const closeModal = (e: any) => {
     e.stopPropagation();
-    setModal(!modalIsOpen);
+    setModal(false);
   };
+
+  const onFinish = async (values: any) => {
+    setLoading(true);
+    AddNewMember({
+      ...values,
+      teamName: data?.teamName,
+      reportsInto: data?.userPrincipalName,
+    });
+    setApiCall((prevVal: boolean) => !prevVal);
+    setLoading(false);
+  };
+
   return (
     <div test-dataid='testmodal' onClick={(e) => e.stopPropagation()}>
-      <Modal isOpen={modalIsOpen} style={customStyles}>
-        <div>
-          <h2 className='header'>Add Member</h2>
-
-          <div className='input-container'>
-            <input
+      <Modal
+        open={modalIsOpen}
+        title='Add Member'
+        footer={null}
+        onCancel={closeModal}
+        destroyOnClose
+        bodyStyle={{ paddingTop: 30 }}
+      >
+        <Spin spinning={loading} size='large'>
+          <Form
+            name='addMemberForm'
+            layout='vertical'
+            onFinish={onFinish}
+            initialValues={initialValues}
+            style={{ paddingBottom: 30 }}
+          >
+            <Form.Item
+              label='Display Name'
               name='displayName'
-              type='text'
-              value={user.displayName}
-              className='edit-input'
-              placeholder='Member display Name'
-              onChange={(e) => handleChange(e)}
-            />
-            <br />
-            <input
-              name='userPrincipalName'
-              type='text'
-              value={user.userPrincipalName}
-              className='edit-input'
-              placeholder='Member upn'
-              onChange={handleChange}
-            />
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                marginTop: '15px',
-              }}
+              rules={[
+                {
+                  required: true,
+                  message: 'Required!',
+                },
+              ]}
             >
-              <div>
-                <label>Team Lead</label>
-                <input
-                  style={{ marginLeft: '10px' }}
-                  type='checkbox'
-                  data-testid='teamLead-input'
-                  name='teamLead'
-                  onClick={(event) => {
-                    let e = {
-                      target: {
-                        name: 'teamLead',
-                        value: event.currentTarget.checked,
-                      },
-                    };
-                    handleChange(e);
-                  }}
-                />
-              </div>
-              <div style={{ marginLeft: '10px' }}>
-                <label>Horizontal</label>
-                <input
-                  style={{ marginLeft: '10px' }}
-                  type='checkbox'
-                  data-testid='horizontal-input'
-                  name='Horizontal'
-                  onClick={(event) => {
-                    let e = {
-                      target: {
-                        name: 'horizontal',
-                        value: event.currentTarget.checked,
-                      },
-                    };
-                    handleChange(e);
-                  }}
-                />
-              </div>
-              <div style={{ marginLeft: '10px' }}>
-                <label>Left</label>
-                <input
-                  style={{ marginLeft: '10px' }}
-                  type='checkbox'
-                  name='Left'
-                  data-testid='left-input'
-                  onClick={(event) => {
-                    let e = {
-                      target: {
-                        name: 'left',
-                        value: event.currentTarget.checked,
-                      },
-                    };
-                    handleChange(e);
-                  }}
-                />
-              </div>
-            </div>
-            <div style={{ marginLeft: '30px', marginTop: '10px' }}>
-              <label>Visible</label>
-              <input
-                style={{ marginLeft: '10px' }}
-                type='checkbox'
-                name='visible'
-                data-testid='visible-input'
-                onClick={(event) => {
-                  let e = {
-                    target: {
-                      name: 'visible',
-                      value: event.currentTarget.checked,
-                    },
-                  };
-                  handleChange(e);
-                }}
-              />
-            </div>
-          </div>
+              <Input placeholder='Type Display Name' />
+            </Form.Item>
 
-          <div className='btn-group'>
-            <button data-testid='test-cancel-btn' className='cancel-btn' onClick={handleCancel}>
-              close
-            </button>
-            <button
-              className='submit-btn'
-              data-testid='testaddmemberbtn'
-              onClick={(e) => {
-                AddNewMember(e, user);
-                setApiCall((prevVal: boolean) => !prevVal);
-              }}
+            <Form.Item
+              label='Member upn'
+              name='userPrincipalName'
+              rules={[
+                {
+                  required: true,
+                  message: 'Required!',
+                },
+              ]}
             >
+              <Input placeholder='Type Member upn' />
+            </Form.Item>
+
+            <Row style={{ marginBottom: 30 }}>
+              <Col span={12}>
+                <Form.Item name='teamLead' valuePropName='checked'>
+                  <Checkbox data-testid='teamLead-input'>Team Lead</Checkbox>
+                </Form.Item>
+              </Col>
+              <Col span={12}>
+                <Form.Item name='horizontal' valuePropName='checked'>
+                  <Checkbox data-testid='horizontal-input'>Horizontal</Checkbox>
+                </Form.Item>
+              </Col>
+              <Col span={12}>
+                <Form.Item name='left' valuePropName='checked'>
+                  <Checkbox data-testid='left-input'>Left</Checkbox>
+                </Form.Item>
+              </Col>
+              <Col span={12}>
+                <Form.Item name='visible' valuePropName='checked'>
+                  <Checkbox>Visible</Checkbox>
+                </Form.Item>
+              </Col>
+            </Row>
+
+            <Button type='primary' htmlType='submit' style={{ float: 'right' }}>
               Submit
-            </button>
-          </div>
-        </div>
+            </Button>
+            <Button
+              // TODO: write emotion css
+              style={{ float: 'right', marginRight: 10 }}
+              onClick={closeModal}
+              data-testid='test-cancel-btn'
+            >
+              Cancel
+            </Button>
+          </Form>
+        </Spin>
       </Modal>
     </div>
   );

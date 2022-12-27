@@ -1,21 +1,26 @@
 .node {
   padding: 0px 0px;
   margin-top: 10px;
-  background-color: #006791;
-  border-radius: 5px;
-  display: inline-block;
-  max-width: 200px;
+  /* background-color: #006791; */
+  background-color: var(--tertiary-color);
+  border-radius: --node-border-radius;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* max-width: 200px; */
   text-align: center;
   max-height: 50px;
   font-size: 0.7vw;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   cursor: pointer;
   color: white;
+  padding-right: 5px;
 }
 .node2 {
   padding: 0px 0;
-  background-color: #006791;
-  border-radius: 5px;
+  /* background-color: #006791; */
+  background-color: var(--tertiary-color);
+  border-radius: --node-border-radius;
   display: inline-block;
   max-width: 200px;
   text-align: center;
@@ -24,11 +29,13 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   cursor: pointer;
   color: white;
+  padding-right: 5px;
 }
 
 .text {
   cursor: pointer;
   font-size: 0.4vw;
+  margin: 5px;
 }
 
 .text-top {
@@ -43,17 +50,18 @@
   width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #3a7879;
+  /* background: #3a7879; */
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c8c8c8;
-  border-radius: 10px;
+  background: rgba(191, 191, 191, 0.35);
+  border-radius: --node-border-radius;
 }
 
 @media only screen and (max-width: 1024px) {
   .text {
     font-size: 0.4vw;
+    margin: 5px;
   }
 }
 

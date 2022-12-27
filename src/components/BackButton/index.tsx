@@ -1,3 +1,4 @@
+import { Button } from "antd";
 import React from "react";
 import { Icons } from "../../common";
 
@@ -14,13 +15,14 @@ const BackButton: React.FC<Props> = ({
   return (
     <div>
       {previousData.length > 0 ? (
-        <button
+        <Button
+          type="primary"
           className="back-btn"
           data-testid="testbackbtn"
           onClick={() => handleBack()}
         >
           <BI.BiArrowBack size={20} />
-        </button>
+        </Button>
       ) : null}
     </div>
   );
