@@ -52,7 +52,4 @@ test('handle horizontal Change', async () => {
 
 
 
-test('Edit Team Modal delete button', async () => {
-  render(<EditModal data={obj} modalIsOpen={true} />);
-  fireEvent.click(screen.getByTestId('delete-member'));
-});
+
