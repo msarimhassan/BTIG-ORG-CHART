@@ -33,6 +33,7 @@ const AddMember: React.FC<Props> = ({ modalIsOpen, setModal = () => {}, data }) 
       teamName: data?.teamName,
       reportsInto: data?.userPrincipalName,
     });
+    setModal(false);
     setApiCall((prevVal: boolean) => !prevVal);
     setLoading(false);
   };

@@ -42,7 +42,6 @@ const LeafName: FC<NameProps> = ({ data, flag }) => {
                   <b>{!!data.teamName ? data.teamName : null}</b>
                   {!!data.teamName ? <br /> : null}
                   {!!data.teamLead ? data.displayName : null}
-                  {data.directTeamMembers.length}
                   <br />
                   {data.directTeamMembers.map((item: any, index: any) => {
                     return (
