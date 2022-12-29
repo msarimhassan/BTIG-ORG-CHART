@@ -16,11 +16,17 @@ const App: FC = () => {
   const [token, setToken] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
+    const handleLogin = async () => {
+      const response: any = await publicClientApplication?.handleRedirectPromise();
+      handleResponse(response);
+    };
     const token = localStorage.getItem('org-token');
     const user = localStorage.getItem('org-user') || '{}';
     if (token) {
       setToken(token);
       setActiveUser(JSON.parse(user));
+    } else {
+      handleLogin();
     }
   }, []);
 
@@ -35,11 +41,6 @@ const App: FC = () => {
       }
     });
   }, []);
-
-  const handleLogin = async () => {
-    const response: any = await publicClientApplication?.handleRedirectPromise();
-    handleResponse(response);
-  };
 
   const handleResponse = (response: any) => {
     if (response !== null) {
@@ -79,28 +80,27 @@ const App: FC = () => {
                 element={
                   token ? (
                     <Home />
-                  ) : (
-                    <div
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        height: '100vh',
-                        flexDirection: 'column',
-                      }}
-                    >
-                      <h1>Login into Org Chart</h1>
-                      <button
-                        className='login-btn'
-                        style={{ marginTop: '10px' }}
-                        onClick={() => {
-                          handleLogin();
-                        }}
-                      >
-                        Login
-                      </button>
-                    </div>
-                  )
+                  ) : // <div
+                  //   style={{
+                  //     display: 'flex',
+                  //     alignItems: 'center',
+                  //     justifyContent: 'center',
+                  //     height: '100vh',
+                  //     flexDirection: 'column',
+                  //   }}
+                  // >
+                  //   <h1>Login into Org Chart</h1>
+                  //   <button
+                  //     className='login-btn'
+                  //     style={{ marginTop: '10px' }}
+                  //     onClick={() => {
+                  //       handleLogin();
+                  //     }}
+                  //   >
+                  //     Login
+                  //   </button>
+                  // </div>
+                  null
                 }
               />
             </Routes>
