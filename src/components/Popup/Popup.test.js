@@ -35,4 +35,6 @@ test('handle Change', async () => {
 
 test('pop render in the dom', async () => {
   render(<Popup modalIsOpen={true} data={data} />);
+  const devEl = await screen.findByTestId('test-popup');
+  expect(devEl).toBeInTheDocument();
 });

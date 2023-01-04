@@ -8,6 +8,10 @@ interface Props {
   data: any;
   setModal?: (obj: any) => void;
 }
+interface checkProps {
+  name: any;
+  title: String;
+}
 
 const Popup: React.FC<Props> = ({ modalIsOpen, setModal = () => {}, data }) => {
   const initialValues = {
@@ -39,8 +43,18 @@ const Popup: React.FC<Props> = ({ modalIsOpen, setModal = () => {}, data }) => {
   };
 
   const closeModal = () => setModal(false);
+
+  const CheckInput: React.FC<checkProps> = ({ name, title }) => {
+    return (
+      <Col span={12}>
+        <Form.Item name={name} valuePropName='checked'>
+          <Checkbox>{title}</Checkbox>
+        </Form.Item>
+      </Col>
+    );
+  };
   return (
-    <div onClick={(e) => e.stopPropagation()}>
+    <div data-testid='test-popup' onClick={(e) => e.stopPropagation()}>
       <Modal
         open={modalIsOpen}
         onCancel={closeModal}
@@ -84,26 +98,10 @@ const Popup: React.FC<Props> = ({ modalIsOpen, setModal = () => {}, data }) => {
             </Form.Item>
 
             <Row style={{ marginBottom: 30 }}>
-              <Col span={12}>
-                <Form.Item name='teamLead' valuePropName='checked'>
-                  <Checkbox>Team Lead</Checkbox>
-                </Form.Item>
-              </Col>
-              <Col span={12}>
-                <Form.Item name='horizontal' valuePropName='checked'>
-                  <Checkbox>Horizontal</Checkbox>
-                </Form.Item>
-              </Col>
-              <Col span={12}>
-                <Form.Item name='left' valuePropName='checked'>
-                  <Checkbox>Left</Checkbox>
-                </Form.Item>
-              </Col>
-              <Col span={12}>
-                <Form.Item name='visible' valuePropName='checked'>
-                  <Checkbox>Visible</Checkbox>
-                </Form.Item>
-              </Col>
+              <CheckInput name='teamLead' title='Team Lead' />
+              <CheckInput name='horizontal' title='Horizontal' />
+              <CheckInput name='left' title='Left' />
+              <CheckInput name='visible' title='Visible' />
             </Row>
 
             <Button
