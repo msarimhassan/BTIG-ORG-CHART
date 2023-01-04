@@ -22,6 +22,14 @@ const childrenContainer = css`
     }
 `;
 
+const childrenContainerWithoutLine = css`
+    display: flex;
+    padding-inline-start: 0;
+    margin: 0;
+    padding-top: var(--tree-line-height);
+    position: relative;
+`;
+
 const node = css`
     /* flex: auto; */
     text-align: center;
@@ -113,4 +121,4 @@ const mergedNodeLines = css`
 `;
 
 
-export {verticalLine,childrenContainer,node,nodeLines, mergedNodeLines}
+export {verticalLine,childrenContainer,node,nodeLines, mergedNodeLines, childrenContainerWithoutLine}

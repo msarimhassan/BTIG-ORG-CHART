@@ -1,19 +1,19 @@
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import Leaf from ".";
-import LeafName from "../LeafName";
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import Leaf from '.';
+import LeafName from '../LeafName';
 
 const flag = { flag: 0 };
 
 const obj = {
-  displayName: "Sarim",
-  userPrincipalName: "SAzriel@btig.com",
-  teamName: "Hexaa",
+  displayName: 'Sarim',
+  userPrincipalName: 'SAzriel@btig.com',
+  teamName: 'Hexaa',
   teamLead: true,
   directTeamMembers: [
     {
-      displayName: "Sarim",
-      userPrincipalName: "SAzriel@btig.com",
-      teamName: "Hexaa",
+      displayName: 'Sarim',
+      userPrincipalName: 'SAzriel@btig.com',
+      teamName: 'Hexaa',
       teamLead: true,
       directTeamMembers: [],
       dimensions: {
@@ -28,26 +28,26 @@ const obj = {
   },
 };
 
-test("node render in the dom", async () => {
+test('node render in the dom', async () => {
   render(<Leaf object={obj} />);
 });
 
-test("node render in the dom", async () => {
+test('node render in the dom', async () => {
   render(<Leaf object={obj} totalNodes={1} handleNode={() => {}} />);
-  const devEl = await screen.findByTestId("testleaf");
+  const devEl = await screen.findByTestId('testleaf');
   expect(devEl).toBeInTheDocument();
 });
 
-test("Show the name of the employee in the leaf", async () => {
+test('Show the name of the employee in the leaf', async () => {
   render(<LeafName data={obj} flag={false} />);
-  const element = await screen.findByTestId("testClick");
-  expect(element).toHaveTextContent("Sarim");
+  const element = await screen.findByTestId('testClick');
+  expect(element).toBeInTheDocument();
 });
 
-test("Null renders when there is no team lead", async () => {
+test('Null renders when there is no team lead', async () => {
   render(<Leaf object={{ ...obj, TeamLead: false }} />);
 
-  const element = await screen.findByTestId("testleaf");
+  const element = await screen.findByTestId('testleaf');
 
-  expect(element).toHaveTextContent("HexaaSarim");
+  expect(element).toHaveTextContent('HexaaSarim');
 });

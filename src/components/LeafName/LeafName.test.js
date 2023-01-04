@@ -16,7 +16,22 @@ const obj = {
   userPrincipalName: "SAzriel@btig.com",
   teamName: "AppDev",
   teamLead: false,
-  directTeamMembers: [],
+  directTeamMembers: [
+    {
+      displayName: "JohnDoe",
+      userPrincipalName: "SAzriel@btig.com",
+      teamName: "AppDev",
+      teamLead: false,
+      directTeamMembers: [
+        
+      ],
+      dimensions: {
+        left: true,
+        horizontal: false,
+      },
+    }
+
+  ],
   dimensions: {
     left: true,
     horizontal: false,
@@ -41,4 +56,10 @@ test("Modal Buttons", () => {
   fireEvent.mouseLeave(screen.getByTestId("testClick"));
   const mockEvent = { stopPropogation: jest.fn() };
   expect(mockEvent.stopPropogation).toBeCalledTimes(0);
+});
+
+test("Testing MemberName", async () => {
+  render(<LeafName data={obj} flag={true} />);
+  const element = await screen.findByTestId('test-member-name');
+  expect(element).toHaveTextContent("JohnDoe");
 });

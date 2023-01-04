@@ -32,39 +32,32 @@ const LeafName: FC<NameProps> = ({ data, flag }) => {
         setModal={setEditModal}
         handleDelete={handleDelete}
       />
-
       <div data-testid='testClick' onClick={() => setEditModal(!editModal)}>
-        <>
-          {flag ? (
-            <>
-              <Tooltip placement='right' title={data.displayName}>
-                <Button size='small' block type='text' className='leaf-member-name'>
-                  <b>{!!data.teamName ? data.teamName : null}</b>
-                  {!!data.teamName ? <br /> : null}
-                  {!!data.teamLead ? data.displayName : null}
-                  <br />
-                  {data.directTeamMembers.map((item: any, index: any) => {
-                    return (
-                      <div style={{ marginTop: '3px', fontSize: '9px' }} key={index}>
-                        {item.displayName}
-                      </div>
-                    );
-                  })}
-                </Button>
-              </Tooltip>
-              {data.directTeamMembers.length ? (
-                <Divider dashed style={{ marginTop: 5, marginBottom: 5 }} />
-              ) : null}
-            </>
-          ) : (
-            <Tooltip placement='right' title={data.displayName}>
-              <Button size='small' block type='text' className='leaf-member-name'>
-                {data.displayName}
-              </Button>
-            </Tooltip>
-          )}
-        </>
+        <Tooltip placement='right' title={data.displayName}>
+          <Button size='small' block type='text' className='leaf-member-name'>
+            {flag ? (
+              <>
+                <b>{!!data.teamName && data.teamName}</b>
+                {!!data.teamName ? <br /> : null}
+                {!!data.teamLead ? <u>{data.displayName}</u> : data.displayName}
+
+                {data.directTeamMembers.map((item: any, index: any) => {
+                  return (
+                    <div style={{ marginTop: '3px' }} key={index} data-testid='test-member-name'>
+                      {item.displayName}
+                    </div>
+                  );
+                })}
+              </>
+            ) : data.teamName ? null : (
+              <>{data.displayName}</>
+            )}
+          </Button>
+        </Tooltip>
       </div>
+      {flag || (!flag && !data.teamName) ? (
+        <Divider dashed style={{ marginTop: 5, marginBottom: 5 }} />
+      ) : null}
     </>
   );
 };

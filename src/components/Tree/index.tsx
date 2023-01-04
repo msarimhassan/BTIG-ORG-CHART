@@ -12,6 +12,7 @@ export interface TreeProps {
     nodePadding?: string;
     children: TreeNodeProps['children'];
     width: number;
+    lineHidden: boolean;
 }
 
 const Tree: FC<TreeProps> = ({
@@ -23,13 +24,14 @@ const Tree: FC<TreeProps> = ({
     nodePadding = '0px',
     lineBorderRadius = '2px',
     width,
+    lineHidden
 }) => {
     return (
         <ul
             data-testid='testtree'
             className={styles({ lineHeight, lineWidth, lineColor, nodePadding, lineBorderRadius })}
         >
-            <TreeNode level={1} isRoot width={width}  label={label}>{children}</TreeNode>
+            <TreeNode lineHidden={lineHidden} level={1} isRoot width={width}  label={label}>{children}</TreeNode>
         </ul>
     );
 };

@@ -1,7 +1,7 @@
 .leaf {
   /* background-color: #3a7879; */
   background-color: #fff;
-  padding: 10px 0px 10px 5px;
+  padding: 10px 4px 10px 5px;
   font-size: 0.5vw;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   border-radius: --node-border-radius;
@@ -17,7 +17,7 @@
 .leaf-merge {
   /* background-color: #3a7879; */
   background-color: #fff;
-  padding: 10px 0px 10px 5px;
+  padding: 10px 4px 10px 5px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   border-radius: --node-border-radius;
   display: inline-block;

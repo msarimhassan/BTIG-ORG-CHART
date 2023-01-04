@@ -26,12 +26,12 @@ const Popup: React.FC<Props> = ({ modalIsOpen, setModal = () => {}, data }) => {
   const onFinish = async (values: any) => {
     setLoading(true);
     try {
-      compareValues(initialValues, values, data.teamName);
+      await compareValues(initialValues, values, data.teamName);
       message.success('User changes are saved successfully!');
-      setLoading(false);
-      closeModal();
       logMessage(`Updated the member ${data.userPrincipalName}`);
+      setLoading(false);
       setApiCall((prevVal: boolean) => !prevVal);
+      closeModal();
     } catch (err: any) {
       message.error('Something went wrong, please refresh and try again!');
       console.log(err);

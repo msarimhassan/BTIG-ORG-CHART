@@ -12,27 +12,21 @@ interface LeafProps {
 
 const Leaf: FC<LeafProps> = ({ object, handleNode = () => {} }) => {
   const window = useWindowDimensions();
+
+  const hidden =
+    !object.directTeamMembers || (object.directTeamMembers && !object.directTeamMembers.length);
   return (
     <div
       data-testid='testleaf'
       id='leaf'
       className='leaf'
-      style={{ width: '100%', height: window.height - 400 }}
+      style={{ width: '100%', height: window.height - 400, display: hidden ? 'none' : undefined }}
     >
       {!!object.directTeamMembers &&
         object.directTeamMembers.map((item: any, index: number) => {
-          if (!item.teamLead) return null;
           return (
-            <React.Fragment key={index}>
+            <React.Fragment key={index + item.teamName}>
               <LeafName key={index} data={item} flag={true} />
-            </React.Fragment>
-          );
-        })}
-      {!!object.directTeamMembers &&
-        object.directTeamMembers.map((item: any, index: number) => {
-          return item.teamLead ? null : (
-            <React.Fragment key={index}>
-              <LeafName data={item} flag={false} />
             </React.Fragment>
           );
         })}

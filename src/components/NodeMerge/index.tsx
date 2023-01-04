@@ -26,14 +26,18 @@ const NodeMerge: FC<LeafProps> = ({ object, handleNode = () => {} }) => {
       }}
     >
       {object.directTeamMembers?.map(
-        (item: { displayName: String; teamLead: boolean; horizontal: boolean }, index: any) => {
-          return (
-            <React.Fragment key={index}>
-              {item.teamLead === true && item.horizontal === true ? null : (
-                <LeafName data={item} key={index} flag={false} />
-              )}
-            </React.Fragment>
-          );
+        (
+          item: { displayName: String; teamLead: boolean; dimensions: any; teamName: any },
+          index: any
+        ) => {
+          if (!item.teamLead) {
+            if (item.teamName) {
+              return <LeafName data={item} key={index} flag={true} />;
+            } else {
+              return <LeafName data={item} key={index} flag={false} />;
+            }
+          }
+          return null;
         }
       )}
     </div>

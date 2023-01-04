@@ -159,6 +159,7 @@
         "teamLead": true,
         "visible": null,
         "directTeamMembers": [
+            
           {
             "displayName": "Casen, Damir",
             "userPrincipalName": "CDamir@btig.com",

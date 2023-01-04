@@ -80,27 +80,7 @@ const App: FC = () => {
                 element={
                   token ? (
                     <Home />
-                  ) : // <div
-                  //   style={{
-                  //     display: 'flex',
-                  //     alignItems: 'center',
-                  //     justifyContent: 'center',
-                  //     height: '100vh',
-                  //     flexDirection: 'column',
-                  //   }}
-                  // >
-                  //   <h1>Login into Org Chart</h1>
-                  //   <button
-                  //     className='login-btn'
-                  //     style={{ marginTop: '10px' }}
-                  //     onClick={() => {
-                  //       handleLogin();
-                  //     }}
-                  //   >
-                  //     Login
-                  //   </button>
-                  // </div>
-                  null
+                  ) : null
                 }
               />
             </Routes>
@@ -112,3 +92,25 @@ const App: FC = () => {
 };
 
 export default App;
+
+
+//  <div
+//    style={{
+//      display: 'flex',
+//      alignItems: 'center',
+//      justifyContent: 'center',
+//      height: '100vh',
+//      flexDirection: 'column',
+//    }}
+//  >
+//    <h1>Login into Org Chart</h1>
+//    <button
+//      className='login-btn'
+//      style={{ marginTop: '10px' }}
+//      onClick={() => {
+//        handleLogin();
+//      }}
+//    >
+//      Login
+//    </button>
+//  </div>;

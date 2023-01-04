@@ -14,7 +14,7 @@ interface Props {
 
 const HorizontalNode: FC<Props> = ({
   object,
-  handleNode = () => { },
+  handleNode = () => {},
   marginLeft,
   leftNodeWidth,
   fullWidthHorizontalNodeWidth,
@@ -42,32 +42,39 @@ const HorizontalNode: FC<Props> = ({
       >
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <div className='highlighted-text' data-testid='testTeamName'>{object.teamName}</div>
+            <div className='highlighted-text' data-testid='testTeamName'>
+              {object.teamName}
+            </div>
             <div className='pipe-sign'></div>
             <div
               style={{
                 marginLeft: '5px',
                 whiteSpace: 'nowrap',
                 fontSize: '13px',
-                fontWeight: 'bold',
               }}
             >
-              {object.displayName}
+              <u>{object.displayName}</u>
             </div>
           </div>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             {object.directTeamMembers.length > 0
-              ? object.directTeamMembers.map((item: { displayName: string }, index: any) => {
-                return (
-                  <div
-                    key={index}
-                    style={{ marginLeft: '15px', whiteSpace: 'nowrap' }}
-                    data-testid='testTeamLead'
-                  >
-                    {item?.displayName}
-                  </div>
-                );
-              })
+              ? object.directTeamMembers.map(
+                  (item: { displayName: string; teamLead: boolean }, index: any) => {
+                    return (
+                      <div
+                        key={index}
+                        style={{
+                          marginLeft: '15px',
+                          whiteSpace: 'nowrap',
+                          fontSize: '13px',
+                        }}
+                        data-testid='testTeamLead'
+                      >
+                        {item.teamLead ? <u>{item?.displayName}</u> : item?.displayName}
+                      </div>
+                    );
+                  }
+                )
               : null}
           </div>
         </div>

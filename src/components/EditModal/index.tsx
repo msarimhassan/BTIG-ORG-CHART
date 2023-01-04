@@ -13,17 +13,11 @@ interface Props {
   handleDelete?: (name: string, closeModal: any) => void;
 }
 
-interface CheckBoxProps {
-  formName: string;
-  title: string;
-  testid?: string;
-}
-
 const EditModal: React.FC<Props> = ({
   data,
-  setModal = () => {},
+  setModal = () => { },
   modalIsOpen,
-  handleDelete = () => {},
+  handleDelete = () => { },
 }) => {
   const { nodes } = useNode();
 
@@ -44,11 +38,11 @@ const EditModal: React.FC<Props> = ({
 
   const closeModal = () => setModal(false);
   const { loading: globalLoading } = useLoader();
-  const options = getOptions(nodes?.directTeamMembers);
+  const options = getOptions(nodes?.directTeamMembers)
   const onFinish = async (values: any) => {
     setLoading(true);
     try {
-      compareMemberValues(initialValues, values);
+      await compareMemberValues(initialValues, values)
       message.success('User changes are saved successfully!');
       setLoading(false);
       closeModal();
@@ -60,16 +54,6 @@ const EditModal: React.FC<Props> = ({
     }
   };
 
-  const CheckBoxes: React.FC<CheckBoxProps> = ({ formName, title, testid }) => {
-    return (
-      <Col span={12}>
-        <Form.Item name={formName} valuePropName='checked'>
-          <Checkbox data-testid={testid}>{title}</Checkbox>
-        </Form.Item>
-      </Col>
-    );
-  };
-
   return (
     <Modal
       open={modalIsOpen}
@@ -79,13 +63,17 @@ const EditModal: React.FC<Props> = ({
       bodyStyle={{ paddingTop: 30 }}
       destroyOnClose
       footer={null}
-      data-testid='edit-modal'
+      data-testid="edit-modal"
     >
+      {/* Don't remove, following line helps to display data in dev mode */}
+      {/* <pre style={{ backgroundColor: "lightgray", padding: 15 }}>
+        {JSON.stringify(initialValues, null, 2)}
+      </pre> */}
       <Spin spinning={loading} size='large'>
         <Form
           name='editForm'
           layout='vertical'
-          onFinish={(e) => onFinish(e)}
+          onFinish={onFinish}
           form={form}
           initialValues={initialValues}
         >
@@ -114,12 +102,29 @@ const EditModal: React.FC<Props> = ({
             />
           </Form.Item>
           <Row style={{ marginBottom: 30 }}>
-            <CheckBoxes formName='teamLead' title='Team Lead' testid='teadLead-input' />
-            <CheckBoxes formName='horizontal' title='Horizontal' testid='horizontal-input' />
-            <CheckBoxes formName='left' title='Left' />
-            <CheckBoxes formName='visible' title='Visible' testid='visible-input' />
+            <Col span={12}>
+              <Form.Item name='teamLead' valuePropName='checked'>
+                <Checkbox data-testid='teamLead-input'>Team Lead</Checkbox>
+              </Form.Item>
+            </Col>
+            <Col span={12}>
+              <Form.Item name='horizontal' valuePropName='checked'>
+                <Checkbox data-testid='horizontal-input'>Horizontal</Checkbox>
+              </Form.Item>
+            </Col>
+            <Col span={12}>
+              <Form.Item name='left' valuePropName='checked'>
+                <Checkbox>Left</Checkbox>
+              </Form.Item>
+            </Col>
+            <Col span={12}>
+              <Form.Item name='visible' valuePropName='checked'>
+                <Checkbox data-testid='visible-input'>Visible</Checkbox>
+              </Form.Item>
+            </Col>
           </Row>
 
+          {/* TODO: remove closeModal that is being passed in handleDelete, it's not good practice */}
           <Button
             disabled={loading || globalLoading}
             danger
@@ -128,17 +133,13 @@ const EditModal: React.FC<Props> = ({
           >
             Delete Member
           </Button>
-          <Button
-            data-testid='update-btn'
-            type='primary'
-            htmlType='submit'
-            style={{ float: 'right' }}
-          >
+          <Button data-testid='update-btn' type='primary' htmlType='submit' style={{ float: 'right' }}>
             Update Changes
           </Button>
           <Button
+            // TODO: write emotion css
             style={{ float: 'right', marginRight: 10 }}
-            onClick={() => closeModal()}
+            onClick={closeModal}
             data-testid='edit-cancel-btn'
           >
             Cancel

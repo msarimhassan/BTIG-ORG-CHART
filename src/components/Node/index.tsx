@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import useWindowDimensions from '../../hooks/useWindowDimensions';
-import './Node.css';
-import { manageteamNamefont } from '../../utils';
+import useWindowDimensions from "../../hooks/useWindowDimensions";
+import "./Node.css";
+import { manageteamNamefont } from "../../utils";
 
 // import { Tooltip } from '../../components';
-import useAuth from '../../hooks/useAuth';
-import { Tooltip } from 'antd';
-import TooltipBox from '../Tooltip';
+import useAuth from "../../hooks/useAuth";
+import { Tooltip } from "antd";
+import TooltipBox from "../Tooltip";
 
 interface Props {
   object: any;
@@ -23,8 +23,8 @@ interface teamName {
 const Node: React.FC<Props> = ({
   object,
   totalNodes = 1,
-  handleNode = () => { },
-  setUpn = () => { },
+  handleNode = () => {},
+  setUpn = () => {},
 }: Props) => {
   const [active, isActive] = useState(false);
   const window = useWindowDimensions();
@@ -39,45 +39,61 @@ const Node: React.FC<Props> = ({
     handleNode(obj);
   };
 
-
-
   const DisplayName: React.FC<teamName> = ({ teamName }) => {
     if (teamName) {
-      return <span style={{ fontSize: '12px' }}>{object.displayName}</span>;
+      return (
+        <span style={{ fontSize: "0.7vw" }}>
+          <u>{object.displayName}</u>
+        </span>
+      );
     }
 
     return (
-      <div className='node-displayname' style={{ fontSize: '12px' }}>
-        {object.displayName}
-      </div>
+      <span className="node-displayname" style={{ fontSize: "0.7vw" }}>
+        <u>{object.displayName}</u>
+      </span>
     );
   };
 
   return (
     <Tooltip
       zIndex={1}
-      placement='top'
-      title={<TooltipBox data={object} active={active} hideTooltip={hideTip} flag={false} />}
+      placement="top"
+      title={
+        <TooltipBox
+          data={object}
+          active={active}
+          hideTooltip={hideTip}
+          flag={false}
+        />
+      }
     >
       <div
-        id='node'
-        style={{ width: '100%', height }}
-        className='node'
-        data-testid='testteamNode'
+        id="node"
+        style={{
+          width: "100%",
+          height,
+          marginTop: totalNodes === 1 ? 0 : "10px",
+        }}
+        className="node"
+        data-testid="testteamNode"
         onClick={(e) => {
           e.stopPropagation();
           handlingNode(object);
         }}
       >
         <div
-          data-testid='testTeamName'
-          className={`text ${activeUser?.role === 'read' ? 'text-top' : ''}`}
+          data-testid="testTeamName"
+          className={`text ${activeUser?.role === "read" ? "text-top" : ""}`}
         >
           <DisplayName teamName={object.teamName} />
           <br />
-          <span className='text-teamname' style={manageteamNamefont(object.teamName)}>
-            <u>{object.teamName}</u>
-          </span>
+          <div
+            className="text-teamname"
+            style={manageteamNamefont(object.teamName)}
+          >
+            {object.teamName}
+          </div>
         </div>
       </div>
     </Tooltip>
