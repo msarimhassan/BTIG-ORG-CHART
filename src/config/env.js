@@ -6,11 +6,12 @@ export const SEQSERVERAPIKEY = 'wCP3b8ye3O6YULE5hm6D';
 let baseURL = null;
 if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
   // Local Development
-   baseURL = 'https://org-chart.btig.dev/api/';
+ baseURL = 'https://org-chart.btig.dev/api/';
 
 } else {
   // K8S DEV/QA/PROD
-   baseURL = 'http://org-chart-backend.btig.svc.cluster.local/';
+    baseURL = 'http://org-chart-backend.btig.svc.cluster.local/';
+
  
 }
 

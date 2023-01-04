@@ -30,14 +30,8 @@ const NodeMerge: FC<LeafProps> = ({ object, handleNode = () => {} }) => {
           item: { displayName: String; teamLead: boolean; dimensions: any; teamName: any },
           index: any
         ) => {
-          if (!item.teamLead) {
-            if (item.teamName) {
-              return <LeafName data={item} key={index} flag={true} />;
-            } else {
-              return <LeafName data={item} key={index} flag={false} />;
-            }
-          }
-          return null;
+          if (item.teamLead === true) return null;
+          return <LeafName data={item} key={index} flag={true} />;
         }
       )}
     </div>
