@@ -13,11 +13,17 @@ interface Props {
   handleDelete?: (name: string, closeModal: any) => void;
 }
 
+interface checkProps {
+  name: any;
+  title: String;
+  testName?: any;
+}
+
 const EditModal: React.FC<Props> = ({
   data,
-  setModal = () => { },
+  setModal = () => {},
   modalIsOpen,
-  handleDelete = () => { },
+  handleDelete = () => {},
 }) => {
   const { nodes } = useNode();
 
@@ -38,11 +44,11 @@ const EditModal: React.FC<Props> = ({
 
   const closeModal = () => setModal(false);
   const { loading: globalLoading } = useLoader();
-  const options = getOptions(nodes?.directTeamMembers)
+  const options = getOptions(nodes?.directTeamMembers);
   const onFinish = async (values: any) => {
     setLoading(true);
     try {
-      await compareMemberValues(initialValues, values)
+      await compareMemberValues(initialValues, values);
       message.success('User changes are saved successfully!');
       setLoading(false);
       closeModal();
@@ -54,6 +60,16 @@ const EditModal: React.FC<Props> = ({
     }
   };
 
+  const CheckInput: React.FC<checkProps> = ({ name, title, testName }) => {
+    return (
+      <Col span={12}>
+        <Form.Item name={name} valuePropName='checked'>
+          <Checkbox data-testid={testName}>{title}</Checkbox>
+        </Form.Item>
+      </Col>
+    );
+  };
+
   return (
     <Modal
       open={modalIsOpen}
@@ -63,7 +79,7 @@ const EditModal: React.FC<Props> = ({
       bodyStyle={{ paddingTop: 30 }}
       destroyOnClose
       footer={null}
-      data-testid="edit-modal"
+      data-testid='edit-modal'
     >
       {/* Don't remove, following line helps to display data in dev mode */}
       {/* <pre style={{ backgroundColor: "lightgray", padding: 15 }}>
@@ -102,26 +118,10 @@ const EditModal: React.FC<Props> = ({
             />
           </Form.Item>
           <Row style={{ marginBottom: 30 }}>
-            <Col span={12}>
-              <Form.Item name='teamLead' valuePropName='checked'>
-                <Checkbox data-testid='teamLead-input'>Team Lead</Checkbox>
-              </Form.Item>
-            </Col>
-            <Col span={12}>
-              <Form.Item name='horizontal' valuePropName='checked'>
-                <Checkbox data-testid='horizontal-input'>Horizontal</Checkbox>
-              </Form.Item>
-            </Col>
-            <Col span={12}>
-              <Form.Item name='left' valuePropName='checked'>
-                <Checkbox>Left</Checkbox>
-              </Form.Item>
-            </Col>
-            <Col span={12}>
-              <Form.Item name='visible' valuePropName='checked'>
-                <Checkbox data-testid='visible-input'>Visible</Checkbox>
-              </Form.Item>
-            </Col>
+            <CheckInput name='teamLead' testName='teamLead-input' title='Team Lead' />
+            <CheckInput name='horizontal' testName='horizontal-input' title='Horizontal' />
+            <CheckInput name='left' title='Left' />
+            <CheckInput name='visible' title='Visible' testName='visible-input' />
           </Row>
 
           {/* TODO: remove closeModal that is being passed in handleDelete, it's not good practice */}
@@ -133,7 +133,12 @@ const EditModal: React.FC<Props> = ({
           >
             Delete Member
           </Button>
-          <Button data-testid='update-btn' type='primary' htmlType='submit' style={{ float: 'right' }}>
+          <Button
+            data-testid='update-btn'
+            type='primary'
+            htmlType='submit'
+            style={{ float: 'right' }}
+          >
             Update Changes
           </Button>
           <Button
