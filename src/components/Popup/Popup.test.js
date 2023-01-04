@@ -1,8 +1,8 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent } from '@testing-library/react';
 
-import Popup from ".";
+import Popup from '.';
 
-const data = { teamName: "Org Chart" };
+const data = { teamName: 'Org Chart' };
 
 window.matchMedia =
   window.matchMedia ||
@@ -14,21 +14,25 @@ window.matchMedia =
     };
   };
 
-test("Modal Buttons", () => {
+test('Modal Buttons', () => {
   render(<Popup modalIsOpen={true} data={data} />);
-  fireEvent.click(screen.getByTestId("test-cancel-btn"));
+  fireEvent.click(screen.getByTestId('test-cancel-btn'));
   const mockEvent = { stopPropogation: jest.fn() };
   expect(mockEvent.stopPropogation).toBeCalledTimes(0);
 });
 
-test("Modal Buttons", () => {
+test('Modal Buttons', () => {
   render(<Popup modalIsOpen={true} data={data} />);
-  fireEvent.click(screen.getByTestId("update-btn"));
+  fireEvent.click(screen.getByTestId('update-btn'));
 });
 
-test("handle Change", async () => {
+test('handle Change', async () => {
   render(<Popup modalIsOpen={true} data={data} />);
-  fireEvent.change(screen.getByTestId("team-input"), {
+  fireEvent.change(screen.getByTestId('team-input'), {
     target: { value: true },
   });
+});
+
+test('pop render in the dom', async () => {
+  render(<Popup modalIsOpen={true} data={data} />);
 });
