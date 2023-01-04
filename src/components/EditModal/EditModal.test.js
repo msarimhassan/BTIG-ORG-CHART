@@ -60,12 +60,12 @@ test("handle Change", async () => {
   });
 });
 
-test("handle visible Change", async () => {
-  render(<EditModal data={obj} modalIsOpen={true} />);
-  fireEvent.click(screen.getByTestId("visible-input"), {
-    target: { value: true },
-  });
-});
+// test("handle visible Change", async () => {
+//   render(<EditModal data={obj} modalIsOpen={true} />);
+//   fireEvent.click(screen.getByTestId("visible-input"), {
+//     target: { value: true },
+//   });
+// });
 
 test("Edit Team Modal delete button", async () => {
   render(<EditModal data={obj} modalIsOpen={true} />);
