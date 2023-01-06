@@ -10,9 +10,6 @@
 
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=BTIG_org-chart-ui&metric=coverage&token=5b5cf8c49fe84f76bd7598815206769769829ca9)](https://sonarcloud.io/summary/new_code?id=BTIG_org-chart-ui)
 
-## Live Link 📌
-
-- [Org Chart](https://j7dfbm0loqjcufysyj.herokuapp.com)
 
 From your command line, first clone Org-Chart:
 
