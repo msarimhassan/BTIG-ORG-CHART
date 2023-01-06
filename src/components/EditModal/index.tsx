@@ -45,6 +45,7 @@ const EditModal: React.FC<Props> = ({
   const closeModal = () => setModal(false);
   const { loading: globalLoading } = useLoader();
   const options = getOptions(nodes?.directTeamMembers);
+
   const onFinish = async (values: any) => {
     setLoading(true);
     try {

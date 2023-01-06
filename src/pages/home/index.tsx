@@ -1,19 +1,27 @@
 /* eslint-disable */
-import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-import { Node, Root, Tree, TreeNode, BackButton, Leaf, HorizontalNode } from '../../components';
-import { Network, Urls, config } from '../../config';
-import { useApi } from '../../hooks/useApi';
-import { useNode } from '../../hooks/useNode';
-import useLoader from '../../hooks/useLoader';
-import useAuth from '../../hooks/useAuth';
-import { logMessage } from '../../utils';
-import NodeMerge from '../../components/NodeMerge';
-import useWindowDimensions from '../../hooks/useWindowDimensions';
-import { calculateDimensions, findNodeDFS } from './helpers';
+import {
+  Node,
+  Root,
+  Tree,
+  TreeNode,
+  BackButton,
+  Leaf,
+  HorizontalNode,
+} from "../../components";
+import { Network, Urls, config } from "../../config";
+import { useApi } from "../../hooks/useApi";
+import { useNode } from "../../hooks/useNode";
+import useLoader from "../../hooks/useLoader";
+import useAuth from "../../hooks/useAuth";
+import { logMessage } from "../../utils";
+import NodeMerge from "../../components/NodeMerge";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
+import { calculateDimensions, findNodeDFS } from "./helpers";
 
-import './Home.css';
+import "./Home.css";
 
 const Home: React.FC = () => {
   const location = useLocation();
@@ -22,7 +30,7 @@ const Home: React.FC = () => {
   const { setNodeData } = useNode();
   const [previousData, setPreviousData] = useState<any>([]);
   const [upn, setUpn] = useState(
-    location.pathname !== '/' ? location.pathname.replace('/', '') : ''
+    location.pathname !== "/" ? location.pathname.replace("/", "") : ""
   );
   const { setLoading } = useLoader();
   const { activeUser } = useAuth();
@@ -32,8 +40,13 @@ const Home: React.FC = () => {
     const GetOrganizationData = async () => {
       setLoading(true);
       const prevState = { data, previousData };
-      const response = await Network.get(Urls.getMember(upn), (await config()).headers);
-      if (!response.ok) return alert('Sorry no records are available');
+      const response = await Network.get(
+        Urls.getMember(upn),
+        (
+          await config()
+        ).headers
+      );
+      if (!response.ok) return alert("Sorry no records are available");
       logMessage(`${activeUser.name} fetch data from endpoint ${upn}`);
 
       if (prevState.data) {
@@ -77,40 +90,58 @@ const Home: React.FC = () => {
   };
 
   const totalVerticalNode = data?.directTeamMembers?.filter(
-    (item: any) => item.dimensions?.horizontal !== true && item.teamLead !== false
+    (item: any) =>
+      item.dimensions?.horizontal !== true && item.teamLead !== false
   ).length;
 
   const totalLeftNodes = data?.directTeamMembers?.filter(
     (item: any) => item.dimensions.left && !item.dimensions.horizontal
   ).length;
 
-  const { width, leftHorizontalNodeWidth, leftHorizontalNodeMargin, fullWidthHorizontalNodeWidth } =
-    calculateDimensions({ totalVerticalNode, totalLeftNodes, window });
+  const {
+    width,
+    leftHorizontalNodeWidth,
+    leftHorizontalNodeMargin,
+    fullWidthHorizontalNodeWidth,
+  } = calculateDimensions({ totalVerticalNode, totalLeftNodes, window });
 
   const rootLineHidden =
     (data &&
-      (!data.directTeamMembers || (data.directTeamMembers && !data.directTeamMembers.length))) ||
+      (!data.directTeamMembers ||
+        (data.directTeamMembers && !data.directTeamMembers.length))) ||
     false;
 
   const mergedNodeVisible =
-    data && data.directTeamMembers && data.directTeamMembers.some((item: any) => !item.teamLead);
+    data &&
+    data.directTeamMembers &&
+    data.directTeamMembers.some((item: any) => !item.teamLead);
 
   return (
     <>
       {data !== null ? (
         <>
-          <div className='container' data-testid='testhome'>
+          <div className="container" data-testid="testhome">
             <BackButton previousData={previousData} handleBack={handleBack} />
-            <Tree lineHidden={rootLineHidden} width={width} label={<Root object={data} />}>
+            <Tree
+              lineHidden={rootLineHidden}
+              width={width}
+              label={<Root object={data} />}
+            >
               {data.directTeamMembers
                 ? data.directTeamMembers
-                    .sort((a: any, b: any) => ('' + a.teamName).localeCompare(b.teamName))
-                    .sort((a: any, b: any) => b.dimensions.left - a.dimensions.left)
+                    .sort((a: any, b: any) =>
+                      ("" + a.teamName).localeCompare(b.teamName)
+                    )
+                    .sort(
+                      (a: any, b: any) => b.dimensions.left - a.dimensions.left
+                    )
                     .map((obj: any, index: any) => {
                       const lineHidden =
                         !obj.directTeamMembers ||
-                        (obj.directTeamMembers && !obj.directTeamMembers.length);
-                      return obj.dimensions?.horizontal !== true && obj.teamLead !== false ? (
+                        (obj.directTeamMembers &&
+                          !obj.directTeamMembers.length);
+                      return obj.dimensions?.horizontal !== true &&
+                        obj.teamLead !== false ? (
                         <TreeNode
                           lineHidden={lineHidden}
                           totalVerticalNode={totalVerticalNode}
@@ -123,7 +154,9 @@ const Home: React.FC = () => {
                               key={index}
                               handleNode={() => handleNode(obj)}
                               object={obj}
-                              totalNodes={totalVerticalNode + (mergedNodeVisible ? 1 : 0)}
+                              totalNodes={
+                                totalVerticalNode + (mergedNodeVisible ? 1 : 0)
+                              }
                             />
                           }
                         >
@@ -131,7 +164,8 @@ const Home: React.FC = () => {
                             <TreeNode
                               lineHidden={
                                 !obj.directTeamMembers ||
-                                (obj.directTeamMembers && !obj.directTeamMembers.length)
+                                (obj.directTeamMembers &&
+                                  !obj.directTeamMembers.length)
                               }
                               totalVerticalNode={totalVerticalNode}
                               level={3}
@@ -154,17 +188,27 @@ const Home: React.FC = () => {
               <TreeNode
                 lineHidden={rootLineHidden}
                 totalVerticalNode={totalVerticalNode}
-                makeVisible={data.directTeamMembers.some((i: any) => !i.teamLead)}
-                isMergedNode={data.directTeamMembers.some((i: any) => i.teamLead)}
+                makeVisible={data.directTeamMembers.some(
+                  (i: any) => !i.teamLead
+                )}
+                isMergedNode={data.directTeamMembers.some(
+                  (i: any) => i.teamLead
+                )}
                 width={width}
-                label={<NodeMerge object={data} handleNode={() => handleNode(data)} />}
+                label={
+                  <NodeMerge
+                    object={data}
+                    handleNode={() => handleNode(data)}
+                  />
+                }
                 level={2}
               />
             </Tree>
           </div>
           <div>
             {data.directTeamMembers?.map((obj: any, index: any) => {
-              return obj.dimensions?.horizontal !== false && obj.teamLead !== false ? (
+              return obj.dimensions?.horizontal !== false &&
+                obj.teamLead !== false ? (
                 <HorizontalNode
                   key={index}
                   object={obj}
