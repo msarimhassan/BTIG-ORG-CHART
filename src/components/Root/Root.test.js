@@ -11,6 +11,7 @@ const obj = {
     left: true,
     horizontal: false,
   },
+  visible:true
 };
 
 test('Employee name  renders the text inside the Root', async () => {

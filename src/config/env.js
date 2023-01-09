@@ -1,21 +1,20 @@
-import { create } from "apisauce";
+import { create } from 'apisauce';
 
-export const SEQSERVERURL = "https://seq-dev.btig.corp/";
-export const SEQSERVERAPIKEY = "wCP3b8ye3O6YULE5hm6D";
+export const SEQSERVERURL = 'https://seq-dev.btig.corp/';
+export const SEQSERVERAPIKEY = 'wCP3b8ye3O6YULE5hm6D';
 
-let baseURL = null;
-  baseURL = "api/";
+let baseURL = 'api/';
 
 const client = create({
   baseURL,
 });
 
 export const config = async () => {
-  const token = localStorage.getItem("org-token");
+  const token = localStorage.getItem('org-token');
   return {
     headers: {
       Authorization: `Bearer ${token}`,
-      Accept: "application/json",
+      Accept: 'application/json',
     },
   };
 };
@@ -23,17 +22,17 @@ export const authConfig = async (token) => {
   return {
     headers: {
       Authorization: `Bearer ${token}`,
-      Accept: "application/json",
+      Accept: 'application/json',
     },
   };
 };
 
 export const multipartConfig = async () => {
-  const token = localStorage.getItem("AC-Token");
+  const token = localStorage.getItem('AC-Token');
   return {
     headers: {
       Authorization: `Bearer ${token}`,
-      Accept: "multipart/form-data",
+      Accept: 'multipart/form-data',
     },
   };
 };
@@ -41,7 +40,7 @@ export const multipartConfig = async () => {
 const responseMonitor = (response) => {
   if (response.status === 401) {
     localStorage.clear();
-    window.location.href = "/";
+    window.location.href = '/';
   }
 };
 

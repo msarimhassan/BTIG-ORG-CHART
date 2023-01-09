@@ -35,10 +35,11 @@ export const AddNewMember = async (obj: any) => {
   if (!response.ok) {
     message.error('Something went wrong, please refresh and try again!');
     // eslint-disable-next-line no-throw-literal
-    throw 'Error, on creating member.';
+    return false;
   }
   message.success('New member is added successfully!');
   logMessage('Added new Team');
+  return true;
 };
 
 export const getApiRoute = (key: any, user: any) => {
@@ -87,7 +88,7 @@ export const manageteamNamefont = (teamName: String) => {
 export const UpdateMember = async (key: any, values: any) => {
   const URL = getApiRoute(key, values);
   const response = await Network.patch(URL, {}, (await config()).headers);
-  if (!response.ok) return alert('Error in updating the member');
+  if (!response.ok) alert('Error in updating the member');
 };
 
 export const handleUpgrade = async (oldName: string, newTeam: string) => {
@@ -98,7 +99,11 @@ export const handleUpgrade = async (oldName: string, newTeam: string) => {
       await config()
     ).headers
   );
-  if (!response.ok) return alert('Error in updating teamName');
+  if (!response.ok) {
+    alert('Error in updating teamName');
+    return false;
+  }
+  return true;
 };
 
 export const compareValues = async (initialValues: any, values: any, oldTeamName: any) => {
@@ -157,8 +162,12 @@ export const getReportsInto = (data: any, reportsInto: any) => {
 
 export const deleteTeamMember = async (upn: any) => {
   const response = await Network.delete(Urls.deleteMember(upn), {}, (await config()).headers);
-  if (!response.ok) return message.error('Failed to delete');
-  logMessage(`Delete Member ${upn}`);
+  if (!response.ok) {
+    message.error('Failed to delete');
+    return false;
+  }
+  logMessage(`Deleted Member ${upn}`);
+  return true;
 };
 
 export const compareMemberValues = async (initialValues: any, values: any) => {
@@ -194,4 +203,31 @@ export const compareWithTeamName = (a: any, b: any) => {
   if (a.teamName < b.teamName) return -1;
   if (a.teamName > b.teamName) return 1;
   return 1;
+};
+
+export const handleTeamDuplication = (object: any, index: any) => {
+  const currentTeamName = object.directTeamMembers[index].teamName;
+  const prevTeamName = object.directTeamMembers[index - 1]?.teamName;
+  const teamNameVisible = index === 0 || (index > 0 && currentTeamName !== prevTeamName);
+  const hideLine =
+    index === 0 ||
+    (index > 0 &&
+      currentTeamName &&
+      currentTeamName.trim() &&
+      prevTeamName &&
+      prevTeamName.trim() &&
+      currentTeamName === prevTeamName);
+
+  return { teamNameVisible, hideLine };
+};
+
+export const handleDuplication = (members: any, index: any) => {
+  const currentTeamName = members[index].teamName?.trim();
+  const prevTeamName = members[index - 1]?.teamName?.trim();
+  const teamNameVisible = index === 0 || (index > 0 && currentTeamName !== prevTeamName);
+  const hideLine =
+    index === 0 ||
+    (index > 0 && currentTeamName === prevTeamName && currentTeamName && prevTeamName);
+
+  return { teamNameVisible, hideLine };
 };

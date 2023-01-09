@@ -11,6 +11,7 @@ const obj = {
     left: true,
     horizontal: true,
   },
+  visible: true,
 };
 
 const obj2 = {
@@ -53,12 +54,14 @@ const obj3 = {
         left: true,
         horizontal: true,
       },
+      visible: true,
     },
   ],
   dimensions: {
     left: true,
     horizontal: true,
   },
+  visible: true,
 };
 
 test("Horizontal Node render in the dom", async () => {

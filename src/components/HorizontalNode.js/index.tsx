@@ -53,13 +53,16 @@ const HorizontalNode: FC<Props> = ({
                 fontSize: '13px',
               }}
             >
-              <u>{object.displayName}</u>
+              {object.visible === true ? <u> {object.displayName}</u> : null}
             </div>
           </div>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             {object.directTeamMembers.length > 0
               ? object.directTeamMembers.map(
-                  (item: { displayName: string; teamLead: boolean }, index: any) => {
+                  (
+                    item: { displayName: string; teamLead: boolean; visible: boolean },
+                    index: any
+                  ) => {
                     return (
                       <div
                         key={index}
@@ -70,7 +73,13 @@ const HorizontalNode: FC<Props> = ({
                         }}
                         data-testid='testTeamLead'
                       >
-                        {item.teamLead ? <u>{item?.displayName}</u> : item?.displayName}
+                        {item.visible === true ? (
+                          item.teamLead ? (
+                            <u>{item?.displayName}</u>
+                          ) : (
+                            item?.displayName
+                          )
+                        ) : null}
                       </div>
                     );
                   }

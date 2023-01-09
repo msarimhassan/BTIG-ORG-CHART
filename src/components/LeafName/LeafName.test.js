@@ -22,20 +22,19 @@ const obj = {
       userPrincipalName: "SAzriel@btig.com",
       teamName: "AppDev",
       teamLead: false,
-      directTeamMembers: [
-        
-      ],
+      directTeamMembers: [],
       dimensions: {
         left: true,
         horizontal: false,
       },
-    }
-
+      visible: true,
+    },
   ],
   dimensions: {
     left: true,
     horizontal: false,
   },
+  visible: true,
 };
 
 test("Leaf Name render in the dom", async () => {
@@ -60,6 +59,6 @@ test("Modal Buttons", () => {
 
 test("Testing MemberName", async () => {
   render(<LeafName data={obj} flag={true} />);
-  const element = await screen.findByTestId('test-member-name');
+  const element = await screen.findByTestId("test-member-name");
   expect(element).toHaveTextContent("JohnDoe");
 });

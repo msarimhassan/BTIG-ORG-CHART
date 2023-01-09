@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import useWindowDimensions from "../../hooks/useWindowDimensions";
-import "./Node.css";
-import { manageteamNamefont } from "../../utils";
+import useWindowDimensions from '../../hooks/useWindowDimensions';
+import './Node.css';
+import { manageteamNamefont } from '../../utils';
 
 // import { Tooltip } from '../../components';
-import useAuth from "../../hooks/useAuth";
-import { Tooltip } from "antd";
-import TooltipBox from "../Tooltip";
+import useAuth from '../../hooks/useAuth';
+import { Tooltip } from 'antd';
+import TooltipBox from '../Tooltip';
 
 interface Props {
   object: any;
@@ -42,14 +42,14 @@ const Node: React.FC<Props> = ({
   const DisplayName: React.FC<teamName> = ({ teamName }) => {
     if (teamName) {
       return (
-        <span style={{ fontSize: "0.7vw" }}>
+        <span style={{ fontSize: '0.7vw' }}>
           <u>{object.displayName}</u>
         </span>
       );
     }
 
     return (
-      <span className="node-displayname" style={{ fontSize: "0.7vw" }}>
+      <span className='node-displayname' style={{ fontSize: '0.7vw' }}>
         <u>{object.displayName}</u>
       </span>
     );
@@ -58,40 +58,34 @@ const Node: React.FC<Props> = ({
   return (
     <Tooltip
       zIndex={1}
-      placement="top"
-      title={
-        <TooltipBox
-          data={object}
-          active={active}
-          hideTooltip={hideTip}
-          flag={false}
-        />
-      }
+      placement='top'
+      title={<TooltipBox data={object} active={active} hideTooltip={hideTip} flag={false} />}
     >
       <div
-        id="node"
+        id='node'
         style={{
-          width: "100%",
+          width: '100%',
           height,
-          marginTop: totalNodes === 1 ? 0 : "10px",
+          marginTop: totalNodes === 1 ? 0 : '10px',
         }}
-        className="node"
-        data-testid="testteamNode"
+        className='node'
+        data-testid='testteamNode'
         onClick={(e) => {
           e.stopPropagation();
           handlingNode(object);
         }}
       >
         <div
-          data-testid="testTeamName"
-          className={`text ${activeUser?.role === "read" ? "text-top" : ""}`}
+          data-testid='testTeamName'
+          className={`text ${activeUser?.role === 'read' ? 'text-top' : ''}`}
         >
-          <DisplayName teamName={object.teamName} />
-          <br />
-          <div
-            className="text-teamname"
-            style={manageteamNamefont(object.teamName)}
-          >
+          {object.visible === true ? (
+            <>
+              <DisplayName teamName={object.teamName} />
+              <br />
+            </>
+          ) : null}
+          <div className='text-teamname' style={manageteamNamefont(object.teamName)}>
             {object.teamName}
           </div>
         </div>

@@ -11,6 +11,7 @@ const obj = {
     left: true,
     horizontal: false,
   },
+  visible:true
 };
 test("node render in the dom", async () => {
   render(<Node object={obj} />);

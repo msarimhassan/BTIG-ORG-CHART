@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 
-import { LeafName } from "../../components";
-import useWindowDimensions from "../../hooks/useWindowDimensions";
-import { compareWithTeamName } from "../../utils";
-import "./Leaf.css";
+import { LeafName } from '../../components';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
+import { compareWithTeamName, handleTeamDuplication } from '../../utils';
+import './Leaf.css';
 
 interface LeafProps {
   object: any;
@@ -28,33 +28,20 @@ const Leaf: FC<LeafProps> = ({ object, handleNode = () => {} }) => {
       }}
     >
       {!!object.directTeamMembers &&
-        object.directTeamMembers
-          .sort(compareWithTeamName)
-          .map((item: any, index: number) => {
-            const currentTeamName = object.directTeamMembers[index].teamName;
-            const prevTeamName =  object.directTeamMembers[index - 1]?.teamName;
-            const teamNameVisible =
-              index === 0 || (index > 0 && currentTeamName !== prevTeamName);
-            const hideLine =
-              index === 0 ||
-              (index > 0 &&
-                currentTeamName &&
-                currentTeamName.trim() &&
-                prevTeamName &&
-                prevTeamName.trim() &&
-                currentTeamName === prevTeamName);
-            return (
-              <React.Fragment key={index + item.teamName}>
-                <LeafName
-                  hideLine={hideLine}
-                  teamNameVisible={teamNameVisible}
-                  key={index}
-                  data={item}
-                  flag={true}
-                />
-              </React.Fragment>
-            );
-          })}
+        object.directTeamMembers.sort(compareWithTeamName).map((item: any, index: number) => {
+          const { teamNameVisible, hideLine } = handleTeamDuplication(object, index);
+          return (
+            <React.Fragment key={index + item.teamName}>
+              <LeafName
+                hideLine={hideLine}
+                teamNameVisible={teamNameVisible}
+                key={index}
+                data={item}
+                flag={true}
+              />
+            </React.Fragment>
+          );
+        })}
     </div>
   );
 };

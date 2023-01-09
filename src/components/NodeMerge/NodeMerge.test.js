@@ -17,12 +17,14 @@ const obj = {
         Left: true,
         horizontal: false,
       },
+      visible: true,
     },
   ],
   dimensions: {
     Left: true,
     horizontal: true,
   },
+  visible: true,
 };
 
 test("node merge  render in the dom", async () => {

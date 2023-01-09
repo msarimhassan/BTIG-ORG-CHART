@@ -20,10 +20,15 @@ const Root: React.FC<Props> = ({ object }: Props) => {
         onMouseEnter={() => isActive(!active)}
         onMouseLeave={hideTooltip}
       >
-        <span style={{ fontSize: '13px' }}>
-          <u>{object?.displayName}</u>
-        </span>
-        <br />
+        {object.visible === true ? (
+          <>
+            <span style={{ fontSize: '13px' }}>
+              <u>{object?.displayName}</u>
+            </span>
+            <br />
+          </>
+        ) : null}
+
         <span className='text-teamname' style={{ fontSize: '13px', fontWeight: 'bold' }}>
           {object.teamName}
         </span>

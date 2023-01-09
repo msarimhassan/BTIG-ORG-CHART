@@ -28,14 +28,15 @@ const AddMember: React.FC<Props> = ({ modalIsOpen, setModal = () => {}, data }) 
 
   const onFinish = async (values: any) => {
     setLoading(true);
-    AddNewMember({
+    const result = await AddNewMember({
       ...values,
       teamName: data?.teamName,
       reportsInto: data?.userPrincipalName,
     });
     setModal(false);
-    setApiCall((prevVal: boolean) => !prevVal);
+
     setLoading(false);
+    if (result === true) setApiCall((prevVal: boolean) => !prevVal);
   };
 
   return (
