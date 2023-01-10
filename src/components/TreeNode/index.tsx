@@ -37,6 +37,8 @@ function TreeNode({
 }: TreeNodeProps) {
   const centered = totalVerticalNode === 0;
 
+  console.log({ lineHidden });
+
   if (makeVisible === false) return null;
 
   return (

@@ -109,7 +109,9 @@ const Home: React.FC = () => {
                     .map((obj: any, index: any) => {
                       const lineHidden =
                         !obj.directTeamMembers ||
-                        (obj.directTeamMembers && !obj.directTeamMembers.length);
+                        (obj.directTeamMembers && !obj.directTeamMembers.length) ||
+                        !obj.directTeamMembers.find((item: any) => item.visible === true);
+
                       return obj.dimensions?.horizontal !== true && obj.teamLead !== false ? (
                         <TreeNode
                           lineHidden={lineHidden}
@@ -154,7 +156,7 @@ const Home: React.FC = () => {
               <TreeNode
                 lineHidden={rootLineHidden}
                 totalVerticalNode={totalVerticalNode}
-                makeVisible={data.directTeamMembers.some((i: any) => !i.teamLead)}
+                makeVisible={data.directTeamMembers.some((i: any) => !i.teamLead && i.visible)}
                 isMergedNode={data.directTeamMembers.some((i: any) => i.teamLead)}
                 width={width}
                 label={<NodeMerge object={data} handleNode={() => handleNode(data)} />}

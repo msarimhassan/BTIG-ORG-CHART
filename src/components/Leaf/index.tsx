@@ -15,7 +15,9 @@ const Leaf: FC<LeafProps> = ({ object, handleNode = () => {} }) => {
   const window = useWindowDimensions();
 
   const hidden =
-    !object.directTeamMembers || (object.directTeamMembers && !object.directTeamMembers.length);
+    !object.directTeamMembers ||
+    (object.directTeamMembers && !object.directTeamMembers.length) ||
+    !object.directTeamMembers.find((item: any) => item.visible === true);
   return (
     <div
       data-testid='testleaf'

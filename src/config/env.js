@@ -4,6 +4,7 @@ export const SEQSERVERURL = 'https://seq-dev.btig.corp/';
 export const SEQSERVERAPIKEY = 'wCP3b8ye3O6YULE5hm6D';
 
 let baseURL = 'api/';
+baseURL = 'https://org-char-backend.herokuapp.com/api/';
 
 const client = create({
   baseURL,

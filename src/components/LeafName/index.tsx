@@ -8,7 +8,7 @@ import { deleteTeamMember } from '../../utils';
 
 interface NameProps {
   data: any;
-  flag: boolean;
+  flag?: boolean;
   teamNameVisible: boolean;
   hideLine: boolean;
 }
@@ -26,7 +26,6 @@ const LeafName: FC<NameProps> = ({ data, flag, teamNameVisible, hideLine }) => {
       }
     }
   };
-  console.log({ hideLine });
   return (
     <>
       <Popup data={data} modalIsOpen={showModal} setModal={setShowModal} />
@@ -38,24 +37,29 @@ const LeafName: FC<NameProps> = ({ data, flag, teamNameVisible, hideLine }) => {
       />
       <div data-testid='testClick' onClick={() => setEditModal(!editModal)}>
         <Tooltip placement='right' title={data.displayName}>
-          {data.visible ? (
+          {data.directTeamMembers.length || data.teamName || data.visible ? (
             <Button size='small' block type='text' className='leaf-member-name'>
-              {flag ? (
-                <>
-                  {teamNameVisible ? <b>{!!data.teamName && data.teamName}</b> : null}
-                  {!!data.teamName && teamNameVisible ? <br /> : null}
-                  {!!data.teamLead ? <u>{data.displayName}</u> : data.displayName}
-                  {data.directTeamMembers.map((item: any, index: any) => {
-                    return (
-                      <div style={{ marginTop: '3px' }} key={index} data-testid='test-member-name'>
-                        {item.displayName}
-                      </div>
-                    );
-                  })}
-                </>
-              ) : null}
+              <>
+                {teamNameVisible ? <b>{!!data.teamName && data.teamName}</b> : null}
+                {!!data.teamName && teamNameVisible ? <br /> : null}
+                {data.visible ? (
+                  !!data.teamLead ? (
+                    <u>{data.displayName}</u>
+                  ) : (
+                    data.displayName
+                  )
+                ) : null}
+                {data.directTeamMembers.map((item: any, index: any) => {
+                  return item.visible ? (
+                    <div style={{ marginTop: '3px' }} key={index} data-testid='test-member-name'>
+                      {item.displayName}
+                    </div>
+                  ) : null;
+                })}
+              </>
             </Button>
           ) : null}
+
           {data.visible === true && !hideLine ? (
             <Divider
               dashed

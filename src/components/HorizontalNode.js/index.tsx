@@ -24,6 +24,14 @@ const HorizontalNode: FC<Props> = ({
   const hideTip = () => {
     isActive(false);
   };
+  const handlingNode = (obj: any) => {
+    if (
+      object.directTeamMembers.length === 0 ||
+      !object.directTeamMembers.find((item: any) => item.visible === true)
+    )
+      return;
+    handleNode(obj);
+  };
 
   return (
     <Tooltip
@@ -34,7 +42,7 @@ const HorizontalNode: FC<Props> = ({
       <div
         data-testid='testhorizontalnode'
         className='HorizontalNode'
-        onClick={() => handleNode(object)}
+        onClick={() => handlingNode(object)}
         style={{
           width: object.dimensions.left ? leftNodeWidth - 10 : fullWidthHorizontalNodeWidth,
           marginLeft: marginLeft,
@@ -46,15 +54,17 @@ const HorizontalNode: FC<Props> = ({
               {object.teamName}
             </div>
             <div className='pipe-sign'></div>
-            <div
-              style={{
-                marginLeft: '5px',
-                whiteSpace: 'nowrap',
-                fontSize: '13px',
-              }}
-            >
-              {object.visible === true ? <u> {object.displayName}</u> : null}
-            </div>
+            {object.visible ? (
+              <div
+                style={{
+                  marginLeft: '5px',
+                  whiteSpace: 'nowrap',
+                  fontSize: '13px',
+                }}
+              >
+                <u> {object.displayName}</u>
+              </div>
+            ) : null}
           </div>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             {object.directTeamMembers.length > 0
@@ -63,25 +73,19 @@ const HorizontalNode: FC<Props> = ({
                     item: { displayName: string; teamLead: boolean; visible: boolean },
                     index: any
                   ) => {
-                    return (
+                    return item.visible ? (
                       <div
                         key={index}
                         style={{
-                          marginLeft: '15px',
+                          marginLeft: '13px',
                           whiteSpace: 'nowrap',
                           fontSize: '13px',
                         }}
                         data-testid='testTeamLead'
                       >
-                        {item.visible === true ? (
-                          item.teamLead ? (
-                            <u>{item?.displayName}</u>
-                          ) : (
-                            item?.displayName
-                          )
-                        ) : null}
+                        {item.teamLead ? <u>{item?.displayName}</u> : item?.displayName}
                       </div>
-                    );
+                    ) : null;
                   }
                 )
               : null}

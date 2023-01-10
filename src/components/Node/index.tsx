@@ -35,7 +35,11 @@ const Node: React.FC<Props> = ({
   const { activeUser } = useAuth();
 
   const handlingNode = (obj: any) => {
-    if (obj.directTeamMembers.length === 0) return;
+    if (
+      obj.directTeamMembers.length === 0 ||
+      !obj.directTeamMembers.find((item: any) => item.visible === true)
+    )
+      return;
     handleNode(obj);
   };
 
